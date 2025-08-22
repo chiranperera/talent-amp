@@ -145,6 +145,7 @@ export default {
         fadeIn: "fadeIn 0.3s ease-out",
         shimmer: "shimmer 2s linear infinite",
         blob: "blob 7s infinite",
+        glow: "glow 4s ease-in-out infinite",
       },
       boxShadow: {
         orange: "0 20px 40px -8px rgba(255, 69, 0, 0.3)",
