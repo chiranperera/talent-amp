@@ -172,38 +172,22 @@ const Services = () => {
                 </div>
 
                 {/* Back of Card - Orange Background */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl flex flex-col" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl flex flex-col justify-center items-center" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-orange-100 mb-6 leading-relaxed text-sm flex-grow">
+                  <p className="text-orange-100 mb-8 leading-relaxed text-center max-w-xs">
                     {service.description}
                   </p>
 
-                  {/* Benefits */}
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold text-sm mb-3 flex items-center">
-                      <Target className="w-4 h-4 mr-2" />
-                      Key Benefits
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.benefits.slice(0, 3).map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-orange-100 text-sm">
-                          <CheckCircle className="w-3 h-3 text-white mr-2 flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
                   {/* Action */}
-                  <button className="w-full bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg">
+                  <button className="bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg">
                     <span className="mr-2">Learn More</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
