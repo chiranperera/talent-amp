@@ -160,38 +160,41 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Floating Metrics Badges - Repositioned for new shape */}
+      {/* Premium Floating Metrics Badges - Above luxury background */}
       <div
-        className="absolute top-32 right-2/3 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-orange-500/20 shadow-lg"
+        className="absolute top-32 right-2/3 hidden lg:block animate-float bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-orange-500/30 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300"
         style={{ marginRight: "-130px" }}
       >
         <div className="flex items-center space-x-3">
-          <div className="w-3 h-3 bg-lime-400 rounded-full animate-pulse"></div>
-          <span className="text-white text-sm font-medium">2,500+ FTEs</span>
+          <div className="w-3 h-3 bg-lime-400 rounded-full animate-pulse shadow-lg"></div>
+          <span className="text-white text-sm font-semibold">2,500+ FTEs</span>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
       </div>
 
       <div
-        className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg"
+        className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-cyan-500/30 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300"
         style={{ animationDelay: "0.7s", margin: "0 -77px -126px 93px" }}
       >
         <div className="flex items-center space-x-3">
-          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-          <span className="text-white text-sm font-medium">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-lg"></div>
+          <span className="text-white text-sm font-semibold">
             15 Years Experience
           </span>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
       </div>
 
-      {/* Additional floating badge for visual balance */}
+      {/* Additional premium floating badge for visual balance */}
       <div
-        className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-purple-500/20 shadow-lg"
+        className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-purple-500/30 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300"
         style={{ animationDelay: "1.2s", margin: "-173px -205px 0 0" }}
       >
         <div className="flex items-center space-x-3">
-          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-          <span className="text-white text-sm font-medium">Global Reach</span>
+          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-lg"></div>
+          <span className="text-white text-sm font-semibold">Global Reach</span>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
       </div>
 
       {/* Main Content */}
