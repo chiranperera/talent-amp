@@ -103,9 +103,9 @@ export default {
           "50%": { transform: "scale(1.05)" },
         },
         float: {
-          "0%": { transform: "translateY(-15px)" },
-          "50%": { transform: "translateY(15px)" },
-          "100%": { transform: "translateY(-15px)" },
+          "0%": { transform: "translateY(-8px)" },
+          "50%": { transform: "translateY(8px)" },
+          "100%": { transform: "translateY(-8px)" },
         },
         slideUp: {
           from: {
