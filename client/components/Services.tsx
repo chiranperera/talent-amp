@@ -20,15 +20,15 @@ const Services = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleCardClick = (index: number) => {
     if (isMobile) {
-      setFlippedCards(prev => {
+      setFlippedCards((prev) => {
         const newSet = new Set(prev);
         if (newSet.has(index)) {
           newSet.delete(index);
@@ -44,55 +44,103 @@ const Services = () => {
     {
       icon: Users,
       title: "Contract & Contract-to-Hire",
-      description: "Flexible staffing solutions that scale with your project needs and business demands.",
-      expandedDescription: "Our flexible staffing solutions provide the agility you need to scale teams up or down based on project requirements. We offer both short-term and long-term contract options, with the possibility to convert to permanent hire.",
-      benefits: ["Rapid team scaling", "Reduced hiring risks", "Cost-effective solutions", "Trial-to-hire options"],
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&crop=center",
+      description:
+        "Flexible staffing solutions that scale with your project needs and business demands.",
+      expandedDescription:
+        "Our flexible staffing solutions provide the agility you need to scale teams up or down based on project requirements. We offer both short-term and long-term contract options, with the possibility to convert to permanent hire.",
+      benefits: [
+        "Rapid team scaling",
+        "Reduced hiring risks",
+        "Cost-effective solutions",
+        "Trial-to-hire options",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&crop=center",
       color: "from-orange-500 to-orange-600",
     },
     {
       icon: UserCheck,
       title: "Direct Hire Services",
-      description: "Permanent placement solutions to build your core team with top-tier IT professionals.",
-      expandedDescription: "Build your dream team with our comprehensive direct hire services. We specialize in identifying, vetting, and placing top-tier IT professionals who align with your company culture and technical requirements.",
-      benefits: ["Executive search", "Cultural fit assessment", "Comprehensive screening", "90-day guarantee"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop&crop=center",
+      description:
+        "Permanent placement solutions to build your core team with top-tier IT professionals.",
+      expandedDescription:
+        "Build your dream team with our comprehensive direct hire services. We specialize in identifying, vetting, and placing top-tier IT professionals who align with your company culture and technical requirements.",
+      benefits: [
+        "Executive search",
+        "Cultural fit assessment",
+        "Comprehensive screening",
+        "90-day guarantee",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop&crop=center",
       color: "from-purple-500 to-purple-600",
     },
     {
       icon: FileText,
       title: "Statement of Work (SOW)",
-      description: "Project-based engagements with defined deliverables and timeline commitments.",
-      expandedDescription: "Deliver complex projects with confidence through our SOW-based engagements. We take ownership of project outcomes with defined deliverables, timelines, and success metrics.",
-      benefits: ["Fixed project pricing", "Defined deliverables", "Timeline guarantees", "Risk mitigation"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
+      description:
+        "Project-based engagements with defined deliverables and timeline commitments.",
+      expandedDescription:
+        "Deliver complex projects with confidence through our SOW-based engagements. We take ownership of project outcomes with defined deliverables, timelines, and success metrics.",
+      benefits: [
+        "Fixed project pricing",
+        "Defined deliverables",
+        "Timeline guarantees",
+        "Risk mitigation",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
       color: "from-cyan-500 to-cyan-600",
     },
     {
       icon: Settings,
       title: "Managed Services",
-      description: "End-to-end management of your technology projects and ongoing operations.",
-      expandedDescription: "Let us handle the complexities of your technology operations while you focus on core business activities. Our managed services include infrastructure management, application support, and strategic technology consulting.",
-      benefits: ["24/7 support coverage", "Proactive monitoring", "Cost optimization", "Strategic planning"],
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&crop=center",
+      description:
+        "End-to-end management of your technology projects and ongoing operations.",
+      expandedDescription:
+        "Let us handle the complexities of your technology operations while you focus on core business activities. Our managed services include infrastructure management, application support, and strategic technology consulting.",
+      benefits: [
+        "24/7 support coverage",
+        "Proactive monitoring",
+        "Cost optimization",
+        "Strategic planning",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&crop=center",
       color: "from-lime-500 to-lime-600",
     },
     {
       icon: Globe,
       title: "Employer of Record (EOR)",
-      description: "Global employment solutions enabling you to hire talent anywhere, compliantly.",
-      expandedDescription: "Expand your talent pool globally without the complexity of international employment law. Our EOR services handle compliance, payroll, benefits, and local regulations across multiple countries.",
-      benefits: ["Global compliance", "Local expertise", "Payroll management", "Benefits administration"],
-      image: "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop&crop=center",
+      description:
+        "Global employment solutions enabling you to hire talent anywhere, compliantly.",
+      expandedDescription:
+        "Expand your talent pool globally without the complexity of international employment law. Our EOR services handle compliance, payroll, benefits, and local regulations across multiple countries.",
+      benefits: [
+        "Global compliance",
+        "Local expertise",
+        "Payroll management",
+        "Benefits administration",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop&crop=center",
       color: "from-orange-500 to-red-500",
     },
     {
       icon: GraduationCap,
       title: "Hire Train Deploy",
-      description: "Custom training programs to develop and deploy skilled professionals for your needs.",
-      expandedDescription: "Bridge the skills gap with our comprehensive hire-train-deploy programs. We identify promising candidates, provide intensive training tailored to your tech stack, and deploy them directly to your team.",
-      benefits: ["Custom training curricula", "Guaranteed skill levels", "Reduced time-to-productivity", "Ongoing mentorship"],
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&crop=center",
+      description:
+        "Custom training programs to develop and deploy skilled professionals for your needs.",
+      expandedDescription:
+        "Bridge the skills gap with our comprehensive hire-train-deploy programs. We identify promising candidates, provide intensive training tailored to your tech stack, and deploy them directly to your team.",
+      benefits: [
+        "Custom training curricula",
+        "Guaranteed skill levels",
+        "Reduced time-to-productivity",
+        "Ongoing mentorship",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&crop=center",
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -118,21 +166,21 @@ const Services = () => {
             <div
               key={index}
               className="group h-80 cursor-pointer"
-              style={{ perspective: '1000px' }}
+              style={{ perspective: "1000px" }}
               onClick={() => handleCardClick(index)}
               onMouseEnter={(e) => {
                 if (!isMobile) {
-                  const flipCard = e.currentTarget.querySelector('.flip-card');
+                  const flipCard = e.currentTarget.querySelector(".flip-card");
                   if (flipCard) {
-                    flipCard.style.transform = 'rotateX(180deg)';
+                    flipCard.style.transform = "rotateX(180deg)";
                   }
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isMobile) {
-                  const flipCard = e.currentTarget.querySelector('.flip-card');
+                  const flipCard = e.currentTarget.querySelector(".flip-card");
                   if (flipCard) {
-                    flipCard.style.transform = 'rotateX(0deg)';
+                    flipCard.style.transform = "rotateX(0deg)";
                   }
                 }
               }}
@@ -140,13 +188,19 @@ const Services = () => {
               <div
                 className="flip-card relative w-full h-full transition-transform duration-500 ease-in-out"
                 style={{
-                  transformStyle: 'preserve-3d',
-                  transformOrigin: 'center center',
-                  transform: isMobile && flippedCards.has(index) ? 'rotateX(180deg)' : 'rotateX(0deg)'
+                  transformStyle: "preserve-3d",
+                  transformOrigin: "center center",
+                  transform:
+                    isMobile && flippedCards.has(index)
+                      ? "rotateX(180deg)"
+                      : "rotateX(0deg)",
                 }}
               >
                 {/* Front of Card - Image */}
-                <div className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300" style={{ backfaceVisibility: 'hidden' }}>
+                <div
+                  className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -158,7 +212,9 @@ const Services = () => {
 
                   {/* Top-left Icon */}
                   <div className="absolute top-4 left-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}>
+                    <div
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
+                    >
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -172,7 +228,13 @@ const Services = () => {
                 </div>
 
                 {/* Back of Card - Orange Background */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl flex flex-col justify-center items-center" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
+                <div
+                  className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl flex flex-col justify-center items-center"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateX(180deg)",
+                  }}
+                >
                   {/* Icon */}
                   <div className="w-16 h-16 flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-white" />
@@ -211,7 +273,6 @@ const Services = () => {
           </button>
         </div>
       </div>
-
     </section>
   );
 };

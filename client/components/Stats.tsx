@@ -123,10 +123,16 @@ const Stats = () => {
   const firstRowStats = stats.slice(0, 6);
   const secondRowStats = stats.slice(6);
 
-  const StatsCard = ({ stat, index }: { stat: typeof stats[0]; index: number }) => (
+  const StatsCard = ({
+    stat,
+    index,
+  }: {
+    stat: (typeof stats)[0];
+    index: number;
+  }) => (
     <div
       className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-orange-500/50 transition-all duration-300 flex flex-col justify-center items-center"
-      style={{ width: '300px', height: '120px' }}
+      style={{ width: "300px", height: "120px" }}
     >
       {/* Number */}
       <div className="text-3xl font-bold text-white mb-2">
