@@ -123,9 +123,9 @@ const Stats = () => {
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Pattern with Sound Waves */}
       <div className="absolute inset-0">
-        <div 
+        <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `
@@ -134,6 +134,26 @@ const Stats = () => {
             `,
           }}
         />
+
+        {/* Sound Wave Visualization */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-5">
+          <div className="flex items-end space-x-3">
+            {[...Array(30)].map((_, i) => {
+              const heights = [20, 40, 30, 60, 25, 50, 35, 70, 20, 45];
+              return (
+                <div
+                  key={i}
+                  className="w-2 bg-orange-500 rounded-t animate-pulse"
+                  style={{
+                    height: `${heights[i % heights.length]}px`,
+                    animationDelay: `${i * 150}ms`,
+                    animationDuration: "3s",
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="container-lg relative z-10">
