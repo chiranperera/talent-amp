@@ -41,33 +41,59 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* TalentAmp Masking Design - Right Side */}
+      {/* TalentAmp Unique Shape Design - Right Side */}
       <div className="absolute right-0 top-0 h-full w-1/2 hidden lg:block">
-        <div className="relative h-full w-full">
-          {/* Main masking image */}
-          <div 
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-full h-3/4"
+        <div className="relative h-full w-full pr-8">
+          {/* Main shape background */}
+          <div
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-full h-4/5 opacity-90"
             style={{
-              backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F9dd974dce5ec47e2bb18b25c9f4d1f1d?format=webp&width=800')`,
+              backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center right',
-              transform: `translateY(${scrollY * -0.2}px) translateY(-50%)`,
+              transform: `translateY(${scrollY * -0.15}px) translateY(-50%)`,
             }}
           />
-          
-          {/* Floating talent pills with diversity theme */}
-          <div className="absolute top-20 right-20 w-16 h-24 bg-gradient-to-b from-orange-500/20 to-purple-500/20 rounded-full backdrop-blur-sm border border-white/10 animate-float">
-            <div className="w-full h-full rounded-full bg-gradient-to-b from-orange-400/30 to-orange-600/30"></div>
-          </div>
-          
-          <div className="absolute top-40 right-40 w-20 h-32 bg-gradient-to-b from-cyan-500/20 to-blue-500/20 rounded-full backdrop-blur-sm border border-white/10 animate-float" style={{animationDelay: "0.5s"}}>
-            <div className="w-full h-full rounded-full bg-gradient-to-b from-cyan-400/30 to-cyan-600/30"></div>
-          </div>
-          
-          <div className="absolute bottom-32 right-16 w-14 h-20 bg-gradient-to-b from-lime-500/20 to-green-500/20 rounded-full backdrop-blur-sm border border-white/10 animate-float" style={{animationDelay: "1s"}}>
-            <div className="w-full h-full rounded-full bg-gradient-to-b from-lime-400/30 to-lime-600/30"></div>
-          </div>
+
+          {/* Masked talent imagery overlay */}
+          <div
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5/6 h-3/5"
+            style={{
+              maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
+              maskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center right',
+              WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
+              WebkitMaskSize: 'contain',
+              WebkitMaskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center right',
+              background: 'linear-gradient(135deg, rgba(255, 69, 0, 0.8) 0%, rgba(124, 58, 237, 0.6) 50%, rgba(6, 182, 212, 0.8) 100%)',
+              transform: `translateY(${scrollY * -0.1}px) translateY(-50%)`,
+            }}
+          />
+
+          {/* Gradient overlay for depth */}
+          <div
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4/5 h-2/3 opacity-60"
+            style={{
+              maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
+              maskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center right',
+              WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
+              WebkitMaskSize: 'contain',
+              WebkitMaskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center right',
+              background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 69, 0, 0.3) 40%, transparent 70%)',
+              transform: `translateY(${scrollY * -0.05}px) translateY(-50%)`,
+            }}
+          />
+
+          {/* Floating accent elements */}
+          <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/60 rounded-full animate-pulse blur-sm" style={{animationDelay: "0s", animationDuration: "3s"}}></div>
+          <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-cyan-400/40 rounded-full animate-pulse blur-sm" style={{animationDelay: "1s", animationDuration: "4s"}}></div>
+          <div className="absolute bottom-1/4 right-1/5 w-5 h-5 bg-purple-400/50 rounded-full animate-pulse blur-sm" style={{animationDelay: "2s", animationDuration: "5s"}}></div>
         </div>
       </div>
 
