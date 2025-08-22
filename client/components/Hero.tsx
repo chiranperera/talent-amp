@@ -199,7 +199,7 @@ const Hero = () => {
 
       {/* Main Content */}
       <div
-        className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left"
+        className="relative z-40 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left"
         style={{
           display: "flex",
           flexDirection: "column",
