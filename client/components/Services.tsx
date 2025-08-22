@@ -222,23 +222,6 @@ const Services = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .rotateX-180 {
-          transform: rotateX(180deg);
-        }
-      `}</style>
     </section>
   );
 };
