@@ -172,21 +172,9 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left" style={{ margin: "0 auto 0 48px", padding: "184px 32px 0" }}>
+      <div className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left" style={{ margin: "0 auto 0 48px", padding: "11px 32px 0" }}>
         {/* TalentAmp Logo Sound Wave */}
         <div className="flex items-center justify-center lg:justify-start mb-8">
-          <div className="flex items-end space-x-1 mr-4">
-            {soundWaveBars.slice(0, 5).map((bar, index) => (
-              <div
-                key={index}
-                className={`w-1 bg-orange-500 rounded-t animate-pulse ${bar.height.replace("h-", "h-")}`}
-                style={{
-                  animationDelay: bar.delay,
-                  animationDuration: "1.5s",
-                }}
-              />
-            ))}
-          </div>
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-orange-400 mr-2" />
             <span className="text-orange-300 text-sm font-medium">
