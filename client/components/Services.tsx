@@ -120,80 +120,66 @@ const Services = () => {
               className="group perspective-1000 h-80 cursor-pointer"
               onClick={() => handleCardClick(index)}
             >
-              <div 
+              <div
                 className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d cursor-pointer
-                  ${!isMobile ? 'group-hover:rotate-y-180' : ''} 
-                  ${isMobile && flippedCards.has(index) ? 'rotate-y-180' : ''}`}
+                  ${!isMobile ? 'group-hover:rotateX-180' : ''}
+                  ${isMobile && flippedCards.has(index) ? 'rotateX-180' : ''}`}
               >
                 {/* Front of Card - Image */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                   {/* Background Image */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url(${service.image})` }}
                   ></div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 group-hover:from-black/80 group-hover:to-black/40 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
 
                   {/* Top-left Icon */}
                   <div className="absolute top-4 left-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}>
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
 
-                  {/* Hover Description Overlay */}
-                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
-                    <div className="text-center text-white">
-                      <h3 className="text-xl font-semibold mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <div className="flex items-center justify-center text-orange-300 text-sm font-medium">
-                        <span className="mr-2">{isMobile ? 'Tap' : 'Click'} for More Details</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Title (always visible) */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <h3 className="text-lg font-semibold text-white truncate">
+                  {/* Title - Moved up from bottom */}
+                  <div className="absolute bottom-6 left-4 right-4">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       {service.title}
                     </h3>
+                    <div className="flex items-center text-orange-300 text-sm font-medium">
+                      <span className="mr-2">{isMobile ? 'Tap' : 'Hover'} to flip</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </div>
 
-                {/* Back of Card - Content */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white rounded-2xl p-8 border border-gray-200 shadow-xl">
+                {/* Back of Card - Orange Background */}
+                <div className="absolute inset-0 w-full h-full backface-hidden rotateX-180 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl">
                   {/* Icon */}
-                  <div
-                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6`}
-                  >
+                  <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-orange-100 mb-6 leading-relaxed text-sm">
                     {service.description}
                   </p>
 
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="text-orange-600 font-medium text-sm mb-3 flex items-center">
+                    <h4 className="text-white font-semibold text-sm mb-3 flex items-center">
                       <Target className="w-4 h-4 mr-2" />
                       Key Benefits
                     </h4>
                     <ul className="space-y-2">
                       {service.benefits.slice(0, 3).map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600 text-sm">
-                          <CheckCircle className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
+                        <li key={idx} className="flex items-center text-orange-100 text-sm">
+                          <CheckCircle className="w-3 h-3 text-white mr-2 flex-shrink-0" />
                           {benefit}
                         </li>
                       ))}
@@ -202,7 +188,7 @@ const Services = () => {
 
                   {/* Action */}
                   <div className="absolute bottom-8 left-8 right-8">
-                    <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                    <button className="w-full bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg">
                       <span className="mr-2">Learn More</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
