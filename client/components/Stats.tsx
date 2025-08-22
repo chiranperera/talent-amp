@@ -251,34 +251,41 @@ const Stats = () => {
       <style jsx>{`
         @keyframes marquee-right {
           0% {
-            transform: translateX(-100%);
+            transform: translateX(-100vw);
           }
           100% {
-            transform: translateX(0%);
+            transform: translateX(100vw);
           }
         }
 
         @keyframes marquee-left {
           0% {
-            transform: translateX(0%);
+            transform: translateX(100vw);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-100vw);
           }
         }
 
         .animate-marquee-right {
-          animation: marquee-right 40s linear infinite;
+          animation: marquee-right 60s linear infinite;
+          width: max-content;
         }
 
         .animate-marquee-left {
-          animation: marquee-left 40s linear infinite;
+          animation: marquee-left 60s linear infinite;
+          width: max-content;
         }
 
         /* Pause animation on hover */
         .animate-marquee-right:hover,
         .animate-marquee-left:hover {
           animation-play-state: paused;
+        }
+
+        /* Ensure full width coverage */
+        section {
+          overflow-x: hidden;
         }
       `}</style>
     </section>
