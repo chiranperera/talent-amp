@@ -227,6 +227,9 @@ const Services = () => {
         .rotate-y-180 {
           transform: rotateY(180deg);
         }
+        .rotateX-180 {
+          transform: rotateX(180deg);
+        }
       `}</style>
     </section>
   );
