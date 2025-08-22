@@ -47,7 +47,7 @@ const Services = () => {
       description: "Flexible staffing solutions that scale with your project needs and business demands.",
       expandedDescription: "Our flexible staffing solutions provide the agility you need to scale teams up or down based on project requirements. We offer both short-term and long-term contract options, with the possibility to convert to permanent hire.",
       benefits: ["Rapid team scaling", "Reduced hiring risks", "Cost-effective solutions", "Trial-to-hire options"],
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=faces",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&crop=center",
       color: "from-orange-500 to-orange-600",
     },
     {
@@ -56,7 +56,7 @@ const Services = () => {
       description: "Permanent placement solutions to build your core team with top-tier IT professionals.",
       expandedDescription: "Build your dream team with our comprehensive direct hire services. We specialize in identifying, vetting, and placing top-tier IT professionals who align with your company culture and technical requirements.",
       benefits: ["Executive search", "Cultural fit assessment", "Comprehensive screening", "90-day guarantee"],
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&crop=faces",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop&crop=center",
       color: "from-purple-500 to-purple-600",
     },
     {
@@ -65,7 +65,7 @@ const Services = () => {
       description: "Project-based engagements with defined deliverables and timeline commitments.",
       expandedDescription: "Deliver complex projects with confidence through our SOW-based engagements. We take ownership of project outcomes with defined deliverables, timelines, and success metrics.",
       benefits: ["Fixed project pricing", "Defined deliverables", "Timeline guarantees", "Risk mitigation"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
       color: "from-cyan-500 to-cyan-600",
     },
     {
@@ -74,7 +74,7 @@ const Services = () => {
       description: "End-to-end management of your technology projects and ongoing operations.",
       expandedDescription: "Let us handle the complexities of your technology operations while you focus on core business activities. Our managed services include infrastructure management, application support, and strategic technology consulting.",
       benefits: ["24/7 support coverage", "Proactive monitoring", "Cost optimization", "Strategic planning"],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&crop=center",
       color: "from-lime-500 to-lime-600",
     },
     {
@@ -83,7 +83,7 @@ const Services = () => {
       description: "Global employment solutions enabling you to hire talent anywhere, compliantly.",
       expandedDescription: "Expand your talent pool globally without the complexity of international employment law. Our EOR services handle compliance, payroll, benefits, and local regulations across multiple countries.",
       benefits: ["Global compliance", "Local expertise", "Payroll management", "Benefits administration"],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop&crop=center",
       color: "from-orange-500 to-red-500",
     },
     {
@@ -92,7 +92,7 @@ const Services = () => {
       description: "Custom training programs to develop and deploy skilled professionals for your needs.",
       expandedDescription: "Bridge the skills gap with our comprehensive hire-train-deploy programs. We identify promising candidates, provide intensive training tailored to your tech stack, and deploy them directly to your team.",
       benefits: ["Custom training curricula", "Guaranteed skill levels", "Reduced time-to-productivity", "Ongoing mentorship"],
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop&crop=faces",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&crop=center",
       color: "from-purple-500 to-pink-500",
     },
   ];
