@@ -126,31 +126,44 @@ const Services = () => {
                   ${isMobile && flippedCards.has(index) ? 'rotate-y-180' : ''}`}
               >
                 {/* Front of Card - Image */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
                   {/* Background Image */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                     style={{ backgroundImage: `url(${service.image})` }}
                   ></div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 group-hover:from-black/80 group-hover:to-black/40 transition-all duration-300"></div>
 
-                  {/* Title Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center mb-3">
-                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mr-3`}>
-                        <service.icon className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                  {/* Top-left Icon */}
+                  <div className="absolute top-4 left-4">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                      <service.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                  </div>
+
+                  {/* Hover Description Overlay */}
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <div className="text-center text-white">
+                      <h3 className="text-xl font-semibold mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center justify-center text-orange-300 text-sm font-medium">
+                        <span className="mr-2">{isMobile ? 'Tap' : 'Click'} for More Details</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Title (always visible) */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+                    <h3 className="text-lg font-semibold text-white truncate">
                       {service.title}
                     </h3>
-                    <div className="flex items-center text-orange-300 text-sm font-medium">
-                      <span className="mr-2">{isMobile ? 'Tap' : 'Hover'} for Details</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </div>
                   </div>
                 </div>
 
