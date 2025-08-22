@@ -145,6 +145,9 @@ export default {
       boxShadow: {
         orange: "0 20px 40px -8px rgba(255, 69, 0, 0.3)",
         glow: "0 0 20px rgba(255, 69, 0, 0.3)",
+        "orange-glow": "0 0 40px rgba(255, 69, 0, 0.6), 0 0 80px rgba(255, 69, 0, 0.3)",
+        "cyan-glow": "0 0 40px rgba(6, 182, 212, 0.6), 0 0 80px rgba(6, 182, 212, 0.3)",
+        "purple-glow": "0 0 40px rgba(168, 85, 247, 0.6), 0 0 80px rgba(168, 85, 247, 0.3)",
       },
       backgroundImage: {
         "gradient-primary":
