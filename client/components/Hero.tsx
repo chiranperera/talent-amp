@@ -129,18 +129,26 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Floating Metrics Badges */}
-      <div className="absolute top-24 right-1/3 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-orange-500/20">
+      {/* Floating Metrics Badges - Repositioned for new shape */}
+      <div className="absolute top-32 right-2/3 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-orange-500/20 shadow-lg">
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-lime-400 rounded-full animate-pulse"></div>
           <span className="text-white text-sm font-medium">2,500+ FTEs</span>
         </div>
       </div>
 
-      <div className="absolute bottom-1/3 left-1/4 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20" style={{animationDelay: "0.7s"}}>
+      <div className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg" style={{animationDelay: "0.7s"}}>
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
           <span className="text-white text-sm font-medium">15 Years Experience</span>
+        </div>
+      </div>
+
+      {/* Additional floating badge for visual balance */}
+      <div className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-purple-500/20 shadow-lg" style={{animationDelay: "1.2s"}}>
+        <div className="flex items-center space-x-3">
+          <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+          <span className="text-white text-sm font-medium">Global Reach</span>
         </div>
       </div>
 
