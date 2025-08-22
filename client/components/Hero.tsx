@@ -153,7 +153,7 @@ const Hero = () => {
 
       <div
         className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg"
-        style={{ animationDelay: "0.7s", margin: "0 -77px -100px 0" }}
+        style={{ animationDelay: "0.7s", margin: "0 -77px -126px 93px" }}
       >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
@@ -182,7 +182,7 @@ const Hero = () => {
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "flex-start",
-          margin: "0 auto 0 50px",
+          margin: "0 auto 0 111px",
           padding: "11px 32px 0",
         }}
       >
