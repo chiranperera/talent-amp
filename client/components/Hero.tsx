@@ -243,7 +243,7 @@ const Hero = () => {
 
       {/* Additional premium glowing badge for visual balance */}
       <div
-        className="absolute top-2/3 right-1/2 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-purple-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-purple-glow"
+        className="absolute top-2/3 right-1/2 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-purple-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-purple-glow animate-glow"
         style={{
           margin: "-173px -205px 0 0",
           boxShadow: "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(168, 85, 247, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
