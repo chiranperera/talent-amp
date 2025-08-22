@@ -212,7 +212,7 @@ const Hero = () => {
 
       {/* Premium Glowing Metrics Badges - Above luxury background */}
       <div
-        className="absolute top-32 right-2/3 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-orange-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-orange-glow"
+        className="absolute top-32 right-2/3 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-orange-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-orange-glow animate-glow"
         style={{
           marginRight: "-130px",
           boxShadow: "0 0 30px rgba(255, 69, 0, 0.4), 0 0 60px rgba(255, 69, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
