@@ -21,7 +21,7 @@ const GlobalFootprint = () => {
       specialization: "Strategic Operations & Client Management",
       icon: "🇺🇸",
       color: "from-blue-500 to-blue-600",
-      coordinates: { x: "25%", y: "35%" },
+      coordinates: { x: "22%", y: "32%" }, // Central US position
     },
     {
       country: "Philippines",
@@ -29,7 +29,7 @@ const GlobalFootprint = () => {
       specialization: "SaaS, FinTech & HealthTech Specialists",
       icon: "🇵🇭",
       color: "from-green-500 to-green-600",
-      coordinates: { x: "75%", y: "55%" },
+      coordinates: { x: "84%", y: "48%" }, // Southeast Asia position
     },
     {
       country: "Mexico",
@@ -37,7 +37,7 @@ const GlobalFootprint = () => {
       specialization: "Application Development & Support",
       icon: "🇲🇽",
       color: "from-red-500 to-red-600",
-      coordinates: { x: "20%", y: "50%" },
+      coordinates: { x: "17%", y: "47%" }, // Central Mexico position
     },
     {
       country: "Guatemala",
@@ -45,7 +45,7 @@ const GlobalFootprint = () => {
       specialization: "Customer Experience & Quality Assurance",
       icon: "🇬🇹",
       color: "from-purple-500 to-purple-600",
-      coordinates: { x: "22%", y: "58%" },
+      coordinates: { x: "15%", y: "51%" }, // Central America position
     },
     {
       country: "Colombia",
@@ -53,7 +53,7 @@ const GlobalFootprint = () => {
       specialization: "Emerging Technologies & R&D",
       icon: "🇨🇴",
       color: "from-yellow-500 to-yellow-600",
-      coordinates: { x: "28%", y: "68%" },
+      coordinates: { x: "25%", y: "62%" }, // Northern South America position
     },
   ];
 
