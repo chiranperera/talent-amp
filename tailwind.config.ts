@@ -12,15 +12,33 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+    },
     extend: {
       colors: {
+        // TalentAmp Brand Colors
+        orange: {
+          50: "hsl(var(--color-orange-50))",
+          100: "hsl(var(--color-orange-100))",
+          200: "hsl(var(--color-orange-200))",
+          300: "hsl(var(--color-orange-300))",
+          400: "hsl(var(--color-orange-400))",
+          500: "hsl(var(--color-orange-500))", // Main brand orange
+          600: "hsl(var(--color-orange-600))",
+          700: "hsl(var(--color-orange-700))",
+          800: "hsl(var(--color-orange-800))",
+          900: "hsl(var(--color-orange-900))",
+        },
+        // Semantic colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "hsl(var(--color-orange-500))", // Use orange as primary
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -47,15 +65,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Accent colors for tech elements
+        purple: {
+          500: "hsl(var(--color-accent-purple))",
+        },
+        cyan: {
+          500: "hsl(var(--color-accent-cyan))",
+        },
+        lime: {
+          500: "hsl(var(--color-accent-lime))",
         },
       },
       borderRadius: {
@@ -80,10 +98,50 @@ export default {
             height: "0",
           },
         },
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        slideUp: {
+          from: {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        shimmer: {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        float: "float 3s ease-in-out infinite",
+        slideUp: "slideUp 0.5s ease-out",
+        fadeIn: "fadeIn 0.3s ease-out",
+        shimmer: "shimmer 2s linear infinite",
+      },
+      boxShadow: {
+        'orange': '0 20px 40px -8px rgba(255, 69, 0, 0.3)',
+        'glow': '0 0 20px rgba(255, 69, 0, 0.3)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-400) 100%)',
+        'gradient-dark': 'linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-700) 100%)',
+        'gradient-tech': 'linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-cyan) 100%)',
       },
     },
   },
