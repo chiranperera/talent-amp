@@ -131,6 +131,10 @@ export default {
           "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
           "100%": { transform: "translate(0px, 0px) scale(1)" },
         },
+        glow: {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(255, 255, 255, 0.1)" },
+          "50%": { boxShadow: "0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
