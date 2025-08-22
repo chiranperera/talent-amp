@@ -141,7 +141,7 @@ const Hero = () => {
       </div>
 
       {/* Floating Metrics Badges - Repositioned for new shape */}
-      <div className="absolute top-32 right-2/3 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-orange-500/20 shadow-lg">
+      <div className="absolute top-32 right-2/3 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-orange-500/20 shadow-lg" style={{ marginRight: "-130px" }}>
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-lime-400 rounded-full animate-pulse"></div>
           <span className="text-white text-sm font-medium">2,500+ FTEs</span>
@@ -150,7 +150,7 @@ const Hero = () => {
 
       <div
         className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg"
-        style={{ animationDelay: "0.7s" }}
+        style={{ animationDelay: "0.7s", margin: "0 -77px -100px 0" }}
       >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
@@ -163,7 +163,7 @@ const Hero = () => {
       {/* Additional floating badge for visual balance */}
       <div
         className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-purple-500/20 shadow-lg"
-        style={{ animationDelay: "1.2s" }}
+        style={{ animationDelay: "1.2s", margin: "-173px -205px 0 0" }}
       >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
@@ -172,7 +172,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left" style={{ margin: "0 auto 0 48px", padding: "11px 32px 0" }}>
+      <div className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left" style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "flex-start", margin: "0 auto 0 50px", padding: "11px 32px 0" }}>
         {/* TalentAmp Logo Sound Wave */}
         <div className="flex items-center justify-center lg:justify-start mb-8">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
@@ -224,9 +224,6 @@ const Hero = () => {
           </button>
         </div>
       </div>
-
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 };
