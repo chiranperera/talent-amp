@@ -215,7 +215,8 @@ const Hero = () => {
         className="absolute top-32 right-2/3 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-orange-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-orange-glow animate-glow"
         style={{
           marginRight: "-130px",
-          boxShadow: "0 0 30px rgba(255, 69, 0, 0.4), 0 0 60px rgba(255, 69, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          boxShadow:
+            "0 0 30px rgba(255, 69, 0, 0.4), 0 0 60px rgba(255, 69, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
         }}
       >
         <div className="flex items-center space-x-3">
@@ -229,7 +230,8 @@ const Hero = () => {
         className="absolute bottom-1/4 left-1/6 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-cyan-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-cyan-glow animate-glow"
         style={{
           margin: "0 -77px -126px 93px",
-          boxShadow: "0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(6, 182, 212, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          boxShadow:
+            "0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(6, 182, 212, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
         }}
       >
         <div className="flex items-center space-x-3">
@@ -246,7 +248,8 @@ const Hero = () => {
         className="absolute top-2/3 right-1/2 hidden lg:block bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-purple-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-purple-glow animate-glow"
         style={{
           margin: "-173px -205px 0 0",
-          boxShadow: "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(168, 85, 247, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          boxShadow:
+            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(168, 85, 247, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
         }}
       >
         <div className="flex items-center space-x-3">
