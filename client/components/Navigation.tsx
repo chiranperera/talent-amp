@@ -16,21 +16,13 @@ const Navigation = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <nav className="container-lg px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo with Sound Wave Pattern */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            {/* Sound Wave Icon */}
-            <div className="flex items-end space-x-0.5">
-              {[8, 12, 6, 16, 4, 14, 10].map((height, index) => (
-                <div
-                  key={index}
-                  className="w-1 bg-gradient-to-t from-orange-500 to-orange-600 rounded-t group-hover:animate-pulse transition-all duration-200"
-                  style={{ height: `${height}px` }}
-                />
-              ))}
-            </div>
-            <span className="font-bold text-xl lg:text-2xl text-gray-900 group-hover:text-orange-600 transition-colors duration-200">
-              TalentAmp
-            </span>
+          {/* TalentAmp Logo */}
+          <Link to="/" className="flex items-center group">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fe3d05ace731744db874427ca0dce58c6%2Fc06c344448cf440fa62625833285c31c?format=webp&width=800"
+              alt="TalentAmp Logo"
+              className="h-8 lg:h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+            />
           </Link>
 
           {/* Desktop Navigation */}
