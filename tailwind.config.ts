@@ -13,8 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-      mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+      mono: ["JetBrains Mono", "Fira Code", "monospace"],
     },
     extend: {
       colors: {
@@ -99,36 +99,36 @@ export default {
           },
         },
         pulse: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.05)' },
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
         slideUp: {
           from: {
-            opacity: '0',
-            transform: 'translateY(20px)',
+            opacity: "0",
+            transform: "translateY(20px)",
           },
           to: {
-            opacity: '1',
-            transform: 'translateY(0)',
+            opacity: "1",
+            transform: "translateY(0)",
           },
         },
         fadeIn: {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
         shimmer: {
-          from: { transform: 'translateX(-100%)' },
-          to: { transform: 'translateX(100%)' },
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(100%)" },
         },
         blob: {
-          '0%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+          "100%": { transform: "translate(0px, 0px) scale(1)" },
         },
       },
       animation: {
@@ -142,13 +142,16 @@ export default {
         blob: "blob 7s infinite",
       },
       boxShadow: {
-        'orange': '0 20px 40px -8px rgba(255, 69, 0, 0.3)',
-        'glow': '0 0 20px rgba(255, 69, 0, 0.3)',
+        orange: "0 20px 40px -8px rgba(255, 69, 0, 0.3)",
+        glow: "0 0 20px rgba(255, 69, 0, 0.3)",
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-400) 100%)',
-        'gradient-dark': 'linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-700) 100%)',
-        'gradient-tech': 'linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-cyan) 100%)',
+        "gradient-primary":
+          "linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-400) 100%)",
+        "gradient-dark":
+          "linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-700) 100%)",
+        "gradient-tech":
+          "linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-cyan) 100%)",
       },
     },
   },

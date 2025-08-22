@@ -5,7 +5,7 @@ const CTA = () => {
     <section className="section-padding bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
@@ -24,10 +24,11 @@ const CTA = () => {
             <br />
             <span className="text-orange-100">Your Talent Strategy?</span>
           </h2>
-          
+
           <p className="text-xl lg:text-2xl text-orange-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join 50+ leading enterprises who trust TalentAmp to scale their IT teams 
-            with world-class talent. Let's discuss your workforce challenges today.
+            Join 50+ leading enterprises who trust TalentAmp to scale their IT
+            teams with world-class talent. Let's discuss your workforce
+            challenges today.
           </p>
 
           {/* CTA Buttons */}
@@ -37,7 +38,7 @@ const CTA = () => {
               <span>Schedule a Consultation</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
-            
+
             <button className="group bg-orange-700/50 hover:bg-orange-700/70 text-white font-semibold px-8 py-4 rounded-xl border border-orange-400/50 transition-all duration-300 backdrop-blur-sm hover:border-orange-300 flex items-center space-x-3">
               <Phone className="w-5 h-5" />
               <span>Call Now: (555) 123-4567</span>
@@ -50,9 +51,12 @@ const CTA = () => {
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <Calendar className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Book a Meeting</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Book a Meeting
+              </h3>
               <p className="text-orange-100 text-sm mb-4">
-                Schedule a personalized consultation to discuss your talent needs
+                Schedule a personalized consultation to discuss your talent
+                needs
               </p>
               <button className="text-white font-medium hover:text-orange-200 transition-colors duration-200 flex items-center space-x-1 mx-auto">
                 <span>Schedule Now</span>
@@ -64,7 +68,9 @@ const CTA = () => {
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <Phone className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Call Direct</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Call Direct
+              </h3>
               <p className="text-orange-100 text-sm mb-4">
                 Speak with our talent experts immediately for urgent needs
               </p>
@@ -78,7 +84,9 @@ const CTA = () => {
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <MessageCircle className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Start Chat</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Start Chat
+              </h3>
               <p className="text-orange-100 text-sm mb-4">
                 Get instant answers to your questions via live chat
               </p>
@@ -92,8 +100,10 @@ const CTA = () => {
           {/* Trust Message */}
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-orange-100 text-lg">
-              <span className="font-semibold">Trusted by Fortune 500 companies</span> • 
-              <span className="mx-2">95% client retention rate</span> • 
+              <span className="font-semibold">
+                Trusted by Fortune 500 companies
+              </span>{" "}
+              •<span className="mx-2">95% client retention rate</span> •
               <span className="font-semibold">Available 24/7</span>
             </p>
           </div>

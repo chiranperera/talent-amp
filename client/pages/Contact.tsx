@@ -6,18 +6,18 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-lg section-padding">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Get in 
+              Get in
               <span className="text-gradient"> Touch</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Ready to amplify your talent strategy? Our experts are here to help 
-              you find the perfect IT professionals for your team.
+              Ready to amplify your talent strategy? Our experts are here to
+              help you find the perfect IT professionals for your team.
             </p>
           </div>
 
@@ -63,7 +63,9 @@ const Contact = () => {
           {/* Construction Notice */}
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
             <p className="text-orange-800 font-medium text-center">
-              🚧 This page is under construction. Continue prompting to have us build out the full contact page with contact forms, office locations map, and calendar integration!
+              🚧 This page is under construction. Continue prompting to have us
+              build out the full contact page with contact forms, office
+              locations map, and calendar integration!
             </p>
           </div>
         </div>

@@ -49,9 +49,9 @@ const Hero = () => {
             className="absolute right-0 top-1/2 transform -translate-y-1/2 w-full h-4/5 opacity-90"
             style={{
               backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center right',
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center right",
               transform: `translateY(${scrollY * -0.15}px) translateY(-50%)`,
             }}
           />
@@ -61,14 +61,15 @@ const Hero = () => {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5/6 h-3/5"
             style={{
               maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center right',
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center right",
               WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
-              WebkitMaskSize: 'contain',
-              WebkitMaskRepeat: 'no-repeat',
-              WebkitMaskPosition: 'center right',
-              background: 'linear-gradient(135deg, rgba(255, 69, 0, 0.8) 0%, rgba(124, 58, 237, 0.6) 50%, rgba(6, 182, 212, 0.8) 100%)',
+              WebkitMaskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center right",
+              background:
+                "linear-gradient(135deg, rgba(255, 69, 0, 0.8) 0%, rgba(124, 58, 237, 0.6) 50%, rgba(6, 182, 212, 0.8) 100%)",
               transform: `translateY(${scrollY * -0.1}px) translateY(-50%)`,
             }}
           />
@@ -78,22 +79,32 @@ const Hero = () => {
             className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4/5 h-2/3 opacity-60"
             style={{
               maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center right',
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center right",
               WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F2ac9edddbe8247688029c8646e1a19ed%2F10826d1250214b29a44f5508c19c1963?format=webp&width=800')`,
-              WebkitMaskSize: 'contain',
-              WebkitMaskRepeat: 'no-repeat',
-              WebkitMaskPosition: 'center right',
-              background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 69, 0, 0.3) 40%, transparent 70%)',
+              WebkitMaskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center right",
+              background:
+                "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 69, 0, 0.3) 40%, transparent 70%)",
               transform: `translateY(${scrollY * -0.05}px) translateY(-50%)`,
             }}
           />
 
           {/* Floating accent elements */}
-          <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/60 rounded-full animate-pulse blur-sm" style={{animationDelay: "0s", animationDuration: "3s"}}></div>
-          <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-cyan-400/40 rounded-full animate-pulse blur-sm" style={{animationDelay: "1s", animationDuration: "4s"}}></div>
-          <div className="absolute bottom-1/4 right-1/5 w-5 h-5 bg-purple-400/50 rounded-full animate-pulse blur-sm" style={{animationDelay: "2s", animationDuration: "5s"}}></div>
+          <div
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/60 rounded-full animate-pulse blur-sm"
+            style={{ animationDelay: "0s", animationDuration: "3s" }}
+          ></div>
+          <div
+            className="absolute top-2/3 right-1/3 w-3 h-3 bg-cyan-400/40 rounded-full animate-pulse blur-sm"
+            style={{ animationDelay: "1s", animationDuration: "4s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/4 right-1/5 w-5 h-5 bg-purple-400/50 rounded-full animate-pulse blur-sm"
+            style={{ animationDelay: "2s", animationDuration: "5s" }}
+          ></div>
         </div>
       </div>
 
@@ -137,15 +148,23 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg" style={{animationDelay: "0.7s"}}>
+      <div
+        className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-cyan-500/20 shadow-lg"
+        style={{ animationDelay: "0.7s" }}
+      >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-          <span className="text-white text-sm font-medium">15 Years Experience</span>
+          <span className="text-white text-sm font-medium">
+            15 Years Experience
+          </span>
         </div>
       </div>
 
       {/* Additional floating badge for visual balance */}
-      <div className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-purple-500/20 shadow-lg" style={{animationDelay: "1.2s"}}>
+      <div
+        className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-purple-500/20 shadow-lg"
+        style={{ animationDelay: "1.2s" }}
+      >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
           <span className="text-white text-sm font-medium">Global Reach</span>
@@ -160,7 +179,7 @@ const Hero = () => {
             {soundWaveBars.slice(0, 5).map((bar, index) => (
               <div
                 key={index}
-                className={`w-1 bg-orange-500 rounded-t animate-pulse ${bar.height.replace('h-', 'h-')}`}
+                className={`w-1 bg-orange-500 rounded-t animate-pulse ${bar.height.replace("h-", "h-")}`}
                 style={{
                   animationDelay: bar.delay,
                   animationDuration: "1.5s",
@@ -170,7 +189,9 @@ const Hero = () => {
           </div>
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-orange-400 mr-2" />
-            <span className="text-orange-300 text-sm font-medium">Workforce Innovation Company</span>
+            <span className="text-orange-300 text-sm font-medium">
+              Workforce Innovation Company
+            </span>
           </div>
         </div>
 
@@ -199,22 +220,39 @@ const Hero = () => {
 
         {/* Subheadline */}
         <p className="text-xl lg:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-          Transforming how organizations source, develop, and deploy tech talent through 
-          <span className="text-orange-400 font-semibold"> AI-powered staffing solutions</span> and 
-          global delivery excellence.
+          Transforming how organizations source, develop, and deploy tech talent
+          through
+          <span className="text-orange-400 font-semibold">
+            {" "}
+            AI-powered staffing solutions
+          </span>{" "}
+          and global delivery excellence.
         </p>
 
         {/* Key Differentiators */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto lg:mx-0">
           {[
-            { icon: "🌍", text: "5 Global Locations", subtext: "US, Philippines, Mexico, Guatemala, Colombia" },
-            { icon: "🏆", text: "MBE Certified", subtext: "Diverse supplier certifications" },
+            {
+              icon: "🌍",
+              text: "5 Global Locations",
+              subtext: "US, Philippines, Mexico, Guatemala, Colombia",
+            },
+            {
+              icon: "🏆",
+              text: "MBE Certified",
+              subtext: "Diverse supplier certifications",
+            },
           ].map((item, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+            >
               <div className="flex items-center space-x-3">
                 <span className="text-2xl">{item.icon}</span>
                 <div>
-                  <div className="text-white font-medium text-sm">{item.text}</div>
+                  <div className="text-white font-medium text-sm">
+                    {item.text}
+                  </div>
                   <div className="text-gray-400 text-xs">{item.subtext}</div>
                 </div>
               </div>
@@ -229,7 +267,7 @@ const Hero = () => {
             <span className="relative">Find Talent</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 relative" />
           </button>
-          
+
           <button className="group bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all duration-300 backdrop-blur-sm hover:border-white/40">
             Explore Services
           </button>
@@ -237,14 +275,23 @@ const Hero = () => {
 
         {/* Trust Indicators */}
         <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-gray-400 text-sm mb-6">Trusted by 50+ enterprise clients worldwide</p>
+          <p className="text-gray-400 text-sm mb-6">
+            Trusted by 50+ enterprise clients worldwide
+          </p>
           <div className="flex justify-center lg:justify-start items-center space-x-8 opacity-60">
             {/* Industry badges */}
-            {["Technology", "Healthcare", "FinTech", "SaaS"].map((industry, index) => (
-              <div key={index} className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
-                <span className="text-white/60 text-xs font-medium">{industry}</span>
-              </div>
-            ))}
+            {["Technology", "Healthcare", "FinTech", "SaaS"].map(
+              (industry, index) => (
+                <div
+                  key={index}
+                  className="px-3 py-1 bg-white/5 rounded-full border border-white/10"
+                >
+                  <span className="text-white/60 text-xs font-medium">
+                    {industry}
+                  </span>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </div>

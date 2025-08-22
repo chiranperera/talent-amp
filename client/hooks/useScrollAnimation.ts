@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -10,7 +10,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
-  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
+  const { threshold = 0.1, rootMargin = "0px", triggerOnce = true } = options;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +27,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
       {
         threshold,
         rootMargin,
-      }
+      },
     );
 
     if (ref.current) {
@@ -52,8 +52,8 @@ export const useParallax = (speed: number = 0.5) => {
       setOffset(window.pageYOffset * speed);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [speed]);
 
   return offset;
@@ -66,14 +66,14 @@ export const useCountUp = (end: number, duration: number = 2000) => {
   const start = () => {
     if (hasStarted) return;
     setHasStarted(true);
-    
+
     let startTime: number;
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(end * easeOutQuart));
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate);
       }

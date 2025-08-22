@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Building2, Users, TrendingUp, DollarSign, Target, Globe } from "lucide-react";
+import {
+  Building2,
+  Users,
+  TrendingUp,
+  DollarSign,
+  Target,
+  Globe,
+} from "lucide-react";
 
 interface CounterProps {
   end: number;
@@ -8,7 +15,12 @@ interface CounterProps {
   prefix?: string;
 }
 
-const Counter = ({ end, duration = 2000, suffix = "", prefix = "" }: CounterProps) => {
+const Counter = ({
+  end,
+  duration = 2000,
+  suffix = "",
+  prefix = "",
+}: CounterProps) => {
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -31,7 +43,7 @@ const Counter = ({ end, duration = 2000, suffix = "", prefix = "" }: CounterProp
           }, 16);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (countRef.current) {
@@ -41,7 +53,13 @@ const Counter = ({ end, duration = 2000, suffix = "", prefix = "" }: CounterProp
     return () => observer.disconnect();
   }, [end, duration, hasAnimated]);
 
-  return <span ref={countRef}>{prefix}{count.toLocaleString()}{suffix}</span>;
+  return (
+    <span ref={countRef}>
+      {prefix}
+      {count.toLocaleString()}
+      {suffix}
+    </span>
+  );
 };
 
 const Stats = () => {
@@ -161,11 +179,14 @@ const Stats = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Proven Results
-            <span className="text-gradient bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent"> by the Numbers</span>
+            <span className="text-gradient bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
+              {" "}
+              by the Numbers
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our track record speaks for itself. These metrics represent years of excellence 
-            in delivering world-class talent solutions.
+            Our track record speaks for itself. These metrics represent years of
+            excellence in delivering world-class talent solutions.
           </p>
         </div>
 
@@ -177,16 +198,18 @@ const Stats = () => {
               className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-orange-500/30 card-hover hover:bg-white/10 transition-all duration-300"
             >
               {/* Icon */}
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Number */}
               <div className="text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
-                <Counter 
-                  end={stat.number} 
-                  suffix={stat.suffix} 
-                  prefix={stat.prefix} 
+                <Counter
+                  end={stat.number}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
                   duration={2000 + index * 200}
                 />
               </div>
@@ -210,7 +233,8 @@ const Stats = () => {
             Ready to Join Our Success Stories?
           </h3>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve similar results with our proven talent solutions.
+            Let's discuss how we can help you achieve similar results with our
+            proven talent solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="btn-primary hover:scale-105 transform transition-all duration-200">

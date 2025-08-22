@@ -28,7 +28,9 @@ const Navigation = () => {
                 />
               ))}
             </div>
-            <span className="font-bold text-xl lg:text-2xl text-gray-900 group-hover:text-orange-600 transition-colors duration-200">TalentAmp</span>
+            <span className="font-bold text-xl lg:text-2xl text-gray-900 group-hover:text-orange-600 transition-colors duration-200">
+              TalentAmp
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -84,7 +86,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="pt-4">
-              <button 
+              <button
                 className="w-full btn-primary"
                 onClick={() => setIsMenuOpen(false)}
               >

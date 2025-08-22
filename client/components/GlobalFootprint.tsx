@@ -1,5 +1,12 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import { MapPin, Users, Building2, Globe, Star, CheckCircle } from "lucide-react";
+import {
+  MapPin,
+  Users,
+  Building2,
+  Globe,
+  Star,
+  CheckCircle,
+} from "lucide-react";
 
 const GlobalFootprint = () => {
   const { ref, isVisible } = useScrollAnimation({
@@ -14,7 +21,7 @@ const GlobalFootprint = () => {
       specialization: "Strategic Operations & Client Management",
       icon: "🇺🇸",
       color: "from-blue-500 to-blue-600",
-      coordinates: { x: "25%", y: "35%" }
+      coordinates: { x: "25%", y: "35%" },
     },
     {
       country: "Philippines",
@@ -22,7 +29,7 @@ const GlobalFootprint = () => {
       specialization: "SaaS, FinTech & HealthTech Specialists",
       icon: "🇵🇭",
       color: "from-green-500 to-green-600",
-      coordinates: { x: "75%", y: "55%" }
+      coordinates: { x: "75%", y: "55%" },
     },
     {
       country: "Mexico",
@@ -30,7 +37,7 @@ const GlobalFootprint = () => {
       specialization: "Application Development & Support",
       icon: "🇲🇽",
       color: "from-red-500 to-red-600",
-      coordinates: { x: "20%", y: "50%" }
+      coordinates: { x: "20%", y: "50%" },
     },
     {
       country: "Guatemala",
@@ -38,7 +45,7 @@ const GlobalFootprint = () => {
       specialization: "Customer Experience & Quality Assurance",
       icon: "🇬🇹",
       color: "from-purple-500 to-purple-600",
-      coordinates: { x: "22%", y: "58%" }
+      coordinates: { x: "22%", y: "58%" },
     },
     {
       country: "Colombia",
@@ -46,8 +53,8 @@ const GlobalFootprint = () => {
       specialization: "Emerging Technologies & R&D",
       icon: "🇨🇴",
       color: "from-yellow-500 to-yellow-600",
-      coordinates: { x: "28%", y: "68%" }
-    }
+      coordinates: { x: "28%", y: "68%" },
+    },
   ];
 
   const globalStats = [
@@ -56,29 +63,29 @@ const GlobalFootprint = () => {
       label: "Full-Time Employees",
       description: "Across all global locations",
       icon: Users,
-      color: "from-orange-500 to-orange-600"
+      color: "from-orange-500 to-orange-600",
     },
     {
       number: "2",
       label: "On-Site Offices",
       description: "Hybrid, work-at-home, and office-based",
       icon: Building2,
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
     },
     {
       number: "40+",
       label: "Service Partners",
       description: "Strategic partnerships worldwide",
       icon: Star,
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
     },
     {
       number: "15",
       label: "Years in Service",
       description: "Proven track record of excellence",
       icon: CheckCircle,
-      color: "from-green-500 to-green-600"
-    }
+      color: "from-green-500 to-green-600",
+    },
   ];
 
   const capabilities = [
@@ -87,7 +94,7 @@ const GlobalFootprint = () => {
     "24/7 global coverage and support",
     "Multi-timezone collaboration excellence",
     "Cultural diversity and language capabilities",
-    "Regulatory compliance across all regions"
+    "Regulatory compliance across all regions",
   ];
 
   return (
@@ -97,7 +104,14 @@ const GlobalFootprint = () => {
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1000 1000">
             <defs>
-              <pattern id="world-grid" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+              <pattern
+                id="world-grid"
+                x="0"
+                y="0"
+                width="50"
+                height="50"
+                patternUnits="userSpaceOnUse"
+              >
                 <circle cx="25" cy="25" r="1" fill="url(#world-gradient)" />
               </pattern>
               <linearGradient id="world-gradient">
@@ -112,19 +126,23 @@ const GlobalFootprint = () => {
 
       <div className="container-lg relative z-10">
         {/* Section Header */}
-        <div 
+        <div
           ref={ref}
           className={`text-center mb-16 transform transition-all duration-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             TalentAmp
-            <span className="text-gradient bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent"> Global Footprint</span>
+            <span className="text-gradient bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
+              {" "}
+              Global Footprint
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Our global presence enables us to deliver world-class talent solutions with local expertise 
-            and cultural understanding across five strategic locations.
+            Our global presence enables us to deliver world-class talent
+            solutions with local expertise and cultural understanding across
+            five strategic locations.
           </p>
         </div>
 
@@ -133,7 +151,10 @@ const GlobalFootprint = () => {
           {/* World Map Container */}
           <div className="relative w-full max-w-6xl mx-auto h-96 bg-gray-800/50 rounded-3xl border border-gray-700 overflow-hidden">
             {/* Simplified World Map SVG */}
-            <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1000 500">
+            <svg
+              className="absolute inset-0 w-full h-full opacity-30"
+              viewBox="0 0 1000 500"
+            >
               <path
                 d="M150,100 Q200,80 250,100 L300,120 Q350,110 400,120 L450,110 Q500,100 550,110 L600,120 Q650,110 700,120 L750,110 Q800,100 850,110 L900,120"
                 stroke="rgba(255, 69, 0, 0.3)"
@@ -169,9 +190,15 @@ const GlobalFootprint = () => {
                   <div className="bg-white rounded-xl p-4 shadow-xl border border-gray-200 min-w-64">
                     <div className="text-center">
                       <div className="text-2xl mb-2">{location.icon}</div>
-                      <h4 className="font-bold text-gray-900 mb-1">{location.country}</h4>
-                      <p className="text-orange-600 font-medium text-sm mb-2">{location.role}</p>
-                      <p className="text-gray-600 text-xs">{location.specialization}</p>
+                      <h4 className="font-bold text-gray-900 mb-1">
+                        {location.country}
+                      </h4>
+                      <p className="text-orange-600 font-medium text-sm mb-2">
+                        {location.role}
+                      </p>
+                      <p className="text-gray-600 text-xs">
+                        {location.specialization}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -211,12 +238,16 @@ const GlobalFootprint = () => {
             <div
               key={index}
               className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-orange-500/30 card-hover hover:bg-white/10 transform transition-all duration-700 ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <stat.icon className="w-6 h-6 text-white" />
               </div>
 
@@ -246,13 +277,17 @@ const GlobalFootprint = () => {
               Global Delivery Excellence
             </h3>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Our worldwide presence ensures seamless service delivery with local expertise and global standards.
+              Our worldwide presence ensures seamless service delivery with
+              local expertise and global standards.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {capabilities.map((capability, index) => (
-              <div key={index} className="flex items-center space-x-3 p-4 bg-white/5 rounded-xl border border-white/10">
+              <div
+                key={index}
+                className="flex items-center space-x-3 p-4 bg-white/5 rounded-xl border border-white/10"
+              >
                 <CheckCircle className="w-5 h-5 text-orange-400 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">{capability}</span>
               </div>

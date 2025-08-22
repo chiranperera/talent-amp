@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
   Facebook,
   ArrowRight,
   Award,
   Users,
-  Globe
+  Globe,
 } from "lucide-react";
 
 const Footer = () => {
   const services = [
     "Contract & Contract-to-Hire",
-    "Direct Hire Services", 
+    "Direct Hire Services",
     "Statement of Work (SOW)",
     "Managed Services",
     "Employer of Record (EOR)",
-    "Hire Train Deploy"
+    "Hire Train Deploy",
   ];
 
   const company = [
@@ -28,7 +28,7 @@ const Footer = () => {
     "Careers",
     "News & Events",
     "Case Studies",
-    "Contact"
+    "Contact",
   ];
 
   const resources = [
@@ -37,21 +37,21 @@ const Footer = () => {
     "Salary Guides",
     "Whitepapers",
     "Webinars",
-    "FAQs"
+    "FAQs",
   ];
 
   const locations = [
     "United States",
     "Philippines",
-    "Mexico", 
+    "Mexico",
     "Guatemala",
-    "Colombia"
+    "Colombia",
   ];
 
   const certifications = [
     { name: "MBE Certified", icon: Award },
     { name: "NMSDC Member", icon: Users },
-    { name: "Diverse Supplier", icon: Globe }
+    { name: "Diverse Supplier", icon: Globe },
   ];
 
   return (
@@ -73,12 +73,14 @@ const Footer = () => {
                   />
                 ))}
               </div>
-              <span className="font-bold text-2xl text-white group-hover:text-orange-400 transition-colors duration-200">TalentAmp</span>
+              <span className="font-bold text-2xl text-white group-hover:text-orange-400 transition-colors duration-200">
+                TalentAmp
+              </span>
             </Link>
 
             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-              Amplifying IT talent at scale through AI-powered staffing solutions 
-              and global delivery excellence.
+              Amplifying IT talent at scale through AI-powered staffing
+              solutions and global delivery excellence.
             </p>
 
             {/* Contact Info */}
@@ -102,7 +104,7 @@ const Footer = () => {
               {[
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
                 { icon: Twitter, href: "#", label: "Twitter" },
-                { icon: Facebook, href: "#", label: "Facebook" }
+                { icon: Facebook, href: "#", label: "Facebook" },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -120,12 +122,14 @@ const Footer = () => {
           <div className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Services */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Services
+              </h3>
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <Link 
-                      to="/services" 
+                    <Link
+                      to="/services"
                       className="text-gray-300 hover:text-orange-400 transition-colors duration-200 text-sm"
                     >
                       {service}
@@ -141,8 +145,8 @@ const Footer = () => {
               <ul className="space-y-3">
                 {company.map((item, index) => (
                   <li key={index}>
-                    <Link 
-                      to="/about" 
+                    <Link
+                      to="/about"
                       className="text-gray-300 hover:text-orange-400 transition-colors duration-200 text-sm"
                     >
                       {item}
@@ -154,12 +158,14 @@ const Footer = () => {
 
             {/* Resources */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-6">Resources</h3>
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Resources
+              </h3>
               <ul className="space-y-3">
                 {resources.map((resource, index) => (
                   <li key={index}>
-                    <Link 
-                      to="/blog" 
+                    <Link
+                      to="/blog"
                       className="text-gray-300 hover:text-orange-400 transition-colors duration-200 text-sm"
                     >
                       {resource}
@@ -171,10 +177,15 @@ const Footer = () => {
 
             {/* Global Reach */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-6">Global Reach</h3>
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Global Reach
+              </h3>
               <ul className="space-y-3">
                 {locations.map((location, index) => (
-                  <li key={index} className="text-gray-300 text-sm flex items-center space-x-2">
+                  <li
+                    key={index}
+                    className="text-gray-300 text-sm flex items-center space-x-2"
+                  >
                     <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                     <span>{location}</span>
                   </li>
@@ -188,8 +199,13 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="mb-6 lg:mb-0">
-              <h3 className="text-xl font-semibold text-white mb-2">Stay Connected</h3>
-              <p className="text-gray-300">Get the latest insights on IT talent trends and workforce solutions.</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Stay Connected
+              </h3>
+              <p className="text-gray-300">
+                Get the latest insights on IT talent trends and workforce
+                solutions.
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 lg:max-w-md lg:w-full">
               <input
@@ -207,10 +223,15 @@ const Footer = () => {
 
         {/* Certifications */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <h4 className="text-lg font-semibold text-white mb-6">Certifications & Partnerships</h4>
+          <h4 className="text-lg font-semibold text-white mb-6">
+            Certifications & Partnerships
+          </h4>
           <div className="flex flex-wrap gap-6">
             {certifications.map((cert, index) => (
-              <div key={index} className="flex items-center space-x-2 text-gray-300">
+              <div
+                key={index}
+                className="flex items-center space-x-2 text-gray-300"
+              >
                 <cert.icon className="w-5 h-5 text-orange-400" />
                 <span className="text-sm">{cert.name}</span>
               </div>
@@ -227,16 +248,28 @@ const Footer = () => {
               © 2024 TalentAmp. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <Link
+                to="/privacy"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <Link
+                to="/terms"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200"
+              >
                 Terms of Service
               </Link>
-              <Link to="/cookies" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <Link
+                to="/cookies"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200"
+              >
                 Cookie Policy
               </Link>
-              <Link to="/accessibility" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <Link
+                to="/accessibility"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200"
+              >
                 Accessibility
               </Link>
             </div>
