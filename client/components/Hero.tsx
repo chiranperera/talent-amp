@@ -108,19 +108,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* TalentAmp Brand Sound Wave Visualization */}
-      <div className="absolute top-20 left-20 hidden lg:flex items-end space-x-1">
-        {soundWaveBars.map((bar, index) => (
-          <div
-            key={index}
-            className={`w-2 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t animate-pulse ${bar.height}`}
-            style={{
-              animationDelay: bar.delay,
-              animationDuration: "1.5s",
-            }}
-          />
-        ))}
-      </div>
 
       {/* Amplification Rings */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
