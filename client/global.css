@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * TalentAmp Design System
+   * Color variables are expressed as HSL values for Tailwind CSS compatibility.
+   */
+  :root {
+    /* TalentAmp Brand Colors - Orange Primary */
+    --color-orange-50: 16 100% 97%; /* #FFF5F0 */
+    --color-orange-100: 19 100% 92%; /* #FFE8DB */
+    --color-orange-200: 18 100% 83%; /* #FFC4A8 */
+    --color-orange-300: 19 100% 73%; /* #FF9F75 */
+    --color-orange-400: 18 100% 63%; /* #FF7B42 */
+    --color-orange-500: 16 100% 50%; /* #FF4500 - Main brand orange */
+    --color-orange-600: 16 100% 45%; /* #E63E00 */
+    --color-orange-700: 16 100% 40%; /* #CC3600 */
+    --color-orange-800: 16 100% 30%; /* #992A00 */
+    --color-orange-900: 16 100% 20%; /* #661C00 */
+
+    /* Neutral Grays */
+    --color-gray-50: 0 0% 98%; /* #FAFAFA */
+    --color-gray-100: 0 0% 96%; /* #F5F5F5 */
+    --color-gray-200: 0 0% 90%; /* #E5E5E5 */
+    --color-gray-300: 0 0% 83%; /* #D4D4D4 */
+    --color-gray-400: 0 0% 64%; /* #A3A3A3 */
+    --color-gray-500: 0 0% 45%; /* #737373 */
+    --color-gray-600: 0 0% 32%; /* #525252 */
+    --color-gray-700: 0 0% 25%; /* #404040 */
+    --color-gray-800: 0 0% 15%; /* #262626 */
+    --color-gray-900: 0 0% 9%; /* #171717 */
+    --color-gray-950: 0 0% 4%; /* #0A0A0A */
+
+    /* Accent Colors */
+    --color-accent-purple: 262 83% 58%; /* #7C3AED */
+    --color-accent-cyan: 188 86% 43%; /* #06B6D4 */
+    --color-accent-lime: 84 81% 44%; /* #84CC16 */
+
+    /* Semantic Color Mapping */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 16 100% 50%; /* Orange 500 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%; /* Gray 100 */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%; /* Gray 100 */
+    --muted-foreground: 0 0% 45%; /* Gray 500 */
+
+    --accent: 0 0% 96%; /* Gray 100 */
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%; /* Gray 200 */
+    --input: 0 0% 90%; /* Gray 200 */
+    --ring: 16 100% 50%; /* Orange 500 */
+
+    --radius: 8px;
+  }
+
+  .dark {
+    --background: 0 0% 9%; /* Gray 900 */
+    --foreground: 0 0% 98%; /* Near white */
+
+    --card: 0 0% 9%; /* Gray 900 */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 9%; /* Gray 900 */
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 16 100% 50%; /* Orange 500 */
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%; /* Gray 800 */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%; /* Gray 800 */
+    --muted-foreground: 0 0% 64%; /* Gray 400 */
+
+    --accent: 0 0% 15%; /* Gray 800 */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%; /* Gray 800 */
+    --input: 0 0% 15%; /* Gray 800 */
+    --ring: 16 100% 50%; /* Orange 500 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  /* Typography improvements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus outline improvements */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-orange-500;
+  }
+
+  /* Remove default outline on non-keyboard focus */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-orange focus:shadow-orange relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: "";
+    @apply absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full transition-transform duration-700;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-900 font-medium px-6 py-3 rounded-lg border border-gray-200 transition-all duration-200 hover:shadow-md relative overflow-hidden;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-gray-100 text-gray-900 font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  /* Card styles */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .card-reveal {
+    @apply transform transition-all duration-700 ease-out;
+  }
+
+  .card-reveal.visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .card-reveal.hidden {
+    @apply translate-y-8 opacity-0;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+
+  /* Glowing effect */
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glow-on-hover:hover {
+    @apply shadow-glow;
+  }
+
+  /* Magnetic effect for interactive elements */
+  .magnetic {
+    @apply transform transition-transform duration-200 ease-out;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 px-4 sm:py-20 sm:px-6 lg:py-24 lg:px-8;
+  }
+
+  /* Container max widths */
+  .container-sm {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .container-md {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .container-lg {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Scroll-triggered animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fade-in-left {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-left.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .fade-in-right {
+    @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-right.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .scale-in {
+    @apply opacity-0 scale-95 transition-all duration-500 ease-out;
+  }
+
+  .scale-in.animate {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Loading states */
+  .loading-dots::after {
+    content: "...";
+    @apply animate-pulse;
+  }
+
+  /* Interactive underlines */
+  .underline-animate {
+    @apply relative;
+  }
+
+  .underline-animate::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 ease-out;
+  }
+
+  .underline-animate:hover::after {
+    @apply w-full;
+  }
+
+  /* Stagger animations */
+  .stagger-item {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+
+  .stagger-item.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-1 bg-orange-500 transition-all duration-300 ease-out transform origin-left;
+  }
+
+  /* Blob animations */
+  .blob {
+    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob;
+  }
+
+  /* Hover lift effect */
+  .lift-on-hover {
+    @apply transform transition-all duration-300 ease-out;
+  }
+
+  .lift-on-hover:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+}
+
+@layer utilities {
+  /* Animation delays for staggered effects */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Reduced motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
