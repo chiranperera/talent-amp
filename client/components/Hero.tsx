@@ -92,6 +92,50 @@ const Hero = () => {
             }}
           />
 
+          {/* Brand Colored Image - Sound Wave Visual */}
+          <div className="absolute right-8 top-1/2 transform -translate-y-1/2 w-3/4 h-4/5 z-20">
+            <div
+              className="relative w-full h-full"
+              style={{
+                backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center right",
+                transform: `translateY(${scrollY * -0.08}px)`,
+              }}
+            >
+              {/* Orange brand color overlay */}
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-orange-500/60 to-orange-600/80 mix-blend-multiply rounded-lg"
+                style={{
+                  maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center right",
+                  WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center right",
+                }}
+              />
+
+              {/* Additional orange glow effect */}
+              <div
+                className="absolute inset-0 bg-orange-400/30 blur-xl rounded-lg"
+                style={{
+                  maskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center right",
+                  WebkitMaskImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center right",
+                }}
+              />
+            </div>
+          </div>
+
           {/* Floating accent elements */}
           <div
             className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/60 rounded-full animate-pulse blur-sm"
