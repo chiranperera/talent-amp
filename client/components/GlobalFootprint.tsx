@@ -149,86 +149,207 @@ const GlobalFootprint = () => {
         {/* Interactive World Map */}
         <div className="relative mb-20">
           {/* World Map Container */}
-          <div className="relative w-full max-w-6xl mx-auto h-96 bg-gray-800/50 rounded-3xl border border-gray-700 overflow-hidden">
-            {/* Simplified World Map SVG */}
+          <div className="relative w-full max-w-7xl mx-auto h-[500px] bg-gradient-to-b from-gray-800/30 to-gray-900/50 rounded-3xl border border-gray-700/50 overflow-hidden backdrop-blur-sm">
+            {/* Enhanced World Map SVG */}
             <svg
-              className="absolute inset-0 w-full h-full opacity-30"
+              className="absolute inset-0 w-full h-full"
               viewBox="0 0 1000 500"
             >
+              <defs>
+                <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(255, 69, 0, 0.1)" />
+                  <stop offset="100%" stopColor="rgba(255, 69, 0, 0)" />
+                </radialGradient>
+                <linearGradient id="connectionPulse">
+                  <stop offset="0%" stopColor="rgba(255, 69, 0, 0.8)" />
+                  <stop offset="50%" stopColor="rgba(255, 149, 0, 0.6)" />
+                  <stop offset="100%" stopColor="rgba(255, 69, 0, 0.2)" />
+                </linearGradient>
+              </defs>
+
+              {/* World Continents Simplified */}
+              {/* North America */}
               <path
-                d="M150,100 Q200,80 250,100 L300,120 Q350,110 400,120 L450,110 Q500,100 550,110 L600,120 Q650,110 700,120 L750,110 Q800,100 850,110 L900,120"
+                d="M80,120 Q120,100 180,110 L220,120 Q260,110 300,120 L340,130 Q360,125 380,130 L400,140 Q420,135 440,140 L460,150 Q480,145 500,150 L520,160 Q540,155 560,160 L580,170 Q600,165 620,170 L640,180 Q660,175 680,180 L700,190 Q720,185 740,190 L760,200 Q780,195 800,200 L820,210 Q840,205 860,210 L880,220 Q900,215 920,220 L940,230 Q960,225 980,230"
+                fill="rgba(255, 69, 0, 0.1)"
                 stroke="rgba(255, 69, 0, 0.3)"
-                strokeWidth="2"
-                fill="none"
+                strokeWidth="1"
               />
+
+              {/* South America */}
               <path
-                d="M100,200 Q200,180 300,200 L400,220 Q500,210 600,220 L700,210 Q800,200 900,210"
-                stroke="rgba(255, 69, 0, 0.3)"
-                strokeWidth="2"
-                fill="none"
+                d="M280,240 Q300,235 320,240 L340,250 Q360,245 380,250 L400,260 Q420,255 440,260 L460,270 Q480,265 500,270 L520,280 Q540,275 560,280 L580,290 Q600,285 620,290 L640,300 Q660,295 680,300 L700,310 Q720,305 740,310 L760,320 Q780,315 800,320 L820,330 Q840,325 860,330 L880,340"
+                fill="rgba(255, 69, 0, 0.08)"
+                stroke="rgba(255, 69, 0, 0.25)"
+                strokeWidth="1"
               />
+
+              {/* Asia */}
+              <path
+                d="M600,120 Q640,100 700,110 L760,120 Q800,110 860,120 L900,130 Q920,125 940,130 L960,140 Q980,135 1000,140"
+                fill="rgba(255, 69, 0, 0.08)"
+                stroke="rgba(255, 69, 0, 0.25)"
+                strokeWidth="1"
+              />
+
+              {/* Animated Grid Overlay */}
+              <g opacity="0.1">
+                {[...Array(20)].map((_, i) => (
+                  <line
+                    key={`v-${i}`}
+                    x1={i * 50}
+                    y1="0"
+                    x2={i * 50}
+                    y2="500"
+                    stroke="rgba(255, 69, 0, 0.2)"
+                    strokeWidth="0.5"
+                    className="animate-pulse"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  />
+                ))}
+                {[...Array(10)].map((_, i) => (
+                  <line
+                    key={`h-${i}`}
+                    x1="0"
+                    y1={i * 50}
+                    x2="1000"
+                    y2={i * 50}
+                    stroke="rgba(255, 69, 0, 0.2)"
+                    strokeWidth="0.5"
+                    className="animate-pulse"
+                    style={{ animationDelay: `${i * 150}ms` }}
+                  />
+                ))}
+              </g>
             </svg>
 
-            {/* Location Markers */}
+            {/* Enhanced Location Markers */}
             {locations.map((location, index) => (
               <div
                 key={index}
-                className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 z-20"
                 style={{
                   left: location.coordinates.x,
                   top: location.coordinates.y,
                 }}
               >
-                {/* Pulsing Marker */}
+                {/* Animated Marker with Ripple Effect */}
                 <div className="relative">
-                  <div className="w-4 h-4 bg-orange-500 rounded-full animate-ping absolute"></div>
-                  <div className="w-4 h-4 bg-orange-400 rounded-full relative z-10"></div>
+                  {/* Outer ripple */}
+                  <div className="w-8 h-8 bg-orange-500/30 rounded-full animate-ping absolute -top-2 -left-2"></div>
+                  {/* Middle ripple */}
+                  <div
+                    className="w-6 h-6 bg-orange-400/50 rounded-full animate-ping absolute -top-1 -left-1"
+                    style={{ animationDelay: '0.5s' }}
+                  ></div>
+                  {/* Core marker */}
+                  <div className="w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full relative z-10 shadow-lg group-hover:scale-125 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
 
-                {/* Tooltip */}
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="bg-white rounded-xl p-4 shadow-xl border border-gray-200 min-w-64">
+                {/* Enhanced Tooltip */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 scale-95 group-hover:scale-100">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 min-w-80 backdrop-blur-sm">
                     <div className="text-center">
-                      <div className="text-2xl mb-2">{location.icon}</div>
-                      <h4 className="font-bold text-gray-900 mb-1">
+                      <div className="text-3xl mb-3 animate-bounce">{location.icon}</div>
+                      <h4 className="font-bold text-gray-900 mb-2 text-lg">
                         {location.country}
                       </h4>
-                      <p className="text-orange-600 font-medium text-sm mb-2">
+                      <div className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${location.color} text-white text-sm font-medium mb-3`}>
                         {location.role}
-                      </p>
-                      <p className="text-gray-600 text-xs">
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         {location.specialization}
                       </p>
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <div className="flex items-center justify-center text-orange-600 text-xs">
+                          <MapPin className="w-3 h-3 mr-1" />
+                          Active Location
+                        </div>
+                      </div>
+                    </div>
+                    {/* Tooltip Arrow */}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+                      <div className="border-8 border-transparent border-t-white"></div>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
 
-            {/* Connection Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
+            {/* Enhanced Connection Lines with Animation */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
               <defs>
-                <linearGradient id="connection-gradient">
-                  <stop offset="0%" stopColor="rgba(255, 69, 0, 0.6)" />
-                  <stop offset="100%" stopColor="rgba(255, 69, 0, 0.1)" />
+                <linearGradient id="connection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(255, 69, 0, 0)" />
+                  <stop offset="20%" stopColor="rgba(255, 69, 0, 0.6)" />
+                  <stop offset="80%" stopColor="rgba(255, 149, 0, 0.6)" />
+                  <stop offset="100%" stopColor="rgba(255, 69, 0, 0)" />
+                </linearGradient>
+                <linearGradient id="connection-gradient-reverse" x1="100%" y1="0%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(255, 69, 0, 0)" />
+                  <stop offset="20%" stopColor="rgba(255, 69, 0, 0.6)" />
+                  <stop offset="80%" stopColor="rgba(255, 149, 0, 0.6)" />
+                  <stop offset="100%" stopColor="rgba(255, 69, 0, 0)" />
                 </linearGradient>
               </defs>
+
+              {/* US to Philippines */}
               <path
-                d="M 250 175 Q 400 150 750 275"
+                d="M 250 175 Q 500 120 750 275"
                 stroke="url(#connection-gradient)"
-                strokeWidth="1"
+                strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
+                strokeDasharray="5,5"
               />
+
+              {/* US to Mexico */}
               <path
-                d="M 200 250 Q 350 200 220 290"
-                stroke="url(#connection-gradient)"
-                strokeWidth="1"
+                d="M 250 175 Q 235 200 200 250"
+                stroke="url(#connection-gradient-reverse)"
+                strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
-                style={{ animationDelay: "0.5s" }}
+                style={{ animationDelay: "1s" }}
+                strokeDasharray="3,3"
+              />
+
+              {/* Mexico to Guatemala */}
+              <path
+                d="M 200 250 L 220 290"
+                stroke="url(#connection-gradient)"
+                strokeWidth="2"
+                fill="none"
+                className="animate-pulse"
+                style={{ animationDelay: "1.5s" }}
+                strokeDasharray="2,2"
+              />
+
+              {/* Guatemala to Colombia */}
+              <path
+                d="M 220 290 Q 250 320 280 340"
+                stroke="url(#connection-gradient-reverse)"
+                strokeWidth="2"
+                fill="none"
+                className="animate-pulse"
+                style={{ animationDelay: "2s" }}
+                strokeDasharray="4,4"
               />
             </svg>
+
+            {/* Floating Data Points */}
+            <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm rounded-xl p-4 text-white text-sm">
+              <div className="flex items-center space-x-2 mb-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span>5 Active Locations</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                <span>24/7 Operations</span>
+              </div>
+            </div>
           </div>
         </div>
 
