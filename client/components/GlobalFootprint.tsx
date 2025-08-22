@@ -338,7 +338,7 @@ const GlobalFootprint = () => {
 
               {/* US to Philippines */}
               <path
-                d="M 250 175 Q 500 120 750 275"
+                d="M 220 160 Q 500 100 840 240"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -348,7 +348,7 @@ const GlobalFootprint = () => {
 
               {/* US to Mexico */}
               <path
-                d="M 250 175 Q 235 200 200 250"
+                d="M 220 160 Q 200 200 170 235"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
@@ -359,7 +359,7 @@ const GlobalFootprint = () => {
 
               {/* Mexico to Guatemala */}
               <path
-                d="M 200 250 L 220 290"
+                d="M 170 235 L 150 255"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -370,13 +370,37 @@ const GlobalFootprint = () => {
 
               {/* Guatemala to Colombia */}
               <path
-                d="M 220 290 Q 250 320 280 340"
+                d="M 150 255 Q 180 280 250 310"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDelay: "2s" }}
                 strokeDasharray="4,4"
+              />
+
+              {/* US to Guatemala (additional connection) */}
+              <path
+                d="M 220 160 Q 180 200 150 255"
+                stroke="url(#connection-gradient)"
+                strokeWidth="1.5"
+                fill="none"
+                className="animate-pulse"
+                style={{ animationDelay: "2.5s" }}
+                strokeDasharray="6,6"
+                opacity="0.6"
+              />
+
+              {/* US to Colombia (additional connection) */}
+              <path
+                d="M 220 160 Q 240 250 250 310"
+                stroke="url(#connection-gradient-reverse)"
+                strokeWidth="1.5"
+                fill="none"
+                className="animate-pulse"
+                style={{ animationDelay: "3s" }}
+                strokeDasharray="7,7"
+                opacity="0.6"
               />
             </svg>
 
