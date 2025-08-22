@@ -1,12 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  Building2,
-  Users,
-  TrendingUp,
-  DollarSign,
-  Target,
-  Globe,
-} from "lucide-react";
 
 interface CounterProps {
   end: number;
@@ -65,83 +57,97 @@ const Counter = ({
 const Stats = () => {
   const stats = [
     {
-      icon: Building2,
       number: 50,
       suffix: "+",
       label: "Enterprise Clients",
-      description: "Leading organizations trust us",
-      color: "from-orange-500 to-orange-600",
     },
     {
-      icon: Users,
       number: 600,
       suffix: "+",
       label: "Billable Consultants",
-      description: "Active professionals worldwide",
-      color: "from-purple-500 to-purple-600",
     },
     {
-      icon: Users,
       number: 2500,
       suffix: "+",
       label: "Total FTEs",
-      description: "Full-time employees globally",
-      color: "from-blue-500 to-blue-600",
     },
     {
-      icon: TrendingUp,
       number: 95,
       suffix: "%",
       label: "Retention Rate",
-      description: "Consultant satisfaction score",
-      color: "from-cyan-500 to-cyan-600",
     },
     {
-      icon: DollarSign,
       number: 75,
       suffix: "M+",
       prefix: "$",
       label: "Annual Revenue",
-      description: "Consistent growth trajectory",
-      color: "from-lime-500 to-lime-600",
     },
     {
-      icon: Target,
       number: 1000,
       suffix: "+",
       label: "Annual Placements",
-      description: "Successful matches per year",
-      color: "from-red-500 to-orange-500",
     },
     {
-      icon: Users,
       number: 100,
       suffix: "+",
       label: "Recruiters",
-      description: "Expert recruiters across regions",
-      color: "from-indigo-500 to-purple-500",
     },
     {
-      icon: Globe,
       number: 5,
       suffix: "",
       label: "Global Locations",
-      description: "US, Philippines, Mexico, Guatemala, Colombia",
-      color: "from-purple-500 to-pink-500",
     },
     {
-      icon: Target,
       number: 15,
       suffix: "",
       label: "Years Experience",
-      description: "Proven track record in SaaS",
-      color: "from-green-500 to-emerald-500",
+    },
+    {
+      number: 200,
+      suffix: "+",
+      label: "Technologies",
+    },
+    {
+      number: 85,
+      suffix: "%",
+      label: "Client Satisfaction",
+    },
+    {
+      number: 30,
+      suffix: "+",
+      label: "Industry Verticals",
     },
   ];
 
+  // Split stats into two rows
+  const firstRowStats = stats.slice(0, 6);
+  const secondRowStats = stats.slice(6);
+
+  const StatsCard = ({ stat, index }: { stat: typeof stats[0]; index: number }) => (
+    <div
+      className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-orange-500/50 transition-all duration-300 flex flex-col justify-center items-center"
+      style={{ width: '300px', height: '120px' }}
+    >
+      {/* Number */}
+      <div className="text-3xl font-bold text-white mb-2">
+        <Counter
+          end={stat.number}
+          suffix={stat.suffix}
+          prefix={stat.prefix}
+          duration={2000 + index * 200}
+        />
+      </div>
+
+      {/* Label */}
+      <h3 className="text-sm font-semibold text-orange-400 text-center px-4">
+        {stat.label}
+      </h3>
+    </div>
+  );
+
   return (
     <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Background Pattern with Sound Waves */}
+      {/* Background Pattern */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-10"
@@ -190,41 +196,27 @@ const Stats = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-orange-500/30 card-hover hover:bg-white/10 transition-all duration-300"
-            >
-              {/* Icon */}
-              <div
-                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <stat.icon className="w-8 h-8 text-white" />
-              </div>
-
-              {/* Number */}
-              <div className="text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
-                <Counter
-                  end={stat.number}
-                  suffix={stat.suffix}
-                  prefix={stat.prefix}
-                  duration={2000 + index * 200}
-                />
-              </div>
-
-              {/* Label */}
-              <h3 className="text-xl font-semibold text-orange-400 mb-3">
-                {stat.label}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-300 leading-relaxed">
-                {stat.description}
-              </p>
+        {/* Marquee Stats Rows */}
+        <div className="space-y-8 mb-16">
+          {/* First Row - Moving Right */}
+          <div className="overflow-hidden">
+            <div className="flex space-x-6 animate-marquee-right">
+              {/* Duplicate content for seamless loop */}
+              {[...firstRowStats, ...firstRowStats].map((stat, index) => (
+                <StatsCard key={`row1-${index}`} stat={stat} index={index} />
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Second Row - Moving Left */}
+          <div className="overflow-hidden">
+            <div className="flex space-x-6 animate-marquee-left">
+              {/* Duplicate content for seamless loop */}
+              {[...secondRowStats, ...secondRowStats].map((stat, index) => (
+                <StatsCard key={`row2-${index}`} stat={stat} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom CTA */}
@@ -246,6 +238,41 @@ const Stats = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS for Marquee Animation */}
+      <style jsx>{`
+        @keyframes marquee-right {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes marquee-left {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .animate-marquee-right {
+          animation: marquee-right 40s linear infinite;
+        }
+
+        .animate-marquee-left {
+          animation: marquee-left 40s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .animate-marquee-right:hover,
+        .animate-marquee-left:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
