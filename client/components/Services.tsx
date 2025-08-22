@@ -121,12 +121,27 @@ const Services = () => {
               onClick={() => handleCardClick(index)}
             >
               <div
-                className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d cursor-pointer
-                  ${!isMobile ? 'group-hover:rotateX-180' : ''}
-                  ${isMobile && flippedCards.has(index) ? 'rotateX-180' : ''}`}
+                className="relative w-full h-full transition-transform duration-700 cursor-pointer"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: `rotateX(${
+                    (!isMobile && 'group-hover:' === 'group-hover:') ? '0deg' :
+                    (isMobile && flippedCards.has(index)) ? '180deg' : '0deg'
+                  })`
+                }}
+                onMouseEnter={(e) => {
+                  if (!isMobile) {
+                    e.currentTarget.style.transform = 'rotateX(180deg)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isMobile) {
+                    e.currentTarget.style.transform = 'rotateX(0deg)';
+                  }
+                }}
               >
                 {/* Front of Card - Image */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300" style={{ backfaceVisibility: 'hidden' }}>
                   {/* Background Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -148,15 +163,11 @@ const Services = () => {
                     <h3 className="text-xl font-semibold text-white mb-2">
                       {service.title}
                     </h3>
-                    <div className="flex items-center text-orange-300 text-sm font-medium">
-                      <span className="mr-2">{isMobile ? 'Tap' : 'Hover'} to flip</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
                   </div>
                 </div>
 
                 {/* Back of Card - Orange Background */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotateX-180 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl">
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-white" />
