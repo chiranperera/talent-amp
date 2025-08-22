@@ -240,7 +240,7 @@ const GlobalFootprint = () => {
                   {/* Middle ripple */}
                   <div
                     className="w-6 h-6 bg-orange-400/50 rounded-full animate-ping absolute -top-1 -left-1"
-                    style={{ animationDelay: '0.5s' }}
+                    style={{ animationDelay: "0.5s" }}
                   ></div>
                   {/* Core marker */}
                   <div className="w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full relative z-10 shadow-lg group-hover:scale-125 transition-transform duration-300">
@@ -252,11 +252,15 @@ const GlobalFootprint = () => {
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 scale-95 group-hover:scale-100">
                   <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 min-w-80 backdrop-blur-sm">
                     <div className="text-center">
-                      <div className="text-3xl mb-3 animate-bounce">{location.icon}</div>
+                      <div className="text-3xl mb-3 animate-bounce">
+                        {location.icon}
+                      </div>
                       <h4 className="font-bold text-gray-900 mb-2 text-lg">
                         {location.country}
                       </h4>
-                      <div className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${location.color} text-white text-sm font-medium mb-3`}>
+                      <div
+                        className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${location.color} text-white text-sm font-medium mb-3`}
+                      >
                         {location.role}
                       </div>
                       <p className="text-gray-600 text-sm leading-relaxed">
@@ -281,13 +285,25 @@ const GlobalFootprint = () => {
             {/* Enhanced Connection Lines with Animation */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
               <defs>
-                <linearGradient id="connection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <linearGradient
+                  id="connection-gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
                   <stop offset="0%" stopColor="rgba(255, 69, 0, 0)" />
                   <stop offset="20%" stopColor="rgba(255, 69, 0, 0.6)" />
                   <stop offset="80%" stopColor="rgba(255, 149, 0, 0.6)" />
                   <stop offset="100%" stopColor="rgba(255, 69, 0, 0)" />
                 </linearGradient>
-                <linearGradient id="connection-gradient-reverse" x1="100%" y1="0%" x2="0%" y2="0%">
+                <linearGradient
+                  id="connection-gradient-reverse"
+                  x1="100%"
+                  y1="0%"
+                  x2="0%"
+                  y2="0%"
+                >
                   <stop offset="0%" stopColor="rgba(255, 69, 0, 0)" />
                   <stop offset="20%" stopColor="rgba(255, 69, 0, 0.6)" />
                   <stop offset="80%" stopColor="rgba(255, 149, 0, 0.6)" />
