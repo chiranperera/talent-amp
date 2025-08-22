@@ -206,10 +206,10 @@ const Stats = () => {
       {/* Full-Width Marquee Stats Rows */}
       <div className="relative z-10 space-y-8 mb-16">
         {/* First Row - Moving Right */}
-        <div className="w-full">
+        <div className="w-full marquee-container">
           <div className="flex space-x-6 animate-marquee-right">
-            {/* Duplicate content for seamless loop */}
-            {[...firstRowStats, ...firstRowStats, ...firstRowStats].map(
+            {/* Duplicate content multiple times for seamless loop */}
+            {[...firstRowStats, ...firstRowStats, ...firstRowStats, ...firstRowStats].map(
               (stat, index) => (
                 <StatsCard key={`row1-${index}`} stat={stat} index={index} />
               ),
@@ -218,10 +218,10 @@ const Stats = () => {
         </div>
 
         {/* Second Row - Moving Left */}
-        <div className="w-full">
+        <div className="w-full marquee-container">
           <div className="flex space-x-6 animate-marquee-left">
-            {/* Duplicate content for seamless loop */}
-            {[...secondRowStats, ...secondRowStats, ...secondRowStats].map(
+            {/* Duplicate content multiple times for seamless loop */}
+            {[...secondRowStats, ...secondRowStats, ...secondRowStats, ...secondRowStats].map(
               (stat, index) => (
                 <StatsCard key={`row2-${index}`} stat={stat} index={index} />
               ),
