@@ -197,7 +197,12 @@ const Hero = () => {
       {/* Additional premium floating badge for visual balance */}
       <div
         className="absolute top-2/3 right-1/2 hidden lg:block animate-float bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-purple-500/30 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300"
-        style={{ animationDelay: "1.2s", margin: "-173px -205px 0 0" }}
+        style={{
+          animationDelay: "5.3s",
+          margin: "-173px -205px 0 0",
+          transform: "translateZ(0)",
+          willChange: "transform"
+        }}
       >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-lg"></div>
