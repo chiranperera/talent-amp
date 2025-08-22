@@ -186,9 +186,9 @@ const Stats = () => {
         </div>
       </div>
 
-      <div className="container-lg relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+      {/* Section Header */}
+      <div className="container-lg relative z-10 mb-16">
+        <div className="text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Proven Results
             <span className="text-gradient bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
@@ -201,31 +201,33 @@ const Stats = () => {
             excellence in delivering world-class talent solutions.
           </p>
         </div>
+      </div>
 
-        {/* Marquee Stats Rows */}
-        <div className="space-y-8 mb-16">
-          {/* First Row - Moving Right */}
-          <div className="overflow-hidden">
-            <div className="flex space-x-6 animate-marquee-right">
-              {/* Duplicate content for seamless loop */}
-              {[...firstRowStats, ...firstRowStats].map((stat, index) => (
-                <StatsCard key={`row1-${index}`} stat={stat} index={index} />
-              ))}
-            </div>
-          </div>
-
-          {/* Second Row - Moving Left */}
-          <div className="overflow-hidden">
-            <div className="flex space-x-6 animate-marquee-left">
-              {/* Duplicate content for seamless loop */}
-              {[...secondRowStats, ...secondRowStats].map((stat, index) => (
-                <StatsCard key={`row2-${index}`} stat={stat} index={index} />
-              ))}
-            </div>
+      {/* Full-Width Marquee Stats Rows */}
+      <div className="relative z-10 space-y-8 mb-16">
+        {/* First Row - Moving Right */}
+        <div className="w-full">
+          <div className="flex space-x-6 animate-marquee-right">
+            {/* Duplicate content for seamless loop */}
+            {[...firstRowStats, ...firstRowStats, ...firstRowStats].map((stat, index) => (
+              <StatsCard key={`row1-${index}`} stat={stat} index={index} />
+            ))}
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* Second Row - Moving Left */}
+        <div className="w-full">
+          <div className="flex space-x-6 animate-marquee-left">
+            {/* Duplicate content for seamless loop */}
+            {[...secondRowStats, ...secondRowStats, ...secondRowStats].map((stat, index) => (
+              <StatsCard key={`row2-${index}`} stat={stat} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="container-lg relative z-10">
         <div className="text-center mt-16 pt-8 border-t border-white/10">
           <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
             Ready to Join Our Success Stories?
