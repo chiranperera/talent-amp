@@ -153,7 +153,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto lg:max-w-3xl lg:mr-auto lg:ml-8 lg:text-left">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left lg:pl-8">
         {/* TalentAmp Logo Sound Wave */}
         <div className="flex items-center justify-center lg:justify-start mb-8">
           <div className="flex items-end space-x-1 mr-4">
