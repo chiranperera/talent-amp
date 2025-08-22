@@ -178,7 +178,12 @@ const Hero = () => {
 
       <div
         className="absolute bottom-1/4 left-1/6 hidden lg:block animate-float bg-white/15 backdrop-blur-lg rounded-2xl p-5 border border-cyan-500/30 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300"
-        style={{ animationDelay: "0.7s", margin: "0 -77px -126px 93px" }}
+        style={{
+          animationDelay: "2.7s",
+          margin: "0 -77px -126px 93px",
+          transform: "translateZ(0)",
+          willChange: "transform"
+        }}
       >
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-lg"></div>
