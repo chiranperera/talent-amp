@@ -172,7 +172,7 @@ const Services = () => {
                 </div>
 
                 {/* Back of Card - Orange Background */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-xl flex flex-col" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-white" />
@@ -182,7 +182,7 @@ const Services = () => {
                   <h3 className="text-2xl font-bold text-white mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-orange-100 mb-6 leading-relaxed text-sm">
+                  <p className="text-orange-100 mb-6 leading-relaxed text-sm flex-grow">
                     {service.description}
                   </p>
 
@@ -203,12 +203,10 @@ const Services = () => {
                   </div>
 
                   {/* Action */}
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <button className="w-full bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg">
-                      <span className="mr-2">Learn More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                  <button className="w-full bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg">
+                    <span className="mr-2">Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
