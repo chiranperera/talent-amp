@@ -153,7 +153,8 @@ export default {
           "linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-700) 100%)",
         "gradient-tech":
           "linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-accent-cyan) 100%)",
-        "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
+        "gradient-radial":
+          "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
       },
     },
   },

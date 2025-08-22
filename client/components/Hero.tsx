@@ -44,18 +44,64 @@ const Hero = () => {
         <div className="absolute inset-0">
           <svg className="w-full h-full opacity-15" viewBox="0 0 1000 1000">
             <defs>
-              <pattern id="luxury-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle cx="50" cy="50" r="2" fill="url(#luxury-gradient)" className="animate-pulse">
-                  <animate attributeName="r" values="1;3;1" dur="4s" repeatCount="indefinite" />
+              <pattern
+                id="luxury-pattern"
+                x="0"
+                y="0"
+                width="100"
+                height="100"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="2"
+                  fill="url(#luxury-gradient)"
+                  className="animate-pulse"
+                >
+                  <animate
+                    attributeName="r"
+                    values="1;3;1"
+                    dur="4s"
+                    repeatCount="indefinite"
+                  />
                 </circle>
-                <circle cx="25" cy="25" r="1" fill="url(#luxury-gradient)" className="animate-pulse">
-                  <animate attributeName="r" values="0.5;2;0.5" dur="6s" repeatCount="indefinite" />
+                <circle
+                  cx="25"
+                  cy="25"
+                  r="1"
+                  fill="url(#luxury-gradient)"
+                  className="animate-pulse"
+                >
+                  <animate
+                    attributeName="r"
+                    values="0.5;2;0.5"
+                    dur="6s"
+                    repeatCount="indefinite"
+                  />
                 </circle>
-                <circle cx="75" cy="75" r="1.5" fill="url(#luxury-gradient)" className="animate-pulse">
-                  <animate attributeName="r" values="0.8;2.5;0.8" dur="5s" repeatCount="indefinite" />
+                <circle
+                  cx="75"
+                  cy="75"
+                  r="1.5"
+                  fill="url(#luxury-gradient)"
+                  className="animate-pulse"
+                >
+                  <animate
+                    attributeName="r"
+                    values="0.8;2.5;0.8"
+                    dur="5s"
+                    repeatCount="indefinite"
+                  />
                 </circle>
               </pattern>
-              <linearGradient id="luxury-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="luxury-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#FF4500" stopOpacity="0.8" />
                 <stop offset="50%" stopColor="#FF8C00" stopOpacity="0.6" />
                 <stop offset="100%" stopColor="#FFD700" stopOpacity="0.4" />
@@ -68,8 +114,14 @@ const Hero = () => {
         {/* Luxury mesh gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-orange-400/40 to-transparent rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-radial from-amber-400/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-radial from-orange-300/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s" }} />
+          <div
+            className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-radial from-amber-400/30 to-transparent rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-radial from-orange-300/20 to-transparent rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "4s" }}
+          />
         </div>
       </div>
 
@@ -124,7 +176,6 @@ const Hero = () => {
             }}
           />
 
-
           {/* Floating accent elements */}
           <div
             className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/60 rounded-full animate-pulse blur-sm"
@@ -140,7 +191,6 @@ const Hero = () => {
           ></div>
         </div>
       </div>
-
 
       {/* Amplification Rings */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -166,7 +216,7 @@ const Hero = () => {
         style={{
           marginRight: "-130px",
           transform: "translateZ(0)",
-          willChange: "transform"
+          willChange: "transform",
         }}
       >
         <div className="flex items-center space-x-3">
@@ -182,7 +232,7 @@ const Hero = () => {
           animationDelay: "2.7s",
           margin: "0 -77px -126px 93px",
           transform: "translateZ(0)",
-          willChange: "transform"
+          willChange: "transform",
         }}
       >
         <div className="flex items-center space-x-3">
@@ -201,7 +251,7 @@ const Hero = () => {
           animationDelay: "5.3s",
           margin: "-173px -205px 0 0",
           transform: "translateZ(0)",
-          willChange: "transform"
+          willChange: "transform",
         }}
       >
         <div className="flex items-center space-x-3">

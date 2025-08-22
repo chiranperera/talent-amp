@@ -209,11 +209,14 @@ const Stats = () => {
         <div className="w-full marquee-container">
           <div className="flex space-x-6 animate-marquee-right">
             {/* Duplicate content multiple times for seamless loop */}
-            {[...firstRowStats, ...firstRowStats, ...firstRowStats, ...firstRowStats].map(
-              (stat, index) => (
-                <StatsCard key={`row1-${index}`} stat={stat} index={index} />
-              ),
-            )}
+            {[
+              ...firstRowStats,
+              ...firstRowStats,
+              ...firstRowStats,
+              ...firstRowStats,
+            ].map((stat, index) => (
+              <StatsCard key={`row1-${index}`} stat={stat} index={index} />
+            ))}
           </div>
         </div>
 
@@ -221,11 +224,14 @@ const Stats = () => {
         <div className="w-full marquee-container">
           <div className="flex space-x-6 animate-marquee-left">
             {/* Duplicate content multiple times for seamless loop */}
-            {[...secondRowStats, ...secondRowStats, ...secondRowStats, ...secondRowStats].map(
-              (stat, index) => (
-                <StatsCard key={`row2-${index}`} stat={stat} index={index} />
-              ),
-            )}
+            {[
+              ...secondRowStats,
+              ...secondRowStats,
+              ...secondRowStats,
+              ...secondRowStats,
+            ].map((stat, index) => (
+              <StatsCard key={`row2-${index}`} stat={stat} index={index} />
+            ))}
           </div>
         </div>
       </div>

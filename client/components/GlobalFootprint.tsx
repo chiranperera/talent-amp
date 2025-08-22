@@ -166,40 +166,52 @@ const GlobalFootprint = () => {
 
                 {/* Simplified but accurate world map continents */}
                 {/* North America */}
-                <path d="M158,110 L170,100 L190,95 L210,100 L230,105 L250,110 L270,115 L290,120 L310,125 L320,130 L310,140 L300,150 L290,160 L280,170 L270,180 L260,190 L250,200 L240,210 L230,220 L220,230 L210,240 L200,250 L190,240 L180,230 L170,220 L160,210 L150,200 L140,190 L130,180 L120,170 L110,160 L120,150 L130,140 L140,130 L150,120 Z"
-                      fill="rgba(59, 130, 246, 0.3)"
-                      stroke="rgba(59, 130, 246, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M158,110 L170,100 L190,95 L210,100 L230,105 L250,110 L270,115 L290,120 L310,125 L320,130 L310,140 L300,150 L290,160 L280,170 L270,180 L260,190 L250,200 L240,210 L230,220 L220,230 L210,240 L200,250 L190,240 L180,230 L170,220 L160,210 L150,200 L140,190 L130,180 L120,170 L110,160 L120,150 L130,140 L140,130 L150,120 Z"
+                  fill="rgba(59, 130, 246, 0.3)"
+                  stroke="rgba(59, 130, 246, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* South America */}
-                <path d="M200,280 L220,275 L240,280 L260,285 L280,290 L300,295 L320,300 L340,305 L350,315 L360,325 L370,335 L380,345 L370,355 L360,365 L350,375 L340,385 L330,395 L320,405 L310,415 L300,425 L290,435 L280,425 L270,415 L260,405 L250,395 L240,385 L230,375 L220,365 L210,355 L200,345 L190,335 L180,325 L170,315 L180,305 L190,295 Z"
-                      fill="rgba(34, 197, 94, 0.3)"
-                      stroke="rgba(34, 197, 94, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M200,280 L220,275 L240,280 L260,285 L280,290 L300,295 L320,300 L340,305 L350,315 L360,325 L370,335 L380,345 L370,355 L360,365 L350,375 L340,385 L330,395 L320,405 L310,415 L300,425 L290,435 L280,425 L270,415 L260,405 L250,395 L240,385 L230,375 L220,365 L210,355 L200,345 L190,335 L180,325 L170,315 L180,305 L190,295 Z"
+                  fill="rgba(34, 197, 94, 0.3)"
+                  stroke="rgba(34, 197, 94, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* Africa */}
-                <path d="M480,180 L500,175 L520,180 L540,185 L560,190 L580,195 L600,200 L620,205 L630,215 L640,225 L650,235 L660,245 L670,255 L680,265 L670,275 L660,285 L650,295 L640,305 L630,315 L620,325 L610,335 L600,345 L590,355 L580,365 L570,375 L560,385 L550,395 L540,385 L530,375 L520,365 L510,355 L500,345 L490,335 L480,325 L470,315 L460,305 L450,295 L440,285 L430,275 L440,265 L450,255 L460,245 L470,235 L480,225 L490,215 L500,205 L490,195 Z"
-                      fill="rgba(168, 85, 247, 0.3)"
-                      stroke="rgba(168, 85, 247, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M480,180 L500,175 L520,180 L540,185 L560,190 L580,195 L600,200 L620,205 L630,215 L640,225 L650,235 L660,245 L670,255 L680,265 L670,275 L660,285 L650,295 L640,305 L630,315 L620,325 L610,335 L600,345 L590,355 L580,365 L570,375 L560,385 L550,395 L540,385 L530,375 L520,365 L510,355 L500,345 L490,335 L480,325 L470,315 L460,305 L450,295 L440,285 L430,275 L440,265 L450,255 L460,245 L470,235 L480,225 L490,215 L500,205 L490,195 Z"
+                  fill="rgba(168, 85, 247, 0.3)"
+                  stroke="rgba(168, 85, 247, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* Europe */}
-                <path d="M450,120 L470,115 L490,120 L510,125 L530,130 L550,135 L570,140 L580,150 L570,160 L560,170 L550,180 L540,170 L530,160 L520,150 L510,140 L500,130 L490,140 L480,150 L470,160 L460,150 L450,140 L440,130 Z"
-                      fill="rgba(245, 101, 101, 0.3)"
-                      stroke="rgba(245, 101, 101, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M450,120 L470,115 L490,120 L510,125 L530,130 L550,135 L570,140 L580,150 L570,160 L560,170 L550,180 L540,170 L530,160 L520,150 L510,140 L500,130 L490,140 L480,150 L470,160 L460,150 L450,140 L440,130 Z"
+                  fill="rgba(245, 101, 101, 0.3)"
+                  stroke="rgba(245, 101, 101, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* Asia */}
-                <path d="M580,100 L620,95 L660,100 L700,105 L740,110 L780,115 L820,120 L860,125 L900,130 L920,140 L940,150 L950,160 L940,170 L930,180 L920,190 L910,200 L900,210 L890,220 L880,230 L870,240 L860,250 L850,260 L840,270 L830,280 L820,290 L810,300 L800,310 L790,320 L780,330 L770,340 L760,350 L750,340 L740,330 L730,320 L720,310 L710,300 L700,290 L690,280 L680,270 L670,260 L660,250 L650,240 L640,230 L630,220 L620,210 L610,200 L600,190 L590,180 L580,170 L570,160 L560,150 L570,140 L580,130 L590,120 L600,110 Z"
-                      fill="rgba(255, 165, 0, 0.3)"
-                      stroke="rgba(255, 165, 0, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M580,100 L620,95 L660,100 L700,105 L740,110 L780,115 L820,120 L860,125 L900,130 L920,140 L940,150 L950,160 L940,170 L930,180 L920,190 L910,200 L900,210 L890,220 L880,230 L870,240 L860,250 L850,260 L840,270 L830,280 L820,290 L810,300 L800,310 L790,320 L780,330 L770,340 L760,350 L750,340 L740,330 L730,320 L720,310 L710,300 L700,290 L690,280 L680,270 L670,260 L660,250 L650,240 L640,230 L630,220 L620,210 L610,200 L600,190 L590,180 L580,170 L570,160 L560,150 L570,140 L580,130 L590,120 L600,110 Z"
+                  fill="rgba(255, 165, 0, 0.3)"
+                  stroke="rgba(255, 165, 0, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* Australia */}
-                <path d="M750,380 L780,375 L810,380 L840,385 L860,390 L880,395 L900,400 L890,410 L880,420 L870,430 L860,440 L850,430 L840,420 L830,410 L820,400 L810,410 L800,420 L790,410 L780,400 L770,390 Z"
-                      fill="rgba(6, 182, 212, 0.3)"
-                      stroke="rgba(6, 182, 212, 0.5)"
-                      strokeWidth="1"/>
+                <path
+                  d="M750,380 L780,375 L810,380 L840,385 L860,390 L880,395 L900,400 L890,410 L880,420 L870,430 L860,440 L850,430 L840,420 L830,410 L820,400 L810,410 L800,420 L790,410 L780,400 L770,390 Z"
+                  fill="rgba(6, 182, 212, 0.3)"
+                  stroke="rgba(6, 182, 212, 0.5)"
+                  strokeWidth="1"
+                />
 
                 {/* Grid overlay for tech feel */}
                 <g opacity="0.08">
@@ -259,14 +271,18 @@ const GlobalFootprint = () => {
                 </div>
 
                 {/* Enhanced Tooltip with Smart Positioning */}
-                <div className={`absolute opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 scale-95 group-hover:scale-100 ${
-                  // Smart positioning based on location coordinates
-                  parseInt(location.coordinates.x) < 25 ? 'left-0' :
-                  parseInt(location.coordinates.x) > 75 ? 'right-0' :
-                  'left-1/2 transform -translate-x-1/2'
-                } ${
-                  parseInt(location.coordinates.y) < 40 ? 'top-8' : 'bottom-8'
-                }`}>
+                <div
+                  className={`absolute opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 scale-95 group-hover:scale-100 ${
+                    // Smart positioning based on location coordinates
+                    parseInt(location.coordinates.x) < 25
+                      ? "left-0"
+                      : parseInt(location.coordinates.x) > 75
+                        ? "right-0"
+                        : "left-1/2 transform -translate-x-1/2"
+                  } ${
+                    parseInt(location.coordinates.y) < 40 ? "top-8" : "bottom-8"
+                  }`}
+                >
                   <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 w-80 backdrop-blur-sm">
                     <div className="text-center">
                       <div className="text-3xl mb-3 animate-bounce">
@@ -291,16 +307,20 @@ const GlobalFootprint = () => {
                       </div>
                     </div>
                     {/* Dynamic Tooltip Arrow */}
-                    <div className={`absolute ${
-                      parseInt(location.coordinates.y) < 40
-                        ? 'bottom-full left-1/2 transform -translate-x-1/2 mb-1'
-                        : 'top-full left-1/2 transform -translate-x-1/2 -mt-1'
-                    }`}>
-                      <div className={`border-8 border-transparent ${
+                    <div
+                      className={`absolute ${
                         parseInt(location.coordinates.y) < 40
-                          ? 'border-b-white'
-                          : 'border-t-white'
-                      }`}></div>
+                          ? "bottom-full left-1/2 transform -translate-x-1/2 mb-1"
+                          : "top-full left-1/2 transform -translate-x-1/2 -mt-1"
+                      }`}
+                    >
+                      <div
+                        className={`border-8 border-transparent ${
+                          parseInt(location.coordinates.y) < 40
+                            ? "border-b-white"
+                            : "border-t-white"
+                        }`}
+                      ></div>
                     </div>
                   </div>
                 </div>
