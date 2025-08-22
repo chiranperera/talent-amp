@@ -251,34 +251,36 @@ const Stats = () => {
         </div>
       </div>
 
-      {/* CSS for Marquee Animation */}
+      {/* CSS for Seamless Marquee Animation */}
       <style jsx>{`
         @keyframes marquee-right {
           0% {
-            transform: translateX(-100vw);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(100vw);
+            transform: translateX(-50%);
           }
         }
 
         @keyframes marquee-left {
           0% {
-            transform: translateX(100vw);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-100vw);
+            transform: translateX(0);
           }
         }
 
         .animate-marquee-right {
           animation: marquee-right 60s linear infinite;
           width: max-content;
+          display: flex;
         }
 
         .animate-marquee-left {
           animation: marquee-left 60s linear infinite;
           width: max-content;
+          display: flex;
         }
 
         /* Pause animation on hover */
@@ -287,9 +289,27 @@ const Stats = () => {
           animation-play-state: paused;
         }
 
-        /* Ensure full width coverage */
+        /* Ensure full width coverage and hide overflow */
         section {
           overflow-x: hidden;
+        }
+
+        /* Ensure seamless looping by hiding the start/end transition */
+        .marquee-container {
+          mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+          );
         }
       `}</style>
     </section>
