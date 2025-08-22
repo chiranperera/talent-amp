@@ -16,12 +16,19 @@ const Navigation = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <nav className="container-lg px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-              <span className="text-white font-bold text-lg lg:text-xl">T</span>
+          {/* Logo with Sound Wave Pattern */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            {/* Sound Wave Icon */}
+            <div className="flex items-end space-x-0.5">
+              {[8, 12, 6, 16, 4, 14, 10].map((height, index) => (
+                <div
+                  key={index}
+                  className="w-1 bg-gradient-to-t from-orange-500 to-orange-600 rounded-t group-hover:animate-pulse transition-all duration-200"
+                  style={{ height: `${height}px` }}
+                />
+              ))}
             </div>
-            <span className="font-bold text-xl lg:text-2xl text-gray-900">TalentAmp</span>
+            <span className="font-bold text-xl lg:text-2xl text-gray-900 group-hover:text-orange-600 transition-colors duration-200">TalentAmp</span>
           </Link>
 
           {/* Desktop Navigation */}
