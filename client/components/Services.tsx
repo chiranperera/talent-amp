@@ -120,22 +120,29 @@ const Services = () => {
               className="group h-80 cursor-pointer"
               style={{ perspective: '1000px' }}
               onClick={() => handleCardClick(index)}
+              onMouseEnter={(e) => {
+                if (!isMobile) {
+                  const flipCard = e.currentTarget.querySelector('.flip-card');
+                  if (flipCard) {
+                    flipCard.style.transform = 'rotateX(180deg)';
+                  }
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isMobile) {
+                  const flipCard = e.currentTarget.querySelector('.flip-card');
+                  if (flipCard) {
+                    flipCard.style.transform = 'rotateX(0deg)';
+                  }
+                }
+              }}
             >
               <div
-                className="relative w-full h-full transition-transform duration-700 cursor-pointer group-card"
+                className="flip-card relative w-full h-full transition-transform duration-500 ease-in-out"
                 style={{
                   transformStyle: 'preserve-3d',
+                  transformOrigin: 'center center',
                   transform: isMobile && flippedCards.has(index) ? 'rotateX(180deg)' : 'rotateX(0deg)'
-                }}
-                onMouseEnter={(e) => {
-                  if (!isMobile) {
-                    e.currentTarget.style.transform = 'rotateX(180deg)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isMobile) {
-                    e.currentTarget.style.transform = 'rotateX(0deg)';
-                  }
                 }}
               >
                 {/* Front of Card - Image */}
