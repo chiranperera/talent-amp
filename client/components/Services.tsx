@@ -117,7 +117,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group perspective-1000 h-80 cursor-pointer"
+              className="group h-80 cursor-pointer"
+              style={{ perspective: '1000px' }}
               onClick={() => handleCardClick(index)}
             >
               <div
