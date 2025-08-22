@@ -61,12 +61,19 @@ const Footer = () => {
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-4">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 mb-6 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-                <span className="text-white font-bold text-xl">T</span>
+            {/* Logo with Sound Wave Pattern */}
+            <Link to="/" className="flex items-center space-x-3 mb-6 group">
+              {/* Sound Wave Icon */}
+              <div className="flex items-end space-x-0.5">
+                {[12, 16, 8, 20, 6, 18, 14].map((height, index) => (
+                  <div
+                    key={index}
+                    className="w-1.5 bg-gradient-to-t from-orange-500 to-orange-400 rounded-t group-hover:animate-pulse transition-all duration-200"
+                    style={{ height: `${height}px` }}
+                  />
+                ))}
               </div>
-              <span className="font-bold text-2xl text-white">TalentAmp</span>
+              <span className="font-bold text-2xl text-white group-hover:text-orange-400 transition-colors duration-200">TalentAmp</span>
             </Link>
 
             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
