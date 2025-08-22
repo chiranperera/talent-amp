@@ -121,13 +121,10 @@ const Services = () => {
               onClick={() => handleCardClick(index)}
             >
               <div
-                className="relative w-full h-full transition-transform duration-700 cursor-pointer"
+                className="relative w-full h-full transition-transform duration-700 cursor-pointer group-card"
                 style={{
                   transformStyle: 'preserve-3d',
-                  transform: `rotateX(${
-                    (!isMobile && 'group-hover:' === 'group-hover:') ? '0deg' :
-                    (isMobile && flippedCards.has(index)) ? '180deg' : '0deg'
-                  })`
+                  transform: isMobile && flippedCards.has(index) ? 'rotateX(180deg)' : 'rotateX(0deg)'
                 }}
                 onMouseEnter={(e) => {
                   if (!isMobile) {
