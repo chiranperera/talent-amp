@@ -23,21 +23,53 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      {/* Animated Sound Wave Background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <div className="flex items-end space-x-2">
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className={`w-1 bg-orange-500 animate-pulse ${
-                soundWaveBars[i % soundWaveBars.length].height
-              }`}
-              style={{
-                animationDelay: `${i * 100}ms`,
-                animationDuration: "2s",
-              }}
-            />
-          ))}
+      {/* Luxury Sound Wave Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Main luxury background pattern */}
+        <div
+          className="absolute inset-0 opacity-25"
+          style={{
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7773ae50cbf346fd83f4010373e2769f%2Fb75728015aa440659af0a587c25294c1?format=webp&width=800')`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            transform: `translateY(${scrollY * -0.05}px) scale(1.1)`,
+          }}
+        />
+
+        {/* Luxury gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-orange-600/20" />
+
+        {/* Modern geometric pattern overlay */}
+        <div className="absolute inset-0">
+          <svg className="w-full h-full opacity-15" viewBox="0 0 1000 1000">
+            <defs>
+              <pattern id="luxury-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="2" fill="url(#luxury-gradient)" className="animate-pulse">
+                  <animate attributeName="r" values="1;3;1" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="25" cy="25" r="1" fill="url(#luxury-gradient)" className="animate-pulse">
+                  <animate attributeName="r" values="0.5;2;0.5" dur="6s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="75" cy="75" r="1.5" fill="url(#luxury-gradient)" className="animate-pulse">
+                  <animate attributeName="r" values="0.8;2.5;0.8" dur="5s" repeatCount="indefinite" />
+                </circle>
+              </pattern>
+              <linearGradient id="luxury-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FF4500" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#FF8C00" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#FFD700" stopOpacity="0.4" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#luxury-pattern)" />
+          </svg>
+        </div>
+
+        {/* Luxury mesh gradient */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-orange-400/40 to-transparent rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-radial from-amber-400/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-radial from-orange-300/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s" }} />
         </div>
       </div>
 
