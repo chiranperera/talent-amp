@@ -101,6 +101,68 @@
   }
 }
 
+/* Ensure animations work across browsers */
+@layer utilities {
+  /* Force GPU acceleration for animations */
+  .animate-pulse {
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    will-change: transform;
+  }
+  
+  .animate-ping {
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    will-change: transform, opacity;
+  }
+  
+  .animate-glow {
+    -webkit-animation: glow 4s ease-in-out infinite;
+    animation: glow 4s ease-in-out infinite;
+    will-change: box-shadow;
+  }
+  
+  /* Fallback for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse,
+    .animate-ping,
+    .animate-glow,
+    .animate-float,
+    .animate-blob {
+      -webkit-animation: none !important;
+      animation: none !important;
+    }
+  }
+  
+  /* Performance optimization for Safari */
+  .will-change-transform {
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Vendor-prefixed keyframes */
+@-webkit-keyframes pulse {
+  0%, 100% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(1.05); transform: scale(1.05); }
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
