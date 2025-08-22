@@ -63,6 +63,14 @@ const Stats = () => {
       color: "from-purple-500 to-purple-600",
     },
     {
+      icon: Users,
+      number: 2500,
+      suffix: "+",
+      label: "Total FTEs",
+      description: "Full-time employees globally",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
       icon: TrendingUp,
       number: 95,
       suffix: "%",
@@ -88,12 +96,28 @@ const Stats = () => {
       color: "from-red-500 to-orange-500",
     },
     {
+      icon: Users,
+      number: 100,
+      suffix: "+",
+      label: "Recruiters",
+      description: "Expert recruiters across regions",
+      color: "from-indigo-500 to-purple-500",
+    },
+    {
       icon: Globe,
       number: 5,
       suffix: "",
       label: "Global Locations",
       description: "US, Philippines, Mexico, Guatemala, Colombia",
       color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Target,
+      number: 15,
+      suffix: "",
+      label: "Years Experience",
+      description: "Proven track record in SaaS",
+      color: "from-green-500 to-emerald-500",
     },
   ];
 
