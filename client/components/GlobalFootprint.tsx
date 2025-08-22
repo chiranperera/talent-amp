@@ -258,9 +258,16 @@ const GlobalFootprint = () => {
                   </div>
                 </div>
 
-                {/* Enhanced Tooltip */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 scale-95 group-hover:scale-100">
-                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 min-w-80 backdrop-blur-sm">
+                {/* Enhanced Tooltip with Smart Positioning */}
+                <div className={`absolute opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 scale-95 group-hover:scale-100 ${
+                  // Smart positioning based on location coordinates
+                  parseInt(location.coordinates.x) < 25 ? 'left-0' :
+                  parseInt(location.coordinates.x) > 75 ? 'right-0' :
+                  'left-1/2 transform -translate-x-1/2'
+                } ${
+                  parseInt(location.coordinates.y) < 40 ? 'top-8' : 'bottom-8'
+                }`}>
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 w-80 backdrop-blur-sm">
                     <div className="text-center">
                       <div className="text-3xl mb-3 animate-bounce">
                         {location.icon}
@@ -283,9 +290,17 @@ const GlobalFootprint = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Tooltip Arrow */}
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
-                      <div className="border-8 border-transparent border-t-white"></div>
+                    {/* Dynamic Tooltip Arrow */}
+                    <div className={`absolute ${
+                      parseInt(location.coordinates.y) < 40
+                        ? 'bottom-full left-1/2 transform -translate-x-1/2 mb-1'
+                        : 'top-full left-1/2 transform -translate-x-1/2 -mt-1'
+                    }`}>
+                      <div className={`border-8 border-transparent ${
+                        parseInt(location.coordinates.y) < 40
+                          ? 'border-b-white'
+                          : 'border-t-white'
+                      }`}></div>
                     </div>
                   </div>
                 </div>
