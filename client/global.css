@@ -135,11 +135,20 @@
 @layer components {
   /* Custom button styles */
   .btn-primary {
-    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-orange focus:shadow-orange;
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-orange focus:shadow-orange relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full transition-transform duration-700;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-full;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-900 font-medium px-6 py-3 rounded-lg border border-gray-200 transition-all duration-200 hover:shadow-md;
+    @apply bg-white hover:bg-gray-50 text-gray-900 font-medium px-6 py-3 rounded-lg border border-gray-200 transition-all duration-200 hover:shadow-md relative overflow-hidden;
   }
 
   .btn-ghost {
@@ -151,9 +160,40 @@
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 
+  .card-reveal {
+    @apply transform transition-all duration-700 ease-out;
+  }
+
+  .card-reveal.visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .card-reveal.hidden {
+    @apply translate-y-8 opacity-0;
+  }
+
   /* Gradient text */
   .text-gradient {
     @apply bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+
+  /* Glowing effect */
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glow-on-hover:hover {
+    @apply shadow-glow;
+  }
+
+  /* Magnetic effect for interactive elements */
+  .magnetic {
+    @apply transform transition-transform duration-200 ease-out;
   }
 
   /* Section padding */
@@ -172,5 +212,109 @@
 
   .container-lg {
     @apply max-w-7xl mx-auto;
+  }
+
+  /* Scroll-triggered animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fade-in-left {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-left.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .fade-in-right {
+    @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-right.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .scale-in {
+    @apply opacity-0 scale-95 transition-all duration-500 ease-out;
+  }
+
+  .scale-in.animate {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Loading states */
+  .loading-dots::after {
+    content: '...';
+    @apply animate-pulse;
+  }
+
+  /* Interactive underlines */
+  .underline-animate {
+    @apply relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 ease-out;
+  }
+
+  .underline-animate:hover::after {
+    @apply w-full;
+  }
+
+  /* Stagger animations */
+  .stagger-item {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+
+  .stagger-item.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-1 bg-orange-500 transition-all duration-300 ease-out transform origin-left;
+  }
+
+  /* Blob animations */
+  .blob {
+    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob;
+  }
+
+  /* Hover lift effect */
+  .lift-on-hover {
+    @apply transform transition-all duration-300 ease-out;
+  }
+
+  .lift-on-hover:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+}
+
+@layer utilities {
+  /* Animation delays for staggered effects */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Reduced motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
