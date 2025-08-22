@@ -172,7 +172,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left lg:pl-8">
+      <div className="relative z-10 text-center max-w-5xl mx-auto lg:max-w-2xl lg:mr-auto lg:ml-12 lg:text-left" style={{ margin: "0 auto 0 48px", padding: "184px 32px 0" }}>
         {/* TalentAmp Logo Sound Wave */}
         <div className="flex items-center justify-center lg:justify-start mb-8">
           <div className="flex items-end space-x-1 mr-4">
@@ -190,7 +190,7 @@ const Hero = () => {
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-orange-400 mr-2" />
             <span className="text-orange-300 text-sm font-medium">
-              Workforce Innovation Company
+              Workforce Innovation
             </span>
           </div>
         </div>
@@ -220,45 +220,8 @@ const Hero = () => {
 
         {/* Subheadline */}
         <p className="text-xl lg:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-          Transforming how organizations source, develop, and deploy tech talent
-          through
-          <span className="text-orange-400 font-semibold">
-            {" "}
-            AI-powered staffing solutions
-          </span>{" "}
-          and global delivery excellence.
+          AI-powered staffing solutions for global tech talent deployment.
         </p>
-
-        {/* Key Differentiators */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto lg:mx-0">
-          {[
-            {
-              icon: "🌍",
-              text: "5 Global Locations",
-              subtext: "US, Philippines, Mexico, Guatemala, Colombia",
-            },
-            {
-              icon: "🏆",
-              text: "MBE Certified",
-              subtext: "Diverse supplier certifications",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
-            >
-              <div className="flex items-center space-x-3">
-                <span className="text-2xl">{item.icon}</span>
-                <div>
-                  <div className="text-white font-medium text-sm">
-                    {item.text}
-                  </div>
-                  <div className="text-gray-400 text-xs">{item.subtext}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
@@ -271,28 +234,6 @@ const Hero = () => {
           <button className="group bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all duration-300 backdrop-blur-sm hover:border-white/40">
             Explore Services
           </button>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-gray-400 text-sm mb-6">
-            Trusted by 50+ enterprise clients worldwide
-          </p>
-          <div className="flex justify-center lg:justify-start items-center space-x-8 opacity-60">
-            {/* Industry badges */}
-            {["Technology", "Healthcare", "FinTech", "SaaS"].map(
-              (industry, index) => (
-                <div
-                  key={index}
-                  className="px-3 py-1 bg-white/5 rounded-full border border-white/10"
-                >
-                  <span className="text-white/60 text-xs font-medium">
-                    {industry}
-                  </span>
-                </div>
-              ),
-            )}
-          </div>
         </div>
       </div>
 
