@@ -21,7 +21,7 @@ const GlobalFootprint = () => {
       specialization: "Strategic Operations & Client Management",
       icon: "🇺🇸",
       color: "from-blue-500 to-blue-600",
-      coordinates: { x: "22%", y: "32%" }, // Central US position
+      coordinates: { x: "25%", y: "35%" }, // North America region in the new map
     },
     {
       country: "Philippines",
@@ -29,7 +29,7 @@ const GlobalFootprint = () => {
       specialization: "SaaS, FinTech & HealthTech Specialists",
       icon: "🇵🇭",
       color: "from-green-500 to-green-600",
-      coordinates: { x: "84%", y: "48%" }, // Southeast Asia position
+      coordinates: { x: "75%", y: "45%" }, // Southeast Asia region in the new map
     },
     {
       country: "Mexico",
@@ -37,7 +37,7 @@ const GlobalFootprint = () => {
       specialization: "Application Development & Support",
       icon: "🇲🇽",
       color: "from-red-500 to-red-600",
-      coordinates: { x: "17%", y: "47%" }, // Central Mexico position
+      coordinates: { x: "20%", y: "50%" }, // Central America/Mexico region
     },
     {
       country: "Guatemala",
@@ -45,7 +45,7 @@ const GlobalFootprint = () => {
       specialization: "Customer Experience & Quality Assurance",
       icon: "🇬🇹",
       color: "from-purple-500 to-purple-600",
-      coordinates: { x: "15%", y: "51%" }, // Central America position
+      coordinates: { x: "18%", y: "55%" }, // Central America region
     },
     {
       country: "Colombia",
@@ -53,7 +53,7 @@ const GlobalFootprint = () => {
       specialization: "Emerging Technologies & R&D",
       icon: "🇨🇴",
       color: "from-yellow-500 to-yellow-600",
-      coordinates: { x: "25%", y: "62%" }, // Northern South America position
+      coordinates: { x: "28%", y: "65%" }, // South America region
     },
   ];
 
@@ -332,97 +332,215 @@ const GlobalFootprint = () => {
         <div className="relative mb-20">
           {/* World Map Container */}
           <div className="relative w-full max-w-7xl mx-auto h-[600px] bg-gradient-to-b from-gray-800/30 to-gray-900/50 rounded-3xl border border-gray-700/50 overflow-visible backdrop-blur-sm">
-            {/* Real World Map Background */}
+            {/* World Map Background */}
             <div className="absolute inset-0 w-full h-full">
               <svg
                 className="w-full h-full opacity-20"
-                viewBox="0 0 1000 500"
+                viewBox="0 0 1200 1200"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <defs>
-                  <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(255, 69, 0, 0.1)" />
-                    <stop offset="100%" stopColor="rgba(255, 69, 0, 0)" />
-                  </radialGradient>
-                </defs>
-
-                {/* Simplified but accurate world map continents */}
-                {/* North America */}
-                <path
-                  d="M158,110 L170,100 L190,95 L210,100 L230,105 L250,110 L270,115 L290,120 L310,125 L320,130 L310,140 L300,150 L290,160 L280,170 L270,180 L260,190 L250,200 L240,210 L230,220 L220,230 L210,240 L200,250 L190,240 L180,230 L170,220 L160,210 L150,200 L140,190 L130,180 L120,170 L110,160 L120,150 L130,140 L140,130 L150,120 Z"
-                  fill="rgba(59, 130, 246, 0.3)"
-                  stroke="rgba(59, 130, 246, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* South America */}
-                <path
-                  d="M200,280 L220,275 L240,280 L260,285 L280,290 L300,295 L320,300 L340,305 L350,315 L360,325 L370,335 L380,345 L370,355 L360,365 L350,375 L340,385 L330,395 L320,405 L310,415 L300,425 L290,435 L280,425 L270,415 L260,405 L250,395 L240,385 L230,375 L220,365 L210,355 L200,345 L190,335 L180,325 L170,315 L180,305 L190,295 Z"
-                  fill="rgba(34, 197, 94, 0.3)"
-                  stroke="rgba(34, 197, 94, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* Africa */}
-                <path
-                  d="M480,180 L500,175 L520,180 L540,185 L560,190 L580,195 L600,200 L620,205 L630,215 L640,225 L650,235 L660,245 L670,255 L680,265 L670,275 L660,285 L650,295 L640,305 L630,315 L620,325 L610,335 L600,345 L590,355 L580,365 L570,375 L560,385 L550,395 L540,385 L530,375 L520,365 L510,355 L500,345 L490,335 L480,325 L470,315 L460,305 L450,295 L440,285 L430,275 L440,265 L450,255 L460,245 L470,235 L480,225 L490,215 L500,205 L490,195 Z"
-                  fill="rgba(168, 85, 247, 0.3)"
-                  stroke="rgba(168, 85, 247, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* Europe */}
-                <path
-                  d="M450,120 L470,115 L490,120 L510,125 L530,130 L550,135 L570,140 L580,150 L570,160 L560,170 L550,180 L540,170 L530,160 L520,150 L510,140 L500,130 L490,140 L480,150 L470,160 L460,150 L450,140 L440,130 Z"
-                  fill="rgba(245, 101, 101, 0.3)"
-                  stroke="rgba(245, 101, 101, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* Asia */}
-                <path
-                  d="M580,100 L620,95 L660,100 L700,105 L740,110 L780,115 L820,120 L860,125 L900,130 L920,140 L940,150 L950,160 L940,170 L930,180 L920,190 L910,200 L900,210 L890,220 L880,230 L870,240 L860,250 L850,260 L840,270 L830,280 L820,290 L810,300 L800,310 L790,320 L780,330 L770,340 L760,350 L750,340 L740,330 L730,320 L720,310 L710,300 L700,290 L690,280 L680,270 L670,260 L660,250 L650,240 L640,230 L630,220 L620,210 L610,200 L600,190 L590,180 L580,170 L570,160 L560,150 L570,140 L580,130 L590,120 L600,110 Z"
-                  fill="rgba(255, 165, 0, 0.3)"
-                  stroke="rgba(255, 165, 0, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* Australia */}
-                <path
-                  d="M750,380 L780,375 L810,380 L840,385 L860,390 L880,395 L900,400 L890,410 L880,420 L870,430 L860,440 L850,430 L840,420 L830,410 L820,400 L810,410 L800,420 L790,410 L780,400 L770,390 Z"
-                  fill="rgba(6, 182, 212, 0.3)"
-                  stroke="rgba(6, 182, 212, 0.5)"
-                  strokeWidth="1"
-                />
-
-                {/* Grid overlay for tech feel */}
-                <g opacity="0.08">
-                  {[...Array(20)].map((_, i) => (
-                    <line
-                      key={`v-${i}`}
-                      x1={i * 50}
-                      y1="0"
-                      x2={i * 50}
-                      y2="500"
-                      stroke="rgba(255, 69, 0, 0.4)"
-                      strokeWidth="0.5"
-                      className="animate-pulse"
-                      style={{ animationDelay: `${i * 100}ms` }}
-                    />
-                  ))}
-                  {[...Array(10)].map((_, i) => (
-                    <line
-                      key={`h-${i}`}
-                      x1="0"
-                      y1={i * 50}
-                      x2="1000"
-                      y2={i * 50}
-                      stroke="rgba(255, 69, 0, 0.4)"
-                      strokeWidth="0.5"
-                      className="animate-pulse"
-                      style={{ animationDelay: `${i * 150}ms` }}
-                    />
-                  ))}
+                <g stroke="#FF4500" fill="none" strokeWidth="12.7188" strokeMiterlimit="10" strokeLinecap="round">
+                  <path d="m24.633 76.653 1.6318-0.003906" transform="scale(12)"></path>
+                  <path d="m96.725 76.653 0.8151-0.003906" transform="scale(12)"></path>
+                  <path d="m88.776 76.653 0.19987-0.003906" transform="scale(12)"></path>
+                  <path d="m24.146 72.738 4.2389-0.001953" transform="scale(12)"></path>
+                  <path d="m87.647 72.738 3.349-0.001953" transform="scale(12)"></path>
+                  <path d="m24.367 68.831 6.3802-0.003907" transform="scale(12)"></path>
+                  <path d="m50.487 68.831 4.8359-0.003907" transform="scale(12)"></path>
+                  <path d="m80.76 68.831 11.724-0.003907" transform="scale(12)"></path>
+                  <path d="m23.405 64.92 10.478-0.001953" transform="scale(12)"></path>
+                  <path d="m49.67 64.92 7.9072-0.001953" transform="scale(12)"></path>
+                  <path d="m59.413 64.92 1.1628-0.001953" transform="scale(12)"></path>
+                  <path d="m84.469 64.92 3.3171-0.001953" transform="scale(12)"></path>
+                  <path d="m89.898 64.92 0.70898-0.001953" transform="scale(12)"></path>
+                  <path d="m97.919 64.92v-0.001953" transform="scale(12)"></path>
+                  <path d="m20.844 61.007h13.039" transform="scale(12)"></path>
+                  <path d="m48.898 61.007h6.2269" transform="scale(12)"></path>
+                  <path d="m55.984 61.007h1.5931" transform="scale(12)"></path>
+                  <path d="m77.579 61.007h1.0599" transform="scale(12)"></path>
+                  <path d="m81.124 61.007h0.52995" transform="scale(12)"></path>
+                  <path d="m83.321 61.007v0" transform="scale(12)"></path>
+                  <path d="m85.616 61.007v0" transform="scale(12)"></path>
+                  <path d="m90.252 61.007h-2.4658" transform="scale(12)"></path>
+                  <path d="m93.387 61.007v0" transform="scale(12)"></path>
+                  <path d="m19.652 57.097h1.1921" transform="scale(12)"></path>
+                  <path d="m22.38 57.097h4.5052" transform="scale(12)"></path>
+                  <path d="m41.744 57.097h19.143" transform="scale(12)"></path>
+                  <path d="m70.912 57.097v0" transform="scale(12)"></path>
+                  <path d="m69.743 57.097h0.15332" transform="scale(12)"></path>
+                  <path d="m76.564 57.097v0" transform="scale(12)"></path>
+                  <path d="m84.502 57.097v0" transform="scale(12)"></path>
+                  <path d="m13.746 53.187h2.151" transform="scale(12)"></path>
+                  <path d="m18.013 53.187h0.6569" transform="scale(12)"></path>
+                  <path d="m21.886 53.187h0.65592" transform="scale(12)"></path>
+                  <path d="m40.749 53.187h15.679" transform="scale(12)"></path>
+                  <path d="m58.325 53.187h5.3451" transform="scale(12)"></path>
+                  <path d="m68.352 53.187h3.6211" transform="scale(12)"></path>
+                  <path d="m74.355 53.187h4.0208" transform="scale(12)"></path>
+                  <path d="m10.633 49.276h10.543" transform="scale(12)"></path>
+                  <path d="m43.311 49.276h6.1012" transform="scale(12)"></path>
+                  <path d="m52.062 49.276h1.374" transform="scale(12)"></path>
+                  <path d="m56.282 49.276h26.051" transform="scale(12)"></path>
+                  <path d="m85.22 49.276v0" transform="scale(12)"></path>
+                  <path d="m8.8659 45.367 10.378-0.007813" transform="scale(12)"></path>
+                  <path d="m20.613 45.367 0.56315-0.007813" transform="scale(12)"></path>
+                  <path d="m22.77 45.367 2.0723-0.007813" transform="scale(12)"></path>
+                  <path d="m45.585 45.367 1.347-0.007813" transform="scale(12)"></path>
+                  <path d="m48.919 45.367v-0.007813" transform="scale(12)"></path>
+                  <path d="m50.422 45.367 3.014-0.007813" transform="scale(12)"></path>
+                  <path d="m57.577 45.367 1.4108-0.007813" transform="scale(12)"></path>
+                  <path d="m61.352 45.367 19.326-0.007813" transform="scale(12)"></path>
+                  <path d="m82.333 45.367 1.6859-0.007813" transform="scale(12)"></path>
+                  <path d="m87.511 45.367 0.31706-0.007813" transform="scale(12)"></path>
+                  <path d="m10.146 41.325 7.1979-9.77e-4" transform="scale(12)"></path>
+                  <path d="m18.67 41.325 3.5439-9.77e-4" transform="scale(12)"></path>
+                  <path d="m23.884 41.325 6.002-9.77e-4" transform="scale(12)"></path>
+                  <path d="m44.989 41.325 0.50391-9.77e-4" transform="scale(12)"></path>
+                  <path d="m43.311 41.325v0" transform="scale(12)"></path>
+                  <path d="m47.421 41.325 38.043-9.77e-4" transform="scale(12)"></path>
+                  <path d="m86.82 41.325v-9.77e-4" transform="scale(12)"></path>
+                  <path d="m89.768 41.325v-9.77e-4" transform="scale(12)"></path>
+                  <path d="m8.5791 37.417 11.238-0.003906" transform="scale(12)"></path>
+                  <path d="m24.632 37.417 2.0498-0.003906" transform="scale(12)"></path>
+                  <path d="m33.178 37.417 1.0251-0.003906" transform="scale(12)"></path>
+                  <path d="m47.421 37.417 2.3711-0.003906" transform="scale(12)"></path>
+                  <path d="m51.562 37.419 2.3711-0.002929" transform="scale(12)"></path>
+                  <path d="m55.323 37.419 27.788-0.002929" transform="scale(12)"></path>
+                  <path d="m89.768 37.419 0.83919-0.002929" transform="scale(12)"></path>
+                  <path d="m1.306 33.377 21.745-9.76e-4" transform="scale(12)"></path>
+                  <path d="m24.102 33.377 0.53027-9.76e-4" transform="scale(12)"></path>
+                  <path d="m27.501 33.377 1.6742-9.76e-4" transform="scale(12)"></path>
+                  <path d="m32.66 33.377 6.8317-9.76e-4" transform="scale(12)"></path>
+                  <path d="m50.422 33.377 3.68-9.76e-4" transform="scale(12)"></path>
+                  <path d="m57.577 33.377 5.2979-9.76e-4" transform="scale(12)"></path>
+                  <path d="m64.282 33.378 22.704-9.77e-4" transform="scale(12)"></path>
+                  <path d="m89.768 33.378v-9.77e-4" transform="scale(12)"></path>
+                  <path d="m2.6621 29.47 12.917-0.005208" transform="scale(12)"></path>
+                  <path d="m17.565 29.47 3.0479-0.005208" transform="scale(12)"></path>
+                  <path d="m22.004 29.47 0.42025-0.005208" transform="scale(12)"></path>
+                  <path d="m24.632 29.47 0.41895-0.005208" transform="scale(12)"></path>
+                  <path d="m25.823 29.47 1.2272-0.005208" transform="scale(12)"></path>
+                  <path d="m32.933 29.47 7.8161-0.005208" transform="scale(12)"></path>
+                  <path d="m58.337 29.47 0.061198-0.005208" transform="scale(12)"></path>
+                  <path d="m61.488 29.47 0.062174-0.005208" transform="scale(12)"></path>
+                  <path d="m64.251 29.47 27.812-0.005208" transform="scale(12)"></path>
+                  <path d="m7.277 25.283h1.0599" transform="scale(12)"></path>
+                  <path d="m19.553 25.283h1.0599" transform="scale(12)"></path>
+                  <path d="m21.65 25.283h0.17806" transform="scale(12)"></path>
+                  <path d="m23.35 25.283h0.17708" transform="scale(12)"></path>
+                  <path d="m25.139 25.283v0" transform="scale(12)"></path>
+                  <path d="m29.622 25.283h-2.5182" transform="scale(12)"></path>
+                  <path d="m42.008 25.283h-11.106" transform="scale(12)"></path>
+                  <path d="m50.542 25.283h-1.1139" transform="scale(12)"></path>
+                  <path d="m54.49 25.283v0" transform="scale(12)"></path>
+                  <path d="m67.335 25.283h2.5729" transform="scale(12)"></path>
+                  <path d="m79.793 25.283h0.21615" transform="scale(12)"></path>
+                  <path d="m86.88 25.283h5.847" transform="scale(12)"></path>
+                  <path d="m29.489 21.375 4.3721-0.010091" transform="scale(12)"></path>
+                  <path d="m38.851 21.375 1.2799-0.010091" transform="scale(12)"></path>
+                  <path d="m63.67 21.375v-0.010091" transform="scale(12)"></path>
+                  <path d="m25.074 78.635 1.1911-0.004232" transform="scale(12)"></path>
+                  <path d="m94.785 78.635 0.41471-0.004232" transform="scale(12)"></path>
+                  <path d="m24.842 74.722 1.821-0.001953" transform="scale(12)"></path>
+                  <path d="m98.246 74.722 0.44792-0.001953" transform="scale(12)"></path>
+                  <path d="m89.098 74.722 0.44694-0.001953" transform="scale(12)"></path>
+                  <path d="m24.367 70.814 5.1891-0.003256" transform="scale(12)"></path>
+                  <path d="m51.547 70.814 2.2533-0.003256" transform="scale(12)"></path>
+                  <path d="m80.76 70.814 11.392-0.003256" transform="scale(12)"></path>
+                  <path d="m24.405 66.902 8.528-0.002929" transform="scale(12)"></path>
+                  <path d="m49.892 66.902 6.292-0.002929" transform="scale(12)"></path>
+                  <path d="m59.033 66.902 0.76204-0.002929" transform="scale(12)"></path>
+                  <path d="m81.124 66.902 10.433-0.002929" transform="scale(12)"></path>
+                  <path d="m97.563 66.902v-0.002929" transform="scale(12)"></path>
+                  <path d="m21.408 62.989h13.019" transform="scale(12)"></path>
+                  <path d="m49.892 62.989h7.6852" transform="scale(12)"></path>
+                  <path d="m80.231 62.989h0.8929" transform="scale(12)"></path>
+                  <path d="m82.516 62.989h0.36393" transform="scale(12)"></path>
+                  <path d="m84.651 62.989v0" transform="scale(12)"></path>
+                  <path d="m91.888 62.989v0" transform="scale(12)"></path>
+                  <path d="m95.798 62.989v0" transform="scale(12)"></path>
+                  <path d="m21.828 59.078h8.0788" transform="scale(12)"></path>
+                  <path d="m48.522 59.078h11.503" transform="scale(12)"></path>
+                  <path d="m76.284 59.078h0.28027" transform="scale(12)"></path>
+                  <path d="m77.721 59.078v0" transform="scale(12)"></path>
+                  <path d="m82.217 59.078h-1.5391" transform="scale(12)"></path>
+                  <path d="m17.081 55.167 2.8451-9.76e-4" transform="scale(12)"></path>
+                  <path d="m27.079 55.167v-9.76e-4" transform="scale(12)"></path>
+                  <path d="m57.577 55.167-16.828-9.76e-4" transform="scale(12)"></path>
+                  <path d="m61.086 55.167-1.6729-9.76e-4" transform="scale(12)"></path>
+                  <path d="m70.194 55.167-1.2259-9.76e-4" transform="scale(12)"></path>
+                  <path d="m79.335 55.167h-2.7708" transform="scale(12)"></path>
+                  <path d="m83.321 55.167h-0.20996" transform="scale(12)"></path>
+                  <path d="m12.84 51.258h3.0472" transform="scale(12)"></path>
+                  <path d="m11.25 51.258h0.35384" transform="scale(12)"></path>
+                  <path d="m20.718 51.258h0.35384" transform="scale(12)"></path>
+                  <path d="m41.645 51.258h13.755" transform="scale(12)"></path>
+                  <path d="m63.404 51.258h18.703" transform="scale(12)"></path>
+                  <path d="m56.779 51.258h3.471" transform="scale(12)"></path>
+                  <path d="m9.5299 47.349 13.24-0.009114" transform="scale(12)"></path>
+                  <path d="m43.311 47.349 1.6781-0.009114" transform="scale(12)"></path>
+                  <path d="m50.001 47.349v-0.009114" transform="scale(12)"></path>
+                  <path d="m52.062 47.349v-0.009114" transform="scale(12)"></path>
+                  <path d="m53.436 47.349 6.292-0.009114" transform="scale(12)"></path>
+                  <path d="m62.059 47.349 19.363-0.009114" transform="scale(12)"></path>
+                  <path d="m84.019 47.349 0.020182-0.009114" transform="scale(12)"></path>
+                  <path d="m85.907 47.349 1.4329-0.009114" transform="scale(12)"></path>
+                  <path d="m9.4899 43.308 9.599-0.001953" transform="scale(12)"></path>
+                  <path d="m21.838 43.308 3.1361-0.001953" transform="scale(12)"></path>
+                  <path d="m26.001 43.308 1.0492-0.001953" transform="scale(12)"></path>
+                  <path d="m29.363 43.308 1.0482-0.001953" transform="scale(12)"></path>
+                  <path d="m86.986 43.308 1.0501-0.001953" transform="scale(12)"></path>
+                  <path d="m44.989 43.308 40.231-0.001953" transform="scale(12)"></path>
+                  <path d="m9.5299 39.398 12.298-0.003255" transform="scale(12)"></path>
+                  <path d="m24.367 39.398 4.5433-0.003255" transform="scale(12)"></path>
+                  <path d="m44.15 39.398 0.12988-0.003255" transform="scale(12)"></path>
+                  <path d="m49.229 39.398 0.56315-0.003255" transform="scale(12)"></path>
+                  <path d="m52.28 39.398 23.048-0.003255" transform="scale(12)"></path>
+                  <path d="m76.513 39.398 8.707-0.003255" transform="scale(12)"></path>
+                  <path d="m86.292 39.398v-0.003255" transform="scale(12)"></path>
+                  <path d="m1.8441 35.358 0.84993-0.001953" transform="scale(12)"></path>
+                  <path d="m8.3369 35.358 12.839-0.001953" transform="scale(12)"></path>
+                  <path d="m32.437 35.358 2.8932-0.001953" transform="scale(12)"></path>
+                  <path d="m39.756 35.358 1.9883-0.001953" transform="scale(12)"></path>
+                  <path d="m49.428 35.358 1.2588-0.001953" transform="scale(12)"></path>
+                  <path d="m52.177 35.358 1.2588-0.001953" transform="scale(12)"></path>
+                  <path d="m55.799 35.358 28.22-0.001953" transform="scale(12)"></path>
+                  <path d="m89.019 35.358 1.5882-0.001953" transform="scale(12)"></path>
+                  <path d="m27.05 35.358 1.446-0.001953" transform="scale(12)"></path>
+                  <path d="m23.438 35.358 0.41471-0.001953" transform="scale(12)"></path>
+                  <path d="m1.8441 31.452 11.527-0.006184" transform="scale(12)"></path>
+                  <path d="m15.887 31.452 1.6781-0.006184" transform="scale(12)"></path>
+                  <path d="m19.244 31.452 0.40788-0.006184" transform="scale(12)"></path>
+                  <path d="m21.541 31.452 0.15592-0.006184" transform="scale(12)"></path>
+                  <path d="m22.973 31.452 0.15592-0.006184" transform="scale(12)"></path>
+                  <path d="m24.974 31.452 0.15592-0.006184" transform="scale(12)"></path>
+                  <path d="m26.682 31.452 2.2282-0.006184" transform="scale(12)"></path>
+                  <path d="m33.178 31.452 6.5778-0.006184" transform="scale(12)"></path>
+                  <path d="m58.061 31.452 0.55208-0.006184" transform="scale(12)"></path>
+                  <path d="m61.859 31.452 0.66211-0.006184" transform="scale(12)"></path>
+                  <path d="m63.951 31.452 1.1543-0.006184" transform="scale(12)"></path>
+                  <path d="m66.299 31.452 21.968-0.006184" transform="scale(12)"></path>
+                  <path d="m89.415 31.452 2.2529-0.006184" transform="scale(12)"></path>
+                  <path d="m10.146 27.265-5.7402-9.77e-4" transform="scale(12)"></path>
+                  <path d="m18.935 27.265-2.7389-9.77e-4" transform="scale(12)"></path>
+                  <path d="m27.348 27.265-2.209-9.77e-4" transform="scale(12)"></path>
+                  <path d="m41.435 27.265-10.225-9.77e-4" transform="scale(12)"></path>
+                  <path d="m49.075 27.265-0.81771-9.77e-4" transform="scale(12)"></path>
+                  <path d="m60.226 27.265v-9.77e-4" transform="scale(12)"></path>
+                  <path d="m65.701 27.265 3.8861-9.77e-4" transform="scale(12)"></path>
+                  <path d="m71.045 27.265 4.5911-9.77e-4" transform="scale(12)"></path>
+                  <path d="m76.917 27.265 14.089-9.77e-4" transform="scale(12)"></path>
+                  <path d="m21.408 27.265v-9.77e-4" transform="scale(12)"></path>
+                  <path d="m20.834 23.355v-0.008138" transform="scale(12)"></path>
+                  <path d="m22.424 23.355v-0.008138" transform="scale(12)"></path>
+                  <path d="m24.632 23.355v-0.008138" transform="scale(12)"></path>
+                  <path d="m27.855 23.355-1.0153-0.008138" transform="scale(12)"></path>
+                  <path d="m31.674 23.355-2.764-0.008138" transform="scale(12)"></path>
+                  <path d="m39.492 23.355-5.9948-0.008138" transform="scale(12)"></path>
+                  <path d="m57.1 23.355-0.32096-0.008138" transform="scale(12)"></path>
+                  <path d="m66.02 23.355-1.2467-0.008138" transform="scale(12)"></path>
+                  <path d="m76.881 23.355-1.2448-0.008138" transform="scale(12)"></path>
+                  <path d="m78.157 23.355-0.22689-0.008138" transform="scale(12)"></path>
                 </g>
               </svg>
             </div>
@@ -540,7 +658,7 @@ const GlobalFootprint = () => {
 
               {/* US to Philippines */}
               <path
-                d="M 220 160 Q 500 100 840 240"
+                d="M 150 210 Q 400 150 450 270"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -550,7 +668,7 @@ const GlobalFootprint = () => {
 
               {/* US to Mexico */}
               <path
-                d="M 220 160 Q 200 200 170 235"
+                d="M 150 210 Q 135 230 120 300"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
@@ -561,7 +679,7 @@ const GlobalFootprint = () => {
 
               {/* Mexico to Guatemala */}
               <path
-                d="M 170 235 L 150 255"
+                d="M 120 300 L 108 330"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -572,7 +690,7 @@ const GlobalFootprint = () => {
 
               {/* Guatemala to Colombia */}
               <path
-                d="M 150 255 Q 180 280 250 310"
+                d="M 108 330 Q 140 360 168 390"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
@@ -583,7 +701,7 @@ const GlobalFootprint = () => {
 
               {/* US to Guatemala (additional connection) */}
               <path
-                d="M 220 160 Q 180 200 150 255"
+                d="M 150 210 Q 125 270 108 330"
                 stroke="url(#connection-gradient)"
                 strokeWidth="1.5"
                 fill="none"
@@ -595,7 +713,7 @@ const GlobalFootprint = () => {
 
               {/* US to Colombia (additional connection) */}
               <path
-                d="M 220 160 Q 240 250 250 310"
+                d="M 150 210 Q 160 300 168 390"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="1.5"
                 fill="none"
