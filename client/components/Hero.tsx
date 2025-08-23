@@ -21,24 +21,15 @@ const Hero = () => {
     { height: "h-10", delay: "1200ms" },
   ];
 
-  // Tech stack icons positioned as per the image layout
+  // Tech stack icons with brand orange backgrounds - reduced and better distributed
   const techStack = [
-    // Top row
-    { icon: Code, name: "Frontend", color: "from-green-500 to-green-600", position: { right: "28%", top: "18%" } },
-    { icon: Database, name: "Backend", color: "from-green-500 to-green-600", position: { right: "12%", top: "25%" } },
-    { icon: Layers, name: "DevOps", color: "from-green-500 to-green-600", position: { right: "20%", top: "32%" } },
-    
-    // Middle row  
-    { icon: Cloud, name: "Cloud", color: "from-purple-500 to-purple-600", position: { right: "32%", top: "45%" } },
-    { icon: GitBranch, name: "Development", color: "from-blue-500 to-blue-600", position: { right: "15%", top: "58%" } },
-    
-    // Bottom row
-    { icon: Server, name: "Infrastructure", color: "from-green-500 to-green-600", position: { right: "28%", top: "68%" } },
-    { icon: Workflow, name: "Automation", color: "from-blue-500 to-blue-600", position: { right: "18%", top: "78%" } },
-    
-    // Additional icons for completeness
-    { icon: Cpu, name: "AI/ML", color: "from-red-500 to-red-600", position: { right: "8%", top: "48%" } },
-    { icon: Smartphone, name: "Mobile", color: "from-yellow-500 to-yellow-600", position: { right: "35%", top: "58%" } },
+    // Strategically positioned for better visual balance
+    { icon: Code, name: "Frontend", position: { right: "25%", top: "20%" } },
+    { icon: Database, name: "Backend", position: { right: "15%", top: "35%" } },
+    { icon: Cloud, name: "Cloud", position: { right: "30%", top: "50%" } },
+    { icon: Server, name: "Infrastructure", position: { right: "18%", top: "65%" } },
+    { icon: GitBranch, name: "Development", position: { right: "8%", top: "80%" } },
+    { icon: Cpu, name: "AI/ML", position: { right: "35%", top: "75%" } },
   ];
 
   // Real-time metrics with dynamic counters
@@ -320,8 +311,8 @@ const Hero = () => {
           >
             {/* Floating animation wrapper */}
             <div className="animate-bounce" style={{ animationDuration: `${3 + index * 0.5}s` }}>
-              <div className={`w-10 h-10 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20`}>
-                <tech.icon className="w-5 h-5 text-white" />
+              <div className="w-12 h-12 bg-orange-500 hover:bg-orange-600 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-orange-400/30 hover:shadow-orange-glow">
+                <tech.icon className="w-6 h-6 text-white" />
               </div>
             </div>
             
@@ -372,38 +363,38 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Connection Lines - Matching Image Layout */}
+      {/* Connection Lines - Updated for new icon positions */}
       <svg className="absolute inset-0 hidden xl:block pointer-events-none" style={{ zIndex: 1 }}>
         <defs>
-          <linearGradient id="greenLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(34, 197, 94, 0.6)" />
-            <stop offset="100%" stopColor="rgba(34, 197, 94, 0.2)" />
+          <linearGradient id="orangeLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(255, 69, 0, 0.4)" />
+            <stop offset="100%" stopColor="rgba(255, 69, 0, 0.1)" />
           </linearGradient>
         </defs>
-        {/* Green connection lines as shown in image */}
+        {/* Orange connection lines connecting the tech stack icons */}
         <path
-          d="M 72% 35% L 80% 55%"
-          stroke="url(#greenLineGradient)"
+          d="M 75% 25% L 85% 38%"
+          stroke="url(#orangeLineGradient)"
           strokeWidth="2"
           fill="none"
           className="animate-pulse"
-          style={{ animationDuration: '2s' }}
+          style={{ animationDuration: '3s' }}
         />
         <path
-          d="M 85% 55% L 72% 75%"
-          stroke="url(#greenLineGradient)"
+          d="M 85% 38% L 70% 52%"
+          stroke="url(#orangeLineGradient)"
           strokeWidth="2"
           fill="none"
           className="animate-pulse"
-          style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}
+          style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}
         />
         <path
-          d="M 68% 45% L 85% 78%"
-          stroke="url(#greenLineGradient)"
+          d="M 82% 68% L 92% 82%"
+          stroke="url(#orangeLineGradient)"
           strokeWidth="2"
           fill="none"
           className="animate-pulse"
-          style={{ animationDuration: '3s', animationDelay: '1s' }}
+          style={{ animationDuration: '4s', animationDelay: '1s' }}
         />
       </svg>
 
