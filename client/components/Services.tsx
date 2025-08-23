@@ -54,8 +54,7 @@ const Services = () => {
         "Cost-effective solutions",
         "Trial-to-hire options",
       ],
-      image:
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&crop=center",
+      image: "/images/contract-contract-to-hire.jpg",
       color: "from-orange-500 to-orange-600",
     },
     {
@@ -71,8 +70,7 @@ const Services = () => {
         "Comprehensive screening",
         "90-day guarantee",
       ],
-      image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/direct-hire-services.jpg",
       color: "from-purple-500 to-purple-600",
     },
     {
@@ -88,8 +86,7 @@ const Services = () => {
         "Timeline guarantees",
         "Risk mitigation",
       ],
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/statement-of-work.jpg",
       color: "from-cyan-500 to-cyan-600",
     },
     {
@@ -105,8 +102,7 @@ const Services = () => {
         "Cost optimization",
         "Strategic planning",
       ],
-      image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&crop=center",
+      image: "/images/managed-services.jpg",
       color: "from-lime-500 to-lime-600",
     },
     {
@@ -122,8 +118,7 @@ const Services = () => {
         "Payroll management",
         "Benefits administration",
       ],
-      image:
-        "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop&crop=center",
+      image: "/images/employer-of-record.jpg",
       color: "from-orange-500 to-red-500",
     },
     {
@@ -139,8 +134,7 @@ const Services = () => {
         "Reduced time-to-productivity",
         "Ongoing mentorship",
       ],
-      image:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&crop=center",
+      image: "/images/hire-train-deploy.jpg",
       color: "from-purple-500 to-pink-500",
     },
   ];
