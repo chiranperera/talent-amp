@@ -99,27 +99,209 @@ const GlobalFootprint = () => {
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Background Pattern */}
+      {/* Vertical Line World Map Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 1000 1000">
+        <div className="absolute inset-0 opacity-15">
+          <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
             <defs>
-              <pattern
-                id="world-grid"
-                x="0"
-                y="0"
-                width="50"
-                height="50"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle cx="25" cy="25" r="1" fill="url(#world-gradient)" />
-              </pattern>
-              <linearGradient id="world-gradient">
-                <stop offset="0%" stopColor="#FF4500" />
-                <stop offset="100%" stopColor="#7C3AED" />
+              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#FF4500" stopOpacity="0.2" />
+                <stop offset="50%" stopColor="#FF4500" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#FF4500" stopOpacity="0.2" />
               </linearGradient>
             </defs>
-            <rect width="100%" height="100%" fill="url(#world-grid)" />
+            
+            {/* World Map with Vertical Lines - Similar to Reference Image */}
+            <g>
+              {/* North America - Dense vertical lines */}
+              {[
+                // Main continent lines
+                80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280
+              ].map((x, i) => (
+                <g key={`na-${i}`}>
+                  {/* Main lines with varying heights */}
+                  <rect
+                    x={x}
+                    y={50 + Math.sin(i * 0.3) * 20}
+                    width={i % 5 === 0 ? 8 : i % 3 === 0 ? 6 : 3}
+                    height={150 + Math.sin(i * 0.5) * 30}
+                    fill="#FF4500"
+                    opacity={0.6 + (i % 4) * 0.1}
+                    rx={1}
+                  />
+                  {/* Small accent lines */}
+                  {i % 4 === 0 && (
+                    <rect
+                      x={x + 15}
+                      y={80 + Math.sin(i * 0.4) * 15}
+                      width={2}
+                      height={60 + Math.sin(i * 0.6) * 20}
+                      fill="#FF4500"
+                      opacity={0.4}
+                      rx={1}
+                    />
+                  )}
+                </g>
+              ))}
+              
+              {/* South America - Tapered lines */}
+              {[
+                190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285
+              ].map((x, i) => (
+                <g key={`sa-${i}`}>
+                  <rect
+                    x={x}
+                    y={220}
+                    width={i % 4 === 0 ? 7 : i % 2 === 0 ? 4 : 2}
+                    height={200 - i * 8}
+                    fill="#FF4500"
+                    opacity={0.5 + (i % 3) * 0.15}
+                    rx={1}
+                  />
+                  {/* Small dots for islands */}
+                  {i % 3 === 0 && (
+                    <circle
+                      cx={x + 20}
+                      cy={350 + i * 5}
+                      r={2}
+                      fill="#FF4500"
+                      opacity={0.6}
+                    />
+                  )}
+                </g>
+              ))}
+              
+              {/* Africa - Varied line heights */}
+              {[
+                450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530, 535, 540, 545, 550, 555, 560, 565, 570
+              ].map((x, i) => (
+                <g key={`af-${i}`}>
+                  <rect
+                    x={x}
+                    y={120 + Math.sin(i * 0.2) * 10}
+                    width={i % 6 === 0 ? 9 : i % 3 === 0 ? 5 : 3}
+                    height={280 + Math.sin(i * 0.4) * 40}
+                    fill="#FF4500"
+                    opacity={0.5 + (i % 4) * 0.1}
+                    rx={1}
+                  />
+                </g>
+              ))}
+              
+              {/* Europe - Short dense lines */}
+              {[
+                420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505
+              ].map((x, i) => (
+                <g key={`eu-${i}`}>
+                  <rect
+                    x={x}
+                    y={60 + Math.sin(i * 0.3) * 15}
+                    width={i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
+                    height={80 + Math.sin(i * 0.5) * 20}
+                    fill="#FF4500"
+                    opacity={0.6 + (i % 3) * 0.1}
+                    rx={1}
+                  />
+                </g>
+              ))}
+              
+              {/* Asia - Large continent with varied patterns */}
+              {[
+                520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900
+              ].map((x, i) => (
+                <g key={`as-${i}`}>
+                  <rect
+                    x={x}
+                    y={40 + Math.sin(i * 0.2) * 25}
+                    width={i % 7 === 0 ? 10 : i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
+                    height={180 + Math.sin(i * 0.3) * 50}
+                    fill="#FF4500"
+                    opacity={0.5 + (i % 5) * 0.1}
+                    rx={1}
+                  />
+                  {/* Additional scattered elements */}
+                  {i % 5 === 0 && (
+                    <rect
+                      x={x + 15}
+                      y={100 + Math.sin(i * 0.4) * 20}
+                      width={3}
+                      height={40 + Math.sin(i * 0.6) * 15}
+                      fill="#FF4500"
+                      opacity={0.4}
+                      rx={1}
+                    />
+                  )}
+                </g>
+              ))}
+              
+              {/* Southeast Asia / Philippines - Island clusters */}
+              {[
+                820, 830, 840, 850, 860, 870, 880, 890, 900, 910
+              ].map((x, i) => (
+                <g key={`sea-${i}`}>
+                  <rect
+                    x={x}
+                    y={280 + Math.sin(i * 0.4) * 10}
+                    width={i % 3 === 0 ? 5 : 3}
+                    height={60 + Math.sin(i * 0.5) * 20}
+                    fill="#FF4500"
+                    opacity={0.6 + (i % 3) * 0.1}
+                    rx={1}
+                  />
+                  {/* Small island dots */}
+                  <circle
+                    cx={x + 10}
+                    cy={320 + i * 8}
+                    r={1.5}
+                    fill="#FF4500"
+                    opacity={0.7}
+                  />
+                  <circle
+                    cx={x - 5}
+                    cy={310 + i * 6}
+                    r={1}
+                    fill="#FF4500"
+                    opacity={0.5}
+                  />
+                </g>
+              ))}
+              
+              {/* Australia / Oceania - Isolated continent */}
+              {[
+                850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970
+              ].map((x, i) => (
+                <g key={`oc-${i}`}>
+                  <rect
+                    x={x}
+                    y={400 + Math.sin(i * 0.3) * 8}
+                    width={i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
+                    height={80 + Math.sin(i * 0.4) * 15}
+                    fill="#FF4500"
+                    opacity={0.5 + (i % 4) * 0.1}
+                    rx={1}
+                  />
+                  {/* Small scattered islands */}
+                  {i % 3 === 0 && (
+                    <>
+                      <circle
+                        cx={x + 20}
+                        cy={450 + i * 3}
+                        r={1}
+                        fill="#FF4500"
+                        opacity={0.6}
+                      />
+                      <circle
+                        cx={x + 25}
+                        cy={460 + i * 2}
+                        r={0.5}
+                        fill="#FF4500"
+                        opacity={0.4}
+                      />
+                    </>
+                  )}
+                </g>
+              ))}
+            </g>
           </svg>
         </div>
       </div>

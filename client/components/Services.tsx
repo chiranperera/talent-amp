@@ -204,18 +204,16 @@ const Services = () => {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
 
-                  {/* Top-left Icon */}
-                  <div className="absolute top-4 left-4">
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
-                    >
-                      <service.icon className="w-6 h-6 text-white" />
+                  {/* Top-left Icon with orange background and white icon */}
+                  <div className="absolute top-6 left-6">
+                    <div className="w-20 h-20 rounded-2xl bg-orange-500 flex items-center justify-center shadow-lg">
+                      <service.icon className="w-10 h-10 text-white" />
                     </div>
                   </div>
 
-                  {/* Title - Moved up from bottom */}
-                  <div className="absolute bottom-6 left-4 right-4">
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                  {/* Title positioned below the icon */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white">
                       {service.title}
                     </h3>
                   </div>
