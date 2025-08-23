@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Users, Zap, Globe, TrendingUp } from "lucide-react";
+import { ArrowRight, Users, Zap, Globe, TrendingUp, Code, Database, Cloud, Cpu, Layers, GitBranch } from "lucide-react";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -20,6 +20,36 @@ const Hero = () => {
     { height: "h-14", delay: "1000ms" },
     { height: "h-10", delay: "1200ms" },
   ];
+
+  // Tech stack icons for floating animation
+  const techStack = [
+    { icon: Code, name: "Frontend", color: "from-blue-500 to-blue-600", position: { right: "15%", top: "20%" } },
+    { icon: Database, name: "Backend", color: "from-green-500 to-green-600", position: { right: "8%", top: "35%" } },
+    { icon: Cloud, name: "Cloud", color: "from-purple-500 to-purple-600", position: { right: "22%", top: "50%" } },
+    { icon: Cpu, name: "AI/ML", color: "from-red-500 to-red-600", position: { right: "12%", top: "65%" } },
+    { icon: Layers, name: "DevOps", color: "from-yellow-500 to-yellow-600", position: { right: "25%", top: "75%" } },
+    { icon: GitBranch, name: "Development", color: "from-indigo-500 to-indigo-600", position: { right: "18%", top: "85%" } },
+  ];
+
+  // Real-time metrics with dynamic counters
+  const [metrics, setMetrics] = useState({
+    activeProjects: 127,
+    availableTalent: 2500,
+    clientSatisfaction: 98,
+    countriesServed: 25
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMetrics(prev => ({
+        activeProjects: prev.activeProjects + Math.floor(Math.random() * 3) - 1,
+        availableTalent: Math.max(2450, prev.availableTalent + Math.floor(Math.random() * 10) - 5),
+        clientSatisfaction: Math.min(100, Math.max(95, prev.clientSatisfaction + (Math.random() - 0.5))),
+        countriesServed: prev.countriesServed
+      }));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 sm:py-0">
@@ -227,9 +257,9 @@ const Hero = () => {
       </div>
 
       <div
-        className="absolute bottom-1/4 left-4 sm:left-1/6 hidden xl:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-cyan-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-cyan-glow animate-glow"
+        className="absolute bottom-1/3 right-1/4 hidden xl:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-cyan-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-cyan-glow animate-glow cursor-pointer group"
         style={{
-          margin: "0 -77px -126px 93px",
+          marginRight: "-50px",
           boxShadow:
             "0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(6, 182, 212, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
         }}
@@ -257,7 +287,107 @@ const Hero = () => {
           <span className="text-white text-sm font-semibold">Global Reach</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
+        
+        {/* Hover tooltip */}
+        <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+          <div className="bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+            15+ Years of Excellence
+          </div>
+        </div>
       </div>
+
+      {/* Floating Tech Stack Icons - Desktop Only for Performance */}
+      <div className="absolute inset-0 hidden xl:block pointer-events-none">
+        {techStack.map((tech, index) => (
+          <div
+            key={tech.name}
+            className="absolute group cursor-pointer pointer-events-auto"
+            style={{
+              right: tech.position.right,
+              top: tech.position.top,
+              animationDelay: `${index * 300}ms`
+            }}
+          >
+            {/* Floating animation wrapper */}
+            <div className="animate-bounce" style={{ animationDuration: `${3 + index * 0.5}s` }}>
+              <div className={`w-12 h-12 bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20`}>
+                <tech.icon className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            
+            {/* Tech name tooltip */}
+            <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                {tech.name}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Interactive Metrics Counter - Desktop Only */}
+      <div className="absolute top-1/4 right-8 hidden xl:block z-30">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+          <h3 className="text-white font-bold text-lg mb-4 text-center">Live Metrics</h3>
+          <div className="space-y-3">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-orange-400">{metrics.activeProjects}</div>
+              <div className="text-xs text-gray-300">Active Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-cyan-400">{metrics.availableTalent.toLocaleString()}</div>
+              <div className="text-xs text-gray-300">Available Talent</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-400">{metrics.clientSatisfaction.toFixed(1)}%</div>
+              <div className="text-xs text-gray-300">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Particle System - Reduced for Performance */}
+      <div className="absolute inset-0 hidden xl:block pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-ping"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Connection Lines */}
+      <svg className="absolute inset-0 hidden xl:block pointer-events-none" style={{ zIndex: 1 }}>
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(255, 69, 0, 0.3)" />
+            <stop offset="100%" stopColor="rgba(255, 69, 0, 0.1)" />
+          </linearGradient>
+        </defs>
+        {/* Animated connecting lines between floating elements */}
+        <path
+          d="M 85% 30% Q 90% 50% 85% 70%"
+          stroke="url(#lineGradient)"
+          strokeWidth="1"
+          fill="none"
+          className="animate-pulse"
+          style={{ animationDuration: '3s' }}
+        />
+        <path
+          d="M 80% 25% Q 75% 45% 80% 65%"
+          stroke="url(#lineGradient)"
+          strokeWidth="1"
+          fill="none"
+          className="animate-pulse"
+          style={{ animationDuration: '4s', animationDelay: '1s' }}
+        />
+      </svg>
 
       {/* Main Content */}
       <div className="relative z-40 text-center px-6 sm:px-8 lg:px-8 max-w-5xl mx-auto xl:max-w-2xl xl:mr-auto xl:ml-20 lg:text-left w-full">
