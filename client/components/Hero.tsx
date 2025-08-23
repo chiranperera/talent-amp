@@ -272,7 +272,7 @@ const Hero = () => {
         </div>
 
         {/* Main Headline with Sound Wave Animation */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1] sm:leading-tight">
+        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-[1.05] sm:leading-tight tracking-tight">
           <span className="block">
             <span className="inline-flex items-end justify-center lg:justify-start">
               <span>Amplifying</span>
@@ -280,7 +280,7 @@ const Hero = () => {
                 {[...Array(3)].map((_, i) => (
                   <div
                     key={i}
-                    className="w-1.5 sm:w-2 h-5 sm:h-6 md:h-8 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t animate-pulse"
+                    className="w-2 sm:w-2 h-6 sm:h-6 md:h-8 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t animate-pulse"
                     style={{
                       animationDelay: `${i * 200}ms`,
                       animationDuration: "1s",
@@ -290,10 +290,10 @@ const Hero = () => {
               </div>
             </span>
           </span>
-          <span className="block text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mt-2">
+          <span className="block text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mt-1 font-black">
             IT Talent
           </span>
-          <span className="block mt-2">at Scale</span>
+          <span className="block mt-1 font-extrabold">at Scale</span>
         </h1>
 
         {/* Subheadline */}

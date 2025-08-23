@@ -13,7 +13,7 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-200">
       <nav className="container-lg px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* TalentAmp Logo */}
@@ -62,7 +62,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${
             isMenuOpen ? "max-h-96 pb-6" : "max-h-0"
           }`}
         >
@@ -89,13 +89,7 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile overlay */}
-      {isMenuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+      {/* Mobile overlay - removed as it was causing blur over menu */}
     </header>
   );
 };
