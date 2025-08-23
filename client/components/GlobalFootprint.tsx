@@ -16,16 +16,19 @@ const GlobalFootprint = () => {
   });
 
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+    const checkDeviceSize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768); // mobile breakpoint
+      setIsTablet(width >= 768 && width < 1024); // tablet breakpoint
     };
     
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+    checkDeviceSize();
+    window.addEventListener("resize", checkDeviceSize);
     
-    return () => window.removeEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkDeviceSize);
   }, []);
 
   const locations = [
@@ -36,10 +39,11 @@ const GlobalFootprint = () => {
       icon: "🇺🇸",
       color: "from-blue-500 to-blue-600",
       coordinates: { 
-        x: "30%", 
-        y: "35%", 
-        mobile: { x: "25%", y: "30%" }
-      }, // North America - positioned over central US region
+        x: "32%", 
+        y: "38%", 
+        mobile: { x: "30%", y: "35%" },
+        tablet: { x: "31%", y: "37%" }
+      }, // North America - positioned over central US region (adjusted for 120% scale)
     },
     {
       country: "Philippines",
@@ -48,10 +52,11 @@ const GlobalFootprint = () => {
       icon: "🇵🇭",
       color: "from-green-500 to-green-600",
       coordinates: { 
-        x: "78%", 
-        y: "55%", 
-        mobile: { x: "75%", y: "50%" }
-      }, // Southeast Asia - positioned over Philippines region
+        x: "75%", 
+        y: "58%", 
+        mobile: { x: "73%", y: "55%" },
+        tablet: { x: "74%", y: "57%" }
+      }, // Southeast Asia - positioned over Philippines region (adjusted for 120% scale)
     },
     {
       country: "Mexico",
@@ -60,10 +65,11 @@ const GlobalFootprint = () => {
       icon: "🇲🇽",
       color: "from-red-500 to-red-600",
       coordinates: { 
-        x: "22%", 
-        y: "48%", 
-        mobile: { x: "20%", y: "45%" }
-      }, // North America - positioned over Mexico
+        x: "25%", 
+        y: "50%", 
+        mobile: { x: "23%", y: "48%" },
+        tablet: { x: "24%", y: "49%" }
+      }, // North America - positioned over Mexico (adjusted for 120% scale)
     },
     {
       country: "Guatemala",
@@ -72,10 +78,11 @@ const GlobalFootprint = () => {
       icon: "🇬🇹",
       color: "from-purple-500 to-purple-600",
       coordinates: { 
-        x: "20%", 
-        y: "52%", 
-        mobile: { x: "18%", y: "50%" }
-      }, // Central America - positioned over Guatemala
+        x: "23%", 
+        y: "54%", 
+        mobile: { x: "21%", y: "52%" },
+        tablet: { x: "22%", y: "53%" }
+      }, // Central America - positioned over Guatemala (adjusted for 120% scale)
     },
     {
       country: "Colombia",
@@ -84,10 +91,11 @@ const GlobalFootprint = () => {
       icon: "🇨🇴",
       color: "from-yellow-500 to-yellow-600",
       coordinates: { 
-        x: "30%", 
-        y: "68%", 
-        mobile: { x: "28%", y: "65%" }
-      }, // South America - positioned over Colombia
+        x: "32%", 
+        y: "70%", 
+        mobile: { x: "30%", y: "68%" },
+        tablet: { x: "31%", y: "69%" }
+      }, // South America - positioned over Colombia (adjusted for 120% scale)
     },
   ];
 
@@ -162,16 +170,21 @@ const GlobalFootprint = () => {
           <div className="relative w-full max-w-7xl mx-auto h-[600px] bg-gradient-to-b from-gray-800/30 to-gray-900/50 rounded-3xl border border-gray-700/50 overflow-visible backdrop-blur-sm">
             {/* World Map Background */}
             <div 
-              className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-contain opacity-20"
+              className="absolute inset-0 w-full h-full bg-no-repeat bg-center opacity-20"
               style={{
                 backgroundImage: "url('/images/world-map.svg')",
+                backgroundSize: "120%",
                 filter: "brightness(0) saturate(100%) invert(27%) sepia(88%) saturate(2867%) hue-rotate(16deg) brightness(99%) contrast(101%)"
               }}
             ></div>
 
             {/* Enhanced Location Markers */}
             {locations.map((location, index) => {
-              const coords = isMobile ? location.coordinates.mobile : location.coordinates;
+              const coords = isMobile 
+                ? location.coordinates.mobile 
+                : isTablet 
+                ? location.coordinates.tablet 
+                : location.coordinates;
               return (
                 <div
                   key={index}
@@ -285,7 +298,7 @@ const GlobalFootprint = () => {
 
               {/* US to Philippines */}
               <path
-                d="M 30% 35% Q 55% 25% 78% 55%"
+                d="M 32% 38% Q 55% 30% 75% 58%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -296,7 +309,7 @@ const GlobalFootprint = () => {
 
               {/* US to Mexico */}
               <path
-                d="M 30% 35% Q 26% 40% 22% 48%"
+                d="M 32% 38% Q 28% 44% 25% 50%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
@@ -308,7 +321,7 @@ const GlobalFootprint = () => {
 
               {/* Mexico to Guatemala */}
               <path
-                d="M 22% 48% L 20% 52%"
+                d="M 25% 50% L 23% 54%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
@@ -320,7 +333,7 @@ const GlobalFootprint = () => {
 
               {/* Guatemala to Colombia */}
               <path
-                d="M 20% 52% Q 25% 60% 30% 68%"
+                d="M 23% 54% Q 27% 62% 32% 70%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
@@ -332,7 +345,7 @@ const GlobalFootprint = () => {
 
               {/* US to Guatemala (additional connection) */}
               <path
-                d="M 30% 35% Q 25% 43% 20% 52%"
+                d="M 32% 38% Q 27% 46% 23% 54%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="1.5"
                 fill="none"
@@ -345,7 +358,7 @@ const GlobalFootprint = () => {
 
               {/* US to Colombia (additional connection) */}
               <path
-                d="M 30% 35% Q 30% 50% 30% 68%"
+                d="M 32% 38% Q 32% 54% 32% 70%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="1.5"
                 fill="none"
