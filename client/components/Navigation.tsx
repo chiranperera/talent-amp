@@ -21,7 +21,7 @@ const Navigation = () => {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fe3d05ace731744db874427ca0dce58c6%2Fc06c344448cf440fa62625833285c31c?format=webp&width=800"
               alt="TalentAmp Logo"
-              className="h-8 lg:h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+              className="h-10 sm:h-10 lg:h-12 w-auto group-hover:scale-105 transition-transform duration-200"
             />
           </Link>
 

@@ -22,7 +22,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 sm:py-0">
       {/* Luxury Sound Wave Background */}
       <div className="absolute inset-0 z-0">
         {/* Main luxury background pattern */}
@@ -212,7 +212,7 @@ const Hero = () => {
 
       {/* Premium Glowing Metrics Badges - Above luxury background */}
       <div
-        className="absolute top-20 sm:top-32 right-1/2 sm:right-2/3 hidden md:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-orange-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-orange-glow animate-glow"
+        className="absolute top-20 sm:top-32 right-1/2 sm:right-2/3 hidden xl:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-orange-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-orange-glow animate-glow"
         style={{
           marginRight: "-130px",
           boxShadow:
@@ -227,7 +227,7 @@ const Hero = () => {
       </div>
 
       <div
-        className="absolute bottom-1/4 left-4 sm:left-1/6 hidden md:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-cyan-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-cyan-glow animate-glow"
+        className="absolute bottom-1/4 left-4 sm:left-1/6 hidden xl:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-cyan-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-cyan-glow animate-glow"
         style={{
           margin: "0 -77px -126px 93px",
           boxShadow:
@@ -245,7 +245,7 @@ const Hero = () => {
 
       {/* Additional premium glowing badge for visual balance */}
       <div
-        className="absolute top-2/3 right-1/3 sm:right-1/2 hidden lg:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-purple-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-purple-glow animate-glow"
+        className="absolute top-2/3 right-1/3 sm:right-1/2 hidden xl:block bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-purple-500/50 shadow-2xl z-30 hover:bg-white/20 transition-all duration-300 hover:shadow-purple-glow animate-glow"
         style={{
           margin: "-173px -205px 0 0",
           boxShadow:
@@ -260,54 +260,56 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-40 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto xl:max-w-2xl xl:mr-auto xl:ml-20 lg:text-left">
+      <div className="relative z-40 text-center px-6 sm:px-8 lg:px-8 max-w-5xl mx-auto xl:max-w-2xl xl:mr-auto xl:ml-20 lg:text-left w-full">
         {/* TalentAmp Logo Sound Wave */}
-        <div className="flex items-center justify-center lg:justify-start mb-8">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
+        <div className="flex items-center justify-center lg:justify-start mb-6 sm:mb-8">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-orange-400 mr-2" />
-            <span className="text-orange-300 text-sm font-medium">
+            <span className="text-orange-300 text-xs sm:text-sm font-medium">
               Workforce Innovation
             </span>
           </div>
         </div>
 
         {/* Main Headline with Sound Wave Animation */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-          <span className="block flex items-center justify-center lg:justify-start flex-wrap">
-            <span>Amplifying</span>
-            <div className="flex items-end ml-2 sm:ml-4 space-x-0.5">
-              {[...Array(3)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-1 sm:w-2 h-4 sm:h-6 md:h-8 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t animate-pulse"
-                  style={{
-                    animationDelay: `${i * 200}ms`,
-                    animationDuration: "1s",
-                  }}
-                />
-              ))}
-            </div>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1] sm:leading-tight">
+          <span className="block">
+            <span className="inline-flex items-end justify-center lg:justify-start">
+              <span>Amplifying</span>
+              <div className="flex items-end ml-3 sm:ml-4 space-x-1">
+                {[...Array(3)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1.5 sm:w-2 h-5 sm:h-6 md:h-8 bg-gradient-to-t from-orange-500 to-orange-300 rounded-t animate-pulse"
+                    style={{
+                      animationDelay: `${i * 200}ms`,
+                      animationDuration: "1s",
+                    }}
+                  />
+                ))}
+              </div>
+            </span>
           </span>
-          <span className="block text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+          <span className="block text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mt-2">
             IT Talent
           </span>
-          <span className="block">at Scale</span>
+          <span className="block mt-2">at Scale</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
           AI-powered staffing solutions for global tech talent deployment.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center w-full sm:w-auto">
-          <button className="group bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:shadow-orange hover:scale-105 flex items-center justify-center space-x-2 relative overflow-hidden w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center w-full sm:w-auto max-w-md mx-auto lg:mx-0">
+          <button className="group bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-orange hover:scale-105 flex items-center justify-center space-x-2 relative overflow-hidden w-full sm:w-auto text-base sm:text-lg">
             <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             <span className="relative">Find Talent</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 relative" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 relative" />
           </button>
 
-          <button className="group bg-white/10 hover:bg-white/20 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-white/20 transition-all duration-300 backdrop-blur-sm hover:border-white/40 w-full sm:w-auto">
+          <button className="group bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all duration-300 backdrop-blur-sm hover:border-white/40 w-full sm:w-auto text-base sm:text-lg">
             Explore Services
           </button>
         </div>
