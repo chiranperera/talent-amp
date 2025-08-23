@@ -101,8 +101,36 @@
   }
 }
 
-/* Ensure animations work across browsers */
+/* Performance optimizations */
 @layer utilities {
+  /* Prevent layout shifts */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Improve scrolling performance */
+  .smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* GPU acceleration for transforms */
+  .gpu-accelerated {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+/* Ensure animations work across browsers */
   /* Force GPU acceleration for animations */
   .animate-pulse {
     -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;

@@ -20,8 +20,11 @@ const Navigation = () => {
           <Link to="/" className="flex items-center group">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fe3d05ace731744db874427ca0dce58c6%2Fc06c344448cf440fa62625833285c31c?format=webp&width=800"
-              alt="TalentAmp Logo"
+              alt="TalentAmp - Home"
               className="h-10 sm:h-10 lg:h-12 w-auto group-hover:scale-105 transition-transform duration-200"
+              loading="eager"
+              width="150"
+              height="40"
             />
           </Link>
 
@@ -41,7 +44,10 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="btn-primary hover:scale-105 transform transition-all duration-200">
+            <button 
+              className="btn-primary hover:scale-105 transform transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
+              aria-label="Get started with TalentAmp services"
+            >
               Get Started
             </button>
           </div>
@@ -49,8 +55,10 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-900" />
@@ -62,9 +70,12 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         <div
+          id="mobile-menu"
           className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${
             isMenuOpen ? "max-h-96 pb-6" : "max-h-0"
           }`}
+          role="navigation"
+          aria-label="Mobile navigation"
         >
           <div className="pt-4 space-y-4">
             {navItems.map((item) => (
