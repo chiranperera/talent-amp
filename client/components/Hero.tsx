@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Users, Zap, Globe, TrendingUp, Code, Database, Cloud, Cpu, Layers, GitBranch } from "lucide-react";
+import { ArrowRight, Users, Zap, Globe, TrendingUp, Code, Database, Cloud, Cpu, Layers, GitBranch, Smartphone, Monitor, Server, Workflow } from "lucide-react";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -21,14 +21,24 @@ const Hero = () => {
     { height: "h-10", delay: "1200ms" },
   ];
 
-  // Tech stack icons for floating animation
+  // Tech stack icons positioned as per the image layout
   const techStack = [
-    { icon: Code, name: "Frontend", color: "from-blue-500 to-blue-600", position: { right: "15%", top: "20%" } },
-    { icon: Database, name: "Backend", color: "from-green-500 to-green-600", position: { right: "8%", top: "35%" } },
-    { icon: Cloud, name: "Cloud", color: "from-purple-500 to-purple-600", position: { right: "22%", top: "50%" } },
-    { icon: Cpu, name: "AI/ML", color: "from-red-500 to-red-600", position: { right: "12%", top: "65%" } },
-    { icon: Layers, name: "DevOps", color: "from-yellow-500 to-yellow-600", position: { right: "25%", top: "75%" } },
-    { icon: GitBranch, name: "Development", color: "from-indigo-500 to-indigo-600", position: { right: "18%", top: "85%" } },
+    // Top row
+    { icon: Code, name: "Frontend", color: "from-green-500 to-green-600", position: { right: "28%", top: "18%" } },
+    { icon: Database, name: "Backend", color: "from-green-500 to-green-600", position: { right: "12%", top: "25%" } },
+    { icon: Layers, name: "DevOps", color: "from-green-500 to-green-600", position: { right: "20%", top: "32%" } },
+    
+    // Middle row  
+    { icon: Cloud, name: "Cloud", color: "from-purple-500 to-purple-600", position: { right: "32%", top: "45%" } },
+    { icon: GitBranch, name: "Development", color: "from-blue-500 to-blue-600", position: { right: "15%", top: "58%" } },
+    
+    // Bottom row
+    { icon: Server, name: "Infrastructure", color: "from-green-500 to-green-600", position: { right: "28%", top: "68%" } },
+    { icon: Workflow, name: "Automation", color: "from-blue-500 to-blue-600", position: { right: "18%", top: "78%" } },
+    
+    // Additional icons for completeness
+    { icon: Cpu, name: "AI/ML", color: "from-red-500 to-red-600", position: { right: "8%", top: "48%" } },
+    { icon: Smartphone, name: "Mobile", color: "from-yellow-500 to-yellow-600", position: { right: "35%", top: "58%" } },
   ];
 
   // Real-time metrics with dynamic counters
@@ -310,8 +320,8 @@ const Hero = () => {
           >
             {/* Floating animation wrapper */}
             <div className="animate-bounce" style={{ animationDuration: `${3 + index * 0.5}s` }}>
-              <div className={`w-12 h-12 bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20`}>
-                <tech.icon className="w-6 h-6 text-white" />
+              <div className={`w-10 h-10 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20`}>
+                <tech.icon className="w-5 h-5 text-white" />
               </div>
             </div>
             
@@ -326,20 +336,20 @@ const Hero = () => {
       </div>
 
       {/* Interactive Metrics Counter - Desktop Only */}
-      <div className="absolute top-1/4 right-8 hidden xl:block z-30">
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-          <h3 className="text-white font-bold text-lg mb-4 text-center">Live Metrics</h3>
-          <div className="space-y-3">
+      <div className="absolute top-1/4 right-4 hidden xl:block z-30">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+          <h3 className="text-white font-bold text-base mb-3 text-center">Live Metrics</h3>
+          <div className="space-y-2">
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-400">{metrics.activeProjects}</div>
+              <div className="text-xl font-bold text-orange-400">{metrics.activeProjects}</div>
               <div className="text-xs text-gray-300">Active Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-400">{metrics.availableTalent.toLocaleString()}</div>
+              <div className="text-xl font-bold text-cyan-400">{metrics.availableTalent.toLocaleString()}</div>
               <div className="text-xs text-gray-300">Available Talent</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">{metrics.clientSatisfaction.toFixed(1)}%</div>
+              <div className="text-xl font-bold text-green-400">{metrics.clientSatisfaction.toFixed(1)}%</div>
               <div className="text-xs text-gray-300">Client Satisfaction</div>
             </div>
           </div>
@@ -362,30 +372,38 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Connection Lines */}
+      {/* Connection Lines - Matching Image Layout */}
       <svg className="absolute inset-0 hidden xl:block pointer-events-none" style={{ zIndex: 1 }}>
         <defs>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(255, 69, 0, 0.3)" />
-            <stop offset="100%" stopColor="rgba(255, 69, 0, 0.1)" />
+          <linearGradient id="greenLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(34, 197, 94, 0.6)" />
+            <stop offset="100%" stopColor="rgba(34, 197, 94, 0.2)" />
           </linearGradient>
         </defs>
-        {/* Animated connecting lines between floating elements */}
+        {/* Green connection lines as shown in image */}
         <path
-          d="M 85% 30% Q 90% 50% 85% 70%"
-          stroke="url(#lineGradient)"
-          strokeWidth="1"
+          d="M 72% 35% L 80% 55%"
+          stroke="url(#greenLineGradient)"
+          strokeWidth="2"
           fill="none"
           className="animate-pulse"
-          style={{ animationDuration: '3s' }}
+          style={{ animationDuration: '2s' }}
         />
         <path
-          d="M 80% 25% Q 75% 45% 80% 65%"
-          stroke="url(#lineGradient)"
-          strokeWidth="1"
+          d="M 85% 55% L 72% 75%"
+          stroke="url(#greenLineGradient)"
+          strokeWidth="2"
           fill="none"
           className="animate-pulse"
-          style={{ animationDuration: '4s', animationDelay: '1s' }}
+          style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}
+        />
+        <path
+          d="M 68% 45% L 85% 78%"
+          stroke="url(#greenLineGradient)"
+          strokeWidth="2"
+          fill="none"
+          className="animate-pulse"
+          style={{ animationDuration: '3s', animationDelay: '1s' }}
         />
       </svg>
 
@@ -402,9 +420,9 @@ const Hero = () => {
         </div>
 
         {/* Main Headline with Sound Wave Animation */}
-        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-[1.05] sm:leading-tight tracking-tight">
-          <span className="block">
-            <span className="inline-flex items-end justify-center lg:justify-start">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-[1.05] sm:leading-tight tracking-tight text-center lg:text-left">
+          <div className="flex flex-col items-center lg:items-start">
+            <span className="flex items-end justify-center lg:justify-start">
               <span>Amplifying</span>
               <div className="flex items-end ml-3 sm:ml-4 space-x-1">
                 {[...Array(3)].map((_, i) => (
@@ -419,11 +437,11 @@ const Hero = () => {
                 ))}
               </div>
             </span>
-          </span>
-          <span className="block text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mt-1 font-black">
-            IT Talent
-          </span>
-          <span className="block mt-1 font-extrabold">at Scale</span>
+            <span className="text-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mt-1 font-black">
+              IT Talent
+            </span>
+            <span className="mt-1 font-extrabold">at Scale</span>
+          </div>
         </h1>
 
         {/* Subheadline */}
