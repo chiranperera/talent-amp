@@ -156,8 +156,8 @@ const DEI = () => {
 
           {/* Service Circle Layout */}
           <div className="relative w-full max-w-4xl mx-auto">
-            {/* Center Circle */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center z-10">
+            {/* Center Circle - Desktop Only */}
+            <div className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full items-center justify-center z-10">
               <div className="text-center">
                 <Heart className="w-8 h-8 text-white mx-auto mb-1" />
                 <span className="text-white font-bold text-sm">DEI</span>
@@ -166,7 +166,7 @@ const DEI = () => {
             </div>
 
             {/* Service Cards in Circle */}
-            <div className="grid md:grid-cols-2 gap-8 pt-16">
+            <div className="grid md:grid-cols-2 gap-8 lg:pt-16">
               {deiServices.map((service, index) => (
                 <div
                   key={index}

@@ -29,12 +29,12 @@ const Services = () => {
   const handleCardClick = (index: number) => {
     if (isMobile) {
       setFlippedCards((prev) => {
-        const newSet = new Set(prev);
-        if (newSet.has(index)) {
-          newSet.delete(index);
-        } else {
+        const newSet = new Set();
+        if (!prev.has(index)) {
+          // Only add the clicked card, removing all others
           newSet.add(index);
         }
+        // If clicking the same card that's already flipped, it will close
         return newSet;
       });
     }
