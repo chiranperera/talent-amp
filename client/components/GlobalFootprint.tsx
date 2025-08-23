@@ -173,7 +173,7 @@ const GlobalFootprint = () => {
               className="absolute inset-0 w-full h-full bg-no-repeat bg-center opacity-20"
               style={{
                 backgroundImage: "url('/images/world-map.svg')",
-                backgroundSize: "120%",
+                backgroundSize: "80%",
                 filter: "brightness(0) saturate(100%) invert(27%) sepia(88%) saturate(2867%) hue-rotate(16deg) brightness(99%) contrast(101%)"
               }}
             ></div>
