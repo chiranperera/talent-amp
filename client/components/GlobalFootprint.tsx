@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
 import {
   MapPin,
   Users,
@@ -14,6 +15,19 @@ const GlobalFootprint = () => {
     triggerOnce: true,
   });
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const locations = [
     {
       country: "United States",
@@ -21,7 +35,11 @@ const GlobalFootprint = () => {
       specialization: "Strategic Operations & Client Management",
       icon: "🇺🇸",
       color: "from-blue-500 to-blue-600",
-      coordinates: { x: "25%", y: "35%" }, // North America region in the new map
+      coordinates: { 
+        x: "30%", 
+        y: "35%", 
+        mobile: { x: "25%", y: "30%" }
+      }, // North America - positioned over central US region
     },
     {
       country: "Philippines",
@@ -29,7 +47,11 @@ const GlobalFootprint = () => {
       specialization: "SaaS, FinTech & HealthTech Specialists",
       icon: "🇵🇭",
       color: "from-green-500 to-green-600",
-      coordinates: { x: "75%", y: "45%" }, // Southeast Asia region in the new map
+      coordinates: { 
+        x: "78%", 
+        y: "55%", 
+        mobile: { x: "75%", y: "50%" }
+      }, // Southeast Asia - positioned over Philippines region
     },
     {
       country: "Mexico",
@@ -37,7 +59,11 @@ const GlobalFootprint = () => {
       specialization: "Application Development & Support",
       icon: "🇲🇽",
       color: "from-red-500 to-red-600",
-      coordinates: { x: "20%", y: "50%" }, // Central America/Mexico region
+      coordinates: { 
+        x: "22%", 
+        y: "48%", 
+        mobile: { x: "20%", y: "45%" }
+      }, // North America - positioned over Mexico
     },
     {
       country: "Guatemala",
@@ -45,7 +71,11 @@ const GlobalFootprint = () => {
       specialization: "Customer Experience & Quality Assurance",
       icon: "🇬🇹",
       color: "from-purple-500 to-purple-600",
-      coordinates: { x: "18%", y: "55%" }, // Central America region
+      coordinates: { 
+        x: "20%", 
+        y: "52%", 
+        mobile: { x: "18%", y: "50%" }
+      }, // Central America - positioned over Guatemala
     },
     {
       country: "Colombia",
@@ -53,7 +83,11 @@ const GlobalFootprint = () => {
       specialization: "Emerging Technologies & R&D",
       icon: "🇨🇴",
       color: "from-yellow-500 to-yellow-600",
-      coordinates: { x: "28%", y: "65%" }, // South America region
+      coordinates: { 
+        x: "30%", 
+        y: "68%", 
+        mobile: { x: "28%", y: "65%" }
+      }, // South America - positioned over Colombia
     },
   ];
 
@@ -99,212 +133,6 @@ const GlobalFootprint = () => {
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Vertical Line World Map Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-15">
-          <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#FF4500" stopOpacity="0.2" />
-                <stop offset="50%" stopColor="#FF4500" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#FF4500" stopOpacity="0.2" />
-              </linearGradient>
-            </defs>
-            
-            {/* World Map with Vertical Lines - Similar to Reference Image */}
-            <g>
-              {/* North America - Dense vertical lines */}
-              {[
-                // Main continent lines
-                80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280
-              ].map((x, i) => (
-                <g key={`na-${i}`}>
-                  {/* Main lines with varying heights */}
-                  <rect
-                    x={x}
-                    y={50 + Math.sin(i * 0.3) * 20}
-                    width={i % 5 === 0 ? 8 : i % 3 === 0 ? 6 : 3}
-                    height={150 + Math.sin(i * 0.5) * 30}
-                    fill="#FF4500"
-                    opacity={0.6 + (i % 4) * 0.1}
-                    rx={1}
-                  />
-                  {/* Small accent lines */}
-                  {i % 4 === 0 && (
-                    <rect
-                      x={x + 15}
-                      y={80 + Math.sin(i * 0.4) * 15}
-                      width={2}
-                      height={60 + Math.sin(i * 0.6) * 20}
-                      fill="#FF4500"
-                      opacity={0.4}
-                      rx={1}
-                    />
-                  )}
-                </g>
-              ))}
-              
-              {/* South America - Tapered lines */}
-              {[
-                190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285
-              ].map((x, i) => (
-                <g key={`sa-${i}`}>
-                  <rect
-                    x={x}
-                    y={220}
-                    width={i % 4 === 0 ? 7 : i % 2 === 0 ? 4 : 2}
-                    height={200 - i * 8}
-                    fill="#FF4500"
-                    opacity={0.5 + (i % 3) * 0.15}
-                    rx={1}
-                  />
-                  {/* Small dots for islands */}
-                  {i % 3 === 0 && (
-                    <circle
-                      cx={x + 20}
-                      cy={350 + i * 5}
-                      r={2}
-                      fill="#FF4500"
-                      opacity={0.6}
-                    />
-                  )}
-                </g>
-              ))}
-              
-              {/* Africa - Varied line heights */}
-              {[
-                450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505, 510, 515, 520, 525, 530, 535, 540, 545, 550, 555, 560, 565, 570
-              ].map((x, i) => (
-                <g key={`af-${i}`}>
-                  <rect
-                    x={x}
-                    y={120 + Math.sin(i * 0.2) * 10}
-                    width={i % 6 === 0 ? 9 : i % 3 === 0 ? 5 : 3}
-                    height={280 + Math.sin(i * 0.4) * 40}
-                    fill="#FF4500"
-                    opacity={0.5 + (i % 4) * 0.1}
-                    rx={1}
-                  />
-                </g>
-              ))}
-              
-              {/* Europe - Short dense lines */}
-              {[
-                420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495, 500, 505
-              ].map((x, i) => (
-                <g key={`eu-${i}`}>
-                  <rect
-                    x={x}
-                    y={60 + Math.sin(i * 0.3) * 15}
-                    width={i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
-                    height={80 + Math.sin(i * 0.5) * 20}
-                    fill="#FF4500"
-                    opacity={0.6 + (i % 3) * 0.1}
-                    rx={1}
-                  />
-                </g>
-              ))}
-              
-              {/* Asia - Large continent with varied patterns */}
-              {[
-                520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900
-              ].map((x, i) => (
-                <g key={`as-${i}`}>
-                  <rect
-                    x={x}
-                    y={40 + Math.sin(i * 0.2) * 25}
-                    width={i % 7 === 0 ? 10 : i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
-                    height={180 + Math.sin(i * 0.3) * 50}
-                    fill="#FF4500"
-                    opacity={0.5 + (i % 5) * 0.1}
-                    rx={1}
-                  />
-                  {/* Additional scattered elements */}
-                  {i % 5 === 0 && (
-                    <rect
-                      x={x + 15}
-                      y={100 + Math.sin(i * 0.4) * 20}
-                      width={3}
-                      height={40 + Math.sin(i * 0.6) * 15}
-                      fill="#FF4500"
-                      opacity={0.4}
-                      rx={1}
-                    />
-                  )}
-                </g>
-              ))}
-              
-              {/* Southeast Asia / Philippines - Island clusters */}
-              {[
-                820, 830, 840, 850, 860, 870, 880, 890, 900, 910
-              ].map((x, i) => (
-                <g key={`sea-${i}`}>
-                  <rect
-                    x={x}
-                    y={280 + Math.sin(i * 0.4) * 10}
-                    width={i % 3 === 0 ? 5 : 3}
-                    height={60 + Math.sin(i * 0.5) * 20}
-                    fill="#FF4500"
-                    opacity={0.6 + (i % 3) * 0.1}
-                    rx={1}
-                  />
-                  {/* Small island dots */}
-                  <circle
-                    cx={x + 10}
-                    cy={320 + i * 8}
-                    r={1.5}
-                    fill="#FF4500"
-                    opacity={0.7}
-                  />
-                  <circle
-                    cx={x - 5}
-                    cy={310 + i * 6}
-                    r={1}
-                    fill="#FF4500"
-                    opacity={0.5}
-                  />
-                </g>
-              ))}
-              
-              {/* Australia / Oceania - Isolated continent */}
-              {[
-                850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970
-              ].map((x, i) => (
-                <g key={`oc-${i}`}>
-                  <rect
-                    x={x}
-                    y={400 + Math.sin(i * 0.3) * 8}
-                    width={i % 4 === 0 ? 6 : i % 2 === 0 ? 4 : 2}
-                    height={80 + Math.sin(i * 0.4) * 15}
-                    fill="#FF4500"
-                    opacity={0.5 + (i % 4) * 0.1}
-                    rx={1}
-                  />
-                  {/* Small scattered islands */}
-                  {i % 3 === 0 && (
-                    <>
-                      <circle
-                        cx={x + 20}
-                        cy={450 + i * 3}
-                        r={1}
-                        fill="#FF4500"
-                        opacity={0.6}
-                      />
-                      <circle
-                        cx={x + 25}
-                        cy={460 + i * 2}
-                        r={0.5}
-                        fill="#FF4500"
-                        opacity={0.4}
-                      />
-                    </>
-                  )}
-                </g>
-              ))}
-            </g>
-          </svg>
-        </div>
-      </div>
 
       <div className="container-lg relative z-10">
         {/* Section Header */}
@@ -342,15 +170,17 @@ const GlobalFootprint = () => {
             ></div>
 
             {/* Enhanced Location Markers */}
-            {locations.map((location, index) => (
-              <div
-                key={index}
-                className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 z-20"
-                style={{
-                  left: location.coordinates.x,
-                  top: location.coordinates.y,
-                }}
-              >
+            {locations.map((location, index) => {
+              const coords = isMobile ? location.coordinates.mobile : location.coordinates;
+              return (
+                <div
+                  key={index}
+                  className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 z-20"
+                  style={{
+                    left: coords.x,
+                    top: coords.y,
+                  }}
+                >
                 {/* Animated Marker with Ripple Effect */}
                 <div className="relative">
                   {/* Outer ripple */}
@@ -370,13 +200,13 @@ const GlobalFootprint = () => {
                 <div
                   className={`absolute opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 scale-95 group-hover:scale-100 ${
                     // Smart positioning based on location coordinates
-                    parseInt(location.coordinates.x) < 25
+                    parseInt(coords.x) < 25
                       ? "left-0"
-                      : parseInt(location.coordinates.x) > 75
+                      : parseInt(coords.x) > 75
                         ? "right-0"
                         : "left-1/2 transform -translate-x-1/2"
                   } ${
-                    parseInt(location.coordinates.y) < 40 ? "top-8" : "bottom-8"
+                    parseInt(coords.y) < 40 ? "top-8" : "bottom-8"
                   }`}
                 >
                   <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-2xl border border-gray-200 w-80 backdrop-blur-sm">
@@ -405,14 +235,14 @@ const GlobalFootprint = () => {
                     {/* Dynamic Tooltip Arrow */}
                     <div
                       className={`absolute ${
-                        parseInt(location.coordinates.y) < 40
+                        parseInt(coords.y) < 40
                           ? "bottom-full left-1/2 transform -translate-x-1/2 mb-1"
                           : "top-full left-1/2 transform -translate-x-1/2 -mt-1"
                       }`}
                     >
                       <div
                         className={`border-8 border-transparent ${
-                          parseInt(location.coordinates.y) < 40
+                          parseInt(coords.y) < 40
                             ? "border-b-white"
                             : "border-t-white"
                         }`}
@@ -420,8 +250,9 @@ const GlobalFootprint = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+                </div>
+              );
+            })}
 
             {/* Enhanced Connection Lines with Animation */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
@@ -454,50 +285,54 @@ const GlobalFootprint = () => {
 
               {/* US to Philippines */}
               <path
-                d="M 150 210 Q 400 150 450 270"
+                d="M 30% 35% Q 55% 25% 78% 55%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
                 strokeDasharray="5,5"
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* US to Mexico */}
               <path
-                d="M 150 210 Q 135 230 120 300"
+                d="M 30% 35% Q 26% 40% 22% 48%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDelay: "1s" }}
                 strokeDasharray="3,3"
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* Mexico to Guatemala */}
               <path
-                d="M 120 300 L 108 330"
+                d="M 22% 48% L 20% 52%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDelay: "1.5s" }}
                 strokeDasharray="2,2"
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* Guatemala to Colombia */}
               <path
-                d="M 108 330 Q 140 360 168 390"
+                d="M 20% 52% Q 25% 60% 30% 68%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="2"
                 fill="none"
                 className="animate-pulse"
                 style={{ animationDelay: "2s" }}
                 strokeDasharray="4,4"
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* US to Guatemala (additional connection) */}
               <path
-                d="M 150 210 Q 125 270 108 330"
+                d="M 30% 35% Q 25% 43% 20% 52%"
                 stroke="url(#connection-gradient)"
                 strokeWidth="1.5"
                 fill="none"
@@ -505,11 +340,12 @@ const GlobalFootprint = () => {
                 style={{ animationDelay: "2.5s" }}
                 strokeDasharray="6,6"
                 opacity="0.6"
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* US to Colombia (additional connection) */}
               <path
-                d="M 150 210 Q 160 300 168 390"
+                d="M 30% 35% Q 30% 50% 30% 68%"
                 stroke="url(#connection-gradient-reverse)"
                 strokeWidth="1.5"
                 fill="none"
@@ -517,6 +353,7 @@ const GlobalFootprint = () => {
                 style={{ animationDelay: "3s" }}
                 strokeDasharray="7,7"
                 opacity="0.6"
+                vectorEffect="non-scaling-stroke"
               />
             </svg>
 
